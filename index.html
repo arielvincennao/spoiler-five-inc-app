@@ -18,13 +18,28 @@
         
         <div class="search-container">
             <i class="fas fa-search search-icon"></i>
-            <input type="text" class="search-bar" placeholder="Buscar música, podcasts o playlists">
+            <input type="text" class="search-bar" placeholder="¿Qué vas a escuchar hoy?">
         </div>
         
         <div class="header-actions">
             <button class="notification-btn">
                 <i class="fas fa-bell"></i>
             </button>
+                <div class="library-menu-container">
+                    <button class="favorites-btn" title="Mi biblioteca">
+                        <i class="fas fa-book"></i>
+                    </button>
+                    <div class="library-menu">
+                        <button class="library-menu-item" data-section="favorites">
+                            <i class="fas fa-heart"></i>
+                            <span>Favoritos</span>
+                        </button>
+                        <button class="library-menu-item" data-section="playlists">
+                            <i class="fas fa-list"></i>
+                            <span>Mis Playlists</span>
+                        </button>
+                    </div>
+                </div>
             <button class="user-btn">
                 <i class="fas fa-user"></i>
             </button>
@@ -32,28 +47,84 @@
     </header>
 
     <main class="main-content">
+        <!-- Sección Hero -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Descubre lo último en música</h1>
+                    <p class="hero-subtitle">Explora los lanzamientos más recientes, tendencias y exclusivos que tenemos para ti</p>
+                    <div class="hero-actions">
+                        <button class="hero-btn primary">
+                            <i class="fas fa-play"></i>
+                            Escuchar ahora
+                        </button>
+                        <button class="hero-btn secondary">
+                            <i class="fas fa-heart"></i>
+                            Ver favoritos
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-card">
+                        <div class="hero-card-image">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="hero-card-content">
+                            <h3>Lo más escuchado</h3>
+                            <p>Descubre las tendencias del momento</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="section">
-            <h2 class="section-title">¡Hola de nuevo, Ariel!</h2>
-            <p class="section-subtitle">Continuemos donde lo dejamos</p>
-            <div class="content-grid">
+            <div class="section-header">
+                <div class="section-title-group">
+                    <h2 class="section-title">Recomendaciones para Ariel</h2>
+                    <p class="section-subtitle">Hechos para vos</p>
+                </div>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" data-carousel="recent">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" data-carousel="recent">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="carousel-track" id="recent-carousel">
                 <div class="content-card">
                     <div class="card-image">
                         <img src="images/p1.png" alt="Mi Playlist de Deporte">
                     </div>
                     <div class="card-tag playlist-tag">Playlist</div>
                     <h3 class="card-title">Hora de Gym</h3>
-                    <p class="card-subtitle">De AC/DC, Black Sabbath, Deep Purple & Motorhead.</p>
+                    <p class="card-subtitle">Por AC/DC, Pink Floyd, Led Zeppelin y más...</p>
                     <div class="card-actions">
                         <button class="play-btn">
                             <i class="fas fa-play"></i>
                         </button>
-                        <div>
+                            <div class="action-buttons-group">
                             <button class="action-btn">
                                 <i class="fas fa-heart"></i>
                             </button>
-                            <button class="action-btn">
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
                                 <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
                             </button>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -64,18 +135,30 @@
                     </div>
                     <div class="card-tag podcast-tag">Podcast</div>
                     <h3 class="card-title">Inglés 101</h3>
-                    <p class="card-subtitle">De Will Seabrook.</p>
+                    <p class="card-subtitle">Por Will Seabrook.</p>
                     <div class="card-actions">
                         <button class="play-btn">
                             <i class="fas fa-play"></i>
                         </button>
-                        <div>
+                            <div class="action-buttons-group">
                             <button class="action-btn">
                                 <i class="fas fa-heart"></i>
                             </button>
-                            <button class="action-btn">
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
                                 <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
                             </button>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -86,18 +169,30 @@
                     </div>
                     <div class="card-tag album-tag">Álbum</div>
                     <h3 class="card-title">My Head Is An Animal</h3>
-                    <p class="card-subtitle">De Of Monsters and Men</p>
+                    <p class="card-subtitle">2011 · Por Of Monsters and Men.</p>
                     <div class="card-actions">
                         <button class="play-btn">
                             <i class="fas fa-play"></i>
                         </button>
-                        <div>
+                            <div class="action-buttons-group">
                             <button class="action-btn">
                                 <i class="fas fa-heart"></i>
                             </button>
-                            <button class="action-btn">
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
                                 <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
                             </button>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -108,18 +203,201 @@
                     </div>
                     <div class="card-tag song-tag">Canción</div>
                     <h3 class="card-title">Luz</h3>
-                    <p class="card-subtitle">De Lil Supa</p>
+                    <p class="card-subtitle">Por Lil Supa</p>
                     <div class="card-actions">
                         <button class="play-btn">
                             <i class="fas fa-play"></i>
                         </button>
-                        <div>
+                            <div class="action-buttons-group">
                             <button class="action-btn">
                                 <i class="fas fa-heart"></i>
                             </button>
-                            <button class="action-btn">
-                                <i class="fas fa-share"></i>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
+                                            <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-image">
+                        <img src="images/p5.png" alt="Rock Clásico">
+                    </div>
+                    <div class="card-tag playlist-tag">Playlist</div>
+                    <h3 class="card-title">Rock Clásico</h3>
+                    <p class="card-subtitle">Por The Rolling Stones, Aerosmith, Jimi Hendrix y más...</p>
+                        <div class="card-actions">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
                             </button>
+                            <div class="action-buttons-group">
+                            <button class="action-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
+                                <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                            </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-image">
+                        <img src="images/p6.png" alt="Tech Talk">
+                    </div>
+                    <div class="card-tag podcast-tag">Podcast</div>
+                    <h3 class="card-title">Tech Talk</h3>
+                    <p class="card-subtitle">Por Tech Talk</p>
+                        <div class="card-actions">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="action-buttons-group">
+                                <button class="action-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
+                                            <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-image">
+                        <img src="images/p7.png" alt="Midnight City">
+                    </div>
+                    <div class="card-tag album-tag">Álbum</div>
+                    <h3 class="card-title">Midnight City</h3>
+                    <p class="card-subtitle">2018 · Por M83.</p>
+                        <div class="card-actions">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="action-buttons-group">
+                                <button class="action-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
+                                            <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-image">
+                        <img src="images/p8.png" alt="Electric Dreams">
+                    </div>
+                    <div class="card-tag song-tag">Canción</div>
+                    <h3 class="card-title">Electric Dreams</h3>
+                    <p class="card-subtitle">De The Weeknd</p>
+                        <div class="card-actions">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="action-buttons-group">
+                                <button class="action-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
+                                            <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-image">
+                        <i class="fas fa-guitar"></i>
+                    </div>
+                    <div class="card-tag playlist-tag">Playlist</div>
+                    <h3 class="card-title">Indie Vibes</h3>
+                    <p class="card-subtitle">Música independiente y alternativa</p>
+                        <div class="card-actions">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="action-buttons-group">
+                                <button class="action-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
+                                            <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -129,9 +407,22 @@
         
         <!-- Recomendaciones Destacadas -->
         <section class="section">
+            <div class="section-header">
+                <div class="section-title-group">
             <h2 class="section-title">Recomendaciones destacadas</h2>
             <p class="section-subtitle">Playlists especialmente para ti</p>
-            <div class="content-grid">
+                </div>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" data-carousel="recommendations">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" data-carousel="recommendations">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="carousel-track" id="recommendations-carousel">
                 <div class="content-card">
                     <div class="card-image">
                         <i class="fas fa-heart"></i>
@@ -143,13 +434,25 @@
                         <button class="play-btn">
                             <i class="fas fa-play"></i>
                         </button>
-                        <div>
+                            <div class="action-buttons-group">
                             <button class="action-btn">
                                 <i class="fas fa-heart"></i>
                             </button>
-                            <button class="action-btn">
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
                                 <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
                             </button>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -165,13 +468,25 @@
                         <button class="play-btn">
                             <i class="fas fa-play"></i>
                         </button>
-                        <div>
+                            <div class="action-buttons-group">
                             <button class="action-btn">
                                 <i class="fas fa-heart"></i>
                             </button>
-                            <button class="action-btn">
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
                                 <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
                             </button>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -187,13 +502,25 @@
                         <button class="play-btn">
                             <i class="fas fa-play"></i>
                         </button>
-                        <div>
+                            <div class="action-buttons-group">
                             <button class="action-btn">
                                 <i class="fas fa-heart"></i>
                             </button>
-                            <button class="action-btn">
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
                                 <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
                             </button>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -209,24 +536,186 @@
                         <button class="play-btn">
                             <i class="fas fa-play"></i>
                         </button>
-                        <div>
+                            <div class="action-buttons-group">
                             <button class="action-btn">
                                 <i class="fas fa-heart"></i>
                             </button>
-                            <button class="action-btn">
-                                <i class="fas fa-share"></i>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
+                                            <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-image">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="card-tag playlist-tag">Playlist</div>
+                    <h3 class="card-title">Éxitos del Año</h3>
+                    <p class="card-subtitle">Los hits más populares de 2024</p>
+                        <div class="card-actions">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
                             </button>
+                            <div class="action-buttons-group">
+                            <button class="action-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
+                                <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                            </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-image">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <div class="card-tag playlist-tag">Playlist</div>
+                    <h3 class="card-title">Noche Relajante</h3>
+                    <p class="card-subtitle">Música suave para relajarse</p>
+                        <div class="card-actions">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="action-buttons-group">
+                                <button class="action-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
+                                            <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-image">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="card-tag playlist-tag">Playlist</div>
+                    <h3 class="card-title">Energía Total</h3>
+                    <p class="card-subtitle">Música para activar tu día</p>
+                        <div class="card-actions">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="action-buttons-group">
+                                <button class="action-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
+                                            <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-image">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="card-tag playlist-tag">Playlist</div>
+                    <h3 class="card-title">Viaje en Carretera</h3>
+                    <p class="card-subtitle">La mejor música para viajar</p>
+                        <div class="card-actions">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="action-buttons-group">
+                                <button class="action-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
+                                            <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Lo Último -->
+        <!-- Mis Favoritos -->
         <section class="section">
-            <h2 class="section-title">Lo último</h2>
-            <p class="section-subtitle">Los lanzamientos más recientes</p>
-            <div class="content-grid">
+            <div class="section-header">
+                <div class="section-title-group">
+                    <h2 class="section-title">Mis favoritos</h2>
+                    <p class="section-subtitle">Tu música favorita en un solo lugar</p>
+                </div>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" data-carousel="latest">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" data-carousel="latest">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="carousel-track" id="latest-carousel">
                 <div class="content-card">
                     <div class="card-image">
                         <i class="fas fa-fire"></i>
@@ -237,13 +726,25 @@
                         <button class="play-btn">
                             <i class="fas fa-play"></i>
                         </button>
-                        <div>
-                            <button class="action-btn">
+                            <div class="action-buttons-group">
+                                <button class="action-btn favorite-heart">
                                 <i class="fas fa-heart"></i>
                             </button>
-                            <button class="action-btn">
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
                                 <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
                             </button>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -258,13 +759,25 @@
                         <button class="play-btn">
                             <i class="fas fa-play"></i>
                         </button>
-                        <div>
-                            <button class="action-btn">
+                            <div class="action-buttons-group">
+                                <button class="action-btn favorite-heart">
                                 <i class="fas fa-heart"></i>
                             </button>
-                            <button class="action-btn">
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
                                 <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
                             </button>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -279,13 +792,25 @@
                         <button class="play-btn">
                             <i class="fas fa-play"></i>
                         </button>
-                        <div>
-                            <button class="action-btn">
+                            <div class="action-buttons-group">
+                                <button class="action-btn favorite-heart">
                                 <i class="fas fa-heart"></i>
                             </button>
-                            <button class="action-btn">
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
                                 <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
                             </button>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -300,13 +825,446 @@
                         <button class="play-btn">
                             <i class="fas fa-play"></i>
                         </button>
-                        <div>
+                            <div class="action-buttons-group">
+                                <button class="action-btn favorite-heart">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
+                                            <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-image">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div class="card-tag song-tag">Canción</div>
+                    <h3 class="card-title">Nueva Canción</h3>
+                    <p class="card-subtitle">Lanzamiento de esta semana</p>
+                        <div class="card-actions">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="action-buttons-group">
+                                <button class="action-btn favorite-heart">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
+                                            <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-image">
+                        <i class="fas fa-compact-disc"></i>
+                    </div>
+                    <div class="card-tag album-tag">Álbum</div>
+                    <h3 class="card-title">Álbum del Mes</h3>
+                    <p class="card-subtitle">El álbum más esperado</p>
+                        <div class="card-actions">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="action-buttons-group">
+                                <button class="action-btn favorite-heart">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
+                                            <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-image">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <div class="card-tag podcast-tag">Podcast</div>
+                    <h3 class="card-title">Podcast Trending</h3>
+                    <p class="card-subtitle">El podcast más escuchado</p>
+                        <div class="card-actions">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="action-buttons-group">
+                                <button class="action-btn favorite-heart">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
+                                            <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-image">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="card-title">Global Hits</h3>
+                    <p class="card-subtitle">Lo que suena en todo el mundo</p>
+                        <div class="card-actions">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="action-buttons-group">
+                                <button class="action-btn favorite-heart">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
+                                            <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-image">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <h3 class="card-title">Lanzamientos de Hoy</h3>
+                    <p class="card-subtitle">Nuevos estrenos diarios</p>
+                        <div class="card-actions">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="action-buttons-group">
+                                <button class="action-btn favorite-heart">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
+                                            <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mis Playlist -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-title-group">
+                    <h2 class="section-title">Mis Playlist</h2>
+                </div>
+                <button class="create-playlist-btn">
+                    <i class="fas fa-plus"></i>
+                    Crear Playlist
+                </button>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" data-carousel="my-playlists">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" data-carousel="my-playlists">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="carousel-track" id="my-playlists-carousel">
+                    <div class="content-card playlist-card">
+                        <div class="card-image">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="card-tag playlist-tag">Playlist</div>
+                        <h3 class="card-title">Rock Favorito</h3>
+                        <p class="card-subtitle">De Ariel Vincennao</p>
+                        <div class="card-actions">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="action-buttons-group">
                             <button class="action-btn">
                                 <i class="fas fa-heart"></i>
                             </button>
-                            <button class="action-btn">
-                                <i class="fas fa-share"></i>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item share-item">
+                                            <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                        <button class="context-menu-item edit-item">
+                                            <i class="fas fa-edit"></i>
+                                            <span>Editar</span>
+                                        </button>
+                                        <button class="context-menu-item delete-item">
+                                            <i class="fas fa-trash"></i>
+                                            <span>Eliminar</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card playlist-card">
+                        <div class="card-image">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="card-tag playlist-tag">Playlist</div>
+                        <h3 class="card-title">Canciones de Amor</h3>
+                        <p class="card-subtitle">Para momentos románticos</p>
+                        <div class="card-actions">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
                             </button>
+                            <div class="action-buttons-group">
+                            <button class="action-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item share-item">
+                                <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                        <button class="context-menu-item edit-item">
+                                            <i class="fas fa-edit"></i>
+                                            <span>Editar</span>
+                                        </button>
+                                        <button class="context-menu-item delete-item">
+                                            <i class="fas fa-trash"></i>
+                                            <span>Eliminar</span>
+                            </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card playlist-card">
+                        <div class="card-image">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <div class="card-tag playlist-tag">Playlist</div>
+                        <h3 class="card-title">Gym Session</h3>
+                        <p class="card-subtitle">Música para entrenar</p>
+                        <div class="card-actions">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="action-buttons-group">
+                                <button class="action-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item share-item">
+                                            <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                        <button class="context-menu-item edit-item">
+                                            <i class="fas fa-edit"></i>
+                                            <span>Editar</span>
+                                        </button>
+                                        <button class="context-menu-item delete-item">
+                                            <i class="fas fa-trash"></i>
+                                            <span>Eliminar</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card playlist-card">
+                        <div class="card-image">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                        <div class="card-tag playlist-tag">Playlist</div>
+                        <h3 class="card-title">Noche Tranquila</h3>
+                        <p class="card-subtitle">Para relajarse antes de dormir</p>
+                        <div class="card-actions">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="action-buttons-group">
+                                <button class="action-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item share-item">
+                                            <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                        <button class="context-menu-item edit-item">
+                                            <i class="fas fa-edit"></i>
+                                            <span>Editar</span>
+                                        </button>
+                                        <button class="context-menu-item delete-item">
+                                            <i class="fas fa-trash"></i>
+                                            <span>Eliminar</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card playlist-card">
+                        <div class="card-image">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="card-tag playlist-tag">Playlist</div>
+                        <h3 class="card-title">Viaje en Auto</h3>
+                        <p class="card-subtitle">Música para la carretera</p>
+                        <div class="card-actions">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="action-buttons-group">
+                                <button class="action-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item share-item">
+                                            <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                        <button class="context-menu-item edit-item">
+                                            <i class="fas fa-edit"></i>
+                                            <span>Editar</span>
+                                        </button>
+                                        <button class="context-menu-item delete-item">
+                                            <i class="fas fa-trash"></i>
+                                            <span>Eliminar</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card playlist-card">
+                        <div class="card-image">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="card-tag playlist-tag">Playlist</div>
+                        <h3 class="card-title">Estudio</h3>
+                        <p class="card-subtitle">Música para concentrarse</p>
+                        <div class="card-actions">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="action-buttons-group">
+                                <button class="action-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item share-item">
+                                            <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                        <button class="context-menu-item edit-item">
+                                            <i class="fas fa-edit"></i>
+                                            <span>Editar</span>
+                                        </button>
+                                        <button class="context-menu-item delete-item">
+                                            <i class="fas fa-trash"></i>
+                                            <span>Eliminar</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -315,8 +1273,12 @@
 
         <!-- Momentos -->
         <section class="section">
+            <div class="section-header">
+                <div class="section-title-group">
             <h2 class="section-title">Para cada momento</h2>
             <p class="section-subtitle">Encuentra la música perfecta para tu estado de ánimo</p>
+                </div>
+            </div>
             <div class="categories-container">
                 <div class="category-card">
                     <h3 class="category-title">🏃‍♂️ Correr</h3>
@@ -356,8 +1318,16 @@
         </div>
 
         <div class="player-controls">
+            <div class="progress-container">
+                <div class="time-display">
+                    <span class="current-time">0:00</span>
+                </div>
             <div class="progress-bar">
                 <div class="progress-fill"></div>
+                </div>
+                <div class="time-display">
+                    <span class="total-time">0:00</span>
+                </div>
             </div>
             <div class="control-buttons">
                 <button class="control-btn">

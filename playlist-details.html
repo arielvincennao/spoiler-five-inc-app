@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora de Gym - Spoiler Five</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-music"></i>
+            Spoiler Five Inc.
+        </div>
+        
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-bar" placeholder="¿Qué vas a escuchar hoy?">
+        </div>
+        
+        <div class="header-actions">
+            <button class="notification-btn">
+                <i class="fas fa-bell"></i>
+            </button>
+                <div class="library-menu-container">
+                    <button class="favorites-btn" title="Mi biblioteca">
+                        <i class="fas fa-book"></i>
+                    </button>
+                    <div class="library-menu">
+                        <button class="library-menu-item" data-section="favorites">
+                            <i class="fas fa-heart"></i>
+                            <span>Favoritos</span>
+                        </button>
+                        <button class="library-menu-item" data-section="playlists">
+                            <i class="fas fa-list"></i>
+                            <span>Mis Playlists</span>
+                        </button>
+                    </div>
+                </div>
+            <button class="user-btn">
+                <i class="fas fa-user"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="main-content">
+        <!-- Hero de la Playlist -->
+        <section class="playlist-hero">
+            <div class="playlist-hero-content">
+                <div class="playlist-image">
+                    <img src="images/p5.png" alt="Hora de Gym">
+                </div>
+                <div class="playlist-info">
+                    <div class="playlist-type">Playlist</div>
+                    <h1 class="playlist-title">Hora de Gym</h1>
+                    <p class="playlist-description">Por AC/DC, Pink Floyd, Led Zeppelin y más...</p>
+                    <div class="playlist-meta">
+                        <span class="playlist-creator">Creada por Juan Cruz López</span>
+                        <span class="playlist-stats">• 25 canciones • 1h 45min</span>
+                    </div>
+                    <div class="playlist-actions">
+                        <button class="play-btn-large">
+                            <i class="fas fa-play"></i>
+                            <span>Reproducir</span>
+                        </button>
+                        <button class="action-btn-large">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="action-btn-large">
+                            <i class="fas fa-share"></i>
+                        </button>
+                        <div class="context-menu-container">
+                            <button class="context-menu-btn" title="Más opciones">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                            <div class="context-menu">
+                                <button class="context-menu-item">
+                                    <i class="fas fa-download"></i>
+                                    <span>Descargar</span>
+                                </button>
+                                <button class="context-menu-item">
+                                    <i class="fas fa-edit"></i>
+                                    <span>Editar playlist</span>
+                                </button>
+                                <button class="context-menu-item">
+                                    <i class="fas fa-trash"></i>
+                                    <span>Eliminar</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lista de Canciones -->
+        <section class="songs-section">
+            <div class="songs-header">
+                <h2>Canciones</h2>
+                <div class="songs-controls">
+                    <button class="shuffle-btn">
+                        <i class="fas fa-random"></i>
+                        <span>Aleatorio</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="songs-list">
+                <!-- Canción 1 -->
+                <div class="song-item">
+                    <div class="song-number">1</div>
+                    <div class="song-info">
+                        <div class="song-image">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="song-details">
+                            <h3 class="song-title">Thunderstruck</h3>
+                            <p class="song-artist">AC/DC</p>
+                        </div>
+                    </div>
+                    <div class="song-album">The Razors Edge</div>
+                    <div class="song-duration">4:52</div>
+                    <div class="song-actions">
+                        <button class="song-action-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="song-action-btn">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Canción 2 -->
+                <div class="song-item">
+                    <div class="song-number">2</div>
+                    <div class="song-info">
+                        <div class="song-image">
+                            <i class="fas fa-compact-disc"></i>
+                        </div>
+                        <div class="song-details">
+                            <h3 class="song-title">Another Brick in the Wall, Pt. 2</h3>
+                            <p class="song-artist">Pink Floyd</p>
+                        </div>
+                    </div>
+                    <div class="song-album">The Wall</div>
+                    <div class="song-duration">3:59</div>
+                    <div class="song-actions">
+                        <button class="song-action-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="song-action-btn">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Canción 3 -->
+                <div class="song-item">
+                    <div class="song-number">3</div>
+                    <div class="song-info">
+                        <div class="song-image">
+                            <i class="fas fa-guitar"></i>
+                        </div>
+                        <div class="song-details">
+                            <h3 class="song-title">Stairway to Heaven</h3>
+                            <p class="song-artist">Led Zeppelin</p>
+                        </div>
+                    </div>
+                    <div class="song-album">Led Zeppelin IV</div>
+                    <div class="song-duration">8:02</div>
+                    <div class="song-actions">
+                        <button class="song-action-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="song-action-btn">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Canción 4 -->
+                <div class="song-item">
+                    <div class="song-number">4</div>
+                    <div class="song-info">
+                        <div class="song-image">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="song-details">
+                            <h3 class="song-title">Bohemian Rhapsody</h3>
+                            <p class="song-artist">Queen</p>
+                        </div>
+                    </div>
+                    <div class="song-album">A Night at the Opera</div>
+                    <div class="song-duration">5:55</div>
+                    <div class="song-actions">
+                        <button class="song-action-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="song-action-btn">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Canción 5 -->
+                <div class="song-item">
+                    <div class="song-number">5</div>
+                    <div class="song-info">
+                        <div class="song-image">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="song-details">
+                            <h3 class="song-title">Eye of the Tiger</h3>
+                            <p class="song-artist">Survivor</p>
+                        </div>
+                    </div>
+                    <div class="song-album">Eye of the Tiger</div>
+                    <div class="song-duration">4:04</div>
+                    <div class="song-actions">
+                        <button class="song-action-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="song-action-btn">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Playlists Relacionadas -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-title-group">
+                    <h2 class="section-title">Más como esta</h2>
+                    <p class="section-subtitle">Playlists similares que te pueden gustar</p>
+                </div>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" data-carousel="related">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" data-carousel="related">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="carousel-track" id="related-carousel">
+                    <div class="content-card">
+                        <div class="card-image">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="card-tag playlist-tag">Playlist</div>
+                        <h3 class="card-title">Rock Clásico</h3>
+                        <p class="card-subtitle">Por The Rolling Stones, Aerosmith, Jimi Hendrix y más...</p>
+                        <div class="card-actions">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="action-buttons-group">
+                                <button class="action-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
+                                            <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-image">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <div class="card-tag playlist-tag">Playlist</div>
+                        <h3 class="card-title">Entrenamiento Intenso</h3>
+                        <p class="card-subtitle">Música para maximizar tu rendimiento</p>
+                        <div class="card-actions">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="action-buttons-group">
+                                <button class="action-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
+                                            <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-image">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="card-tag playlist-tag">Playlist</div>
+                        <h3 class="card-title">Energía Total</h3>
+                        <p class="card-subtitle">Canciones para mantenerte motivado</p>
+                        <div class="card-actions">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="action-buttons-group">
+                                <button class="action-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="context-menu-container">
+                                    <button class="context-menu-btn" title="Más opciones">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="context-menu">
+                                        <button class="context-menu-item save-item">
+                                            <i class="fas fa-bookmark"></i>
+                                            <span>Guardar en mi biblioteca</span>
+                                        </button>
+                                        <button class="context-menu-item share-item">
+                                            <i class="fas fa-share"></i>
+                                            <span>Compartir</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Player Fijo -->
+    <div class="player">
+        <div class="player-info">
+            <div class="player-image">
+                <i class="fas fa-music"></i>
+            </div>
+            <div class="player-details">
+                <h4>Canción Actual</h4>
+                <p>Artista - Álbum</p>
+            </div>
+        </div>
+
+        <div class="player-controls">
+            <div class="progress-container">
+                <div class="time-display">
+                    <span class="current-time">0:00</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="time-display">
+                    <span class="total-time">0:00</span>
+                </div>
+            </div>
+            <div class="control-buttons">
+                <button class="control-btn">
+                    <i class="fas fa-random"></i>
+                </button>
+                <button class="control-btn">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button class="play-pause-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="control-btn">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+                <button class="control-btn">
+                    <i class="fas fa-redo"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="volume-control">
+            <button class="control-btn">
+                <i class="fas fa-volume-up"></i>
+            </button>
+            <div class="volume-slider">
+                <div class="volume-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
