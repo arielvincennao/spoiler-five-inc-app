@@ -475,9 +475,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         searchBar.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
-                const searchTerm = this.value;
-                if (searchTerm.trim()) {
-                    alert(`Buscando: "${searchTerm}"`);
+                const searchTerm = this.value.trim();
+                if (searchTerm) {
+                    // Redirigir a la página de resultados de búsqueda
+                    window.location.href = `search-results.html?q=${encodeURIComponent(searchTerm)}`;
                 }
             }
         });
@@ -485,13 +486,82 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Notificaciones
     const notificationBtn = document.querySelector('.notification-btn');
+    const notificationsPanel = document.getElementById('notificationsPanel');
+    const closeNotificationsBtn = document.getElementById('closeNotificationsBtn');
+    const notificationsOverlay = document.getElementById('notificationsOverlay');
+
     if (notificationBtn) {
         notificationBtn.addEventListener('click', function() {
             this.style.background = '#2a9d8a';
             setTimeout(() => {
                 this.style.background = 'rgba(255, 255, 255, 0.1)';
             }, 200);
-            alert('Notificaciones');
+            
+            // Mostrar panel de notificaciones
+            if (notificationsPanel) {
+                notificationsPanel.classList.add('show');
+                notificationsOverlay.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    }
+
+    // Cerrar panel de notificaciones
+    function closeNotifications() {
+        if (notificationsPanel) {
+            notificationsPanel.classList.remove('show');
+            notificationsOverlay.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    if (closeNotificationsBtn) {
+        closeNotificationsBtn.addEventListener('click', closeNotifications);
+    }
+
+    if (notificationsOverlay) {
+        notificationsOverlay.addEventListener('click', closeNotifications);
+    }
+
+    // Cerrar notificaciones con tecla Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && notificationsPanel && notificationsPanel.classList.contains('show')) {
+            closeNotifications();
+        }
+    });
+
+    // Funcionalidad de los elementos de notificaciones
+    const notificationItems = document.querySelectorAll('.notification-item');
+    notificationItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const title = this.querySelector('.notification-title').textContent;
+            
+            // Efecto visual
+            this.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+            
+            // Simular acción
+            setTimeout(() => {
+                alert(`Abriendo notificación: ${title}`);
+            }, 200);
+        });
+    });
+
+    // Botón "Ver todas las notificaciones"
+    const viewAllBtn = document.querySelector('.view-all-btn');
+    if (viewAllBtn) {
+        viewAllBtn.addEventListener('click', function() {
+            this.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+            
+            setTimeout(() => {
+                alert('Redirigiendo a todas las notificaciones...');
+                closeNotifications();
+            }, 200);
         });
     }
 
@@ -531,6 +601,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Usuario
     const userBtn = document.querySelector('.user-btn');
+    const userSettingsPanel = document.getElementById('userSettingsPanel');
+    const closeSettingsBtn = document.getElementById('closeSettingsBtn');
+    const settingsOverlay = document.getElementById('settingsOverlay');
+
     if (userBtn) {
         userBtn.addEventListener('click', function() {
             this.style.background = '#2a9d8a';
@@ -547,9 +621,257 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.style.transform = 'scale(1)';
             }, 300);
             
-            alert('Perfil de usuario');
+            // Mostrar panel de ajustes
+            if (userSettingsPanel) {
+                userSettingsPanel.classList.add('show');
+                settingsOverlay.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
         });
     }
+
+    // Cerrar panel de ajustes
+    function closeSettings() {
+        if (userSettingsPanel) {
+            userSettingsPanel.classList.remove('show');
+            settingsOverlay.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    if (closeSettingsBtn) {
+        closeSettingsBtn.addEventListener('click', closeSettings);
+    }
+
+    if (settingsOverlay) {
+        settingsOverlay.addEventListener('click', closeSettings);
+    }
+
+    // Cerrar ajustes con tecla Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && userSettingsPanel && userSettingsPanel.classList.contains('show')) {
+            closeSettings();
+        }
+    });
+
+    // Funcionalidad de los elementos de ajustes
+    const settingsItems = document.querySelectorAll('.settings-item');
+    settingsItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const text = this.querySelector('span').textContent;
+            
+            // Efecto visual
+            this.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+            
+            // Redirigir a planes si es el elemento "Plan"
+            if (text === 'Plan') {
+                setTimeout(() => {
+                    window.location.href = 'plans.html';
+                }, 200);
+                return;
+            }
+            
+            // Simular acción para otros elementos
+            setTimeout(() => {
+                alert(`Abriendo: ${text}`);
+            }, 200);
+        });
+    });
+
+    // Botón de cerrar sesión
+    const logoutBtn = document.querySelector('.logout-btn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', function() {
+            this.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+            
+            setTimeout(() => {
+                if (confirm('¿Estás seguro de que quieres cerrar sesión?')) {
+                    alert('Cerrando sesión...');
+                    closeSettings();
+                }
+            }, 200);
+        });
+    }
+
+    // Funcionalidad de los toggle switches
+    const toggleSwitches = document.querySelectorAll('.toggle-switch input');
+    toggleSwitches.forEach(toggle => {
+        toggle.addEventListener('change', function() {
+            const label = this.nextElementSibling;
+            const settingName = this.closest('.settings-item').querySelector('span').textContent;
+            
+            // Efecto visual
+            label.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                label.style.transform = 'scale(1)';
+            }, 150);
+            
+            // Simular cambio de configuración
+            setTimeout(() => {
+                const status = this.checked ? 'activado' : 'desactivado';
+                alert(`${settingName}: ${status}`);
+            }, 200);
+        });
+    });
+
+    // Funcionalidad del panel lateral
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const sidebar = document.getElementById('sidebar');
+    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    // Abrir panel lateral
+    if (hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', function() {
+            sidebar.classList.add('open');
+            sidebarOverlay.classList.add('show');
+            document.body.style.overflow = 'hidden'; // Prevenir scroll del body
+        });
+    }
+
+    // Cerrar panel lateral
+    function closeSidebar() {
+        sidebar.classList.remove('open');
+        sidebarOverlay.classList.remove('show');
+        document.body.style.overflow = 'auto'; // Restaurar scroll del body
+    }
+
+    if (closeSidebarBtn) {
+        closeSidebarBtn.addEventListener('click', closeSidebar);
+    }
+
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener('click', closeSidebar);
+    }
+
+    // Cerrar con tecla Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && sidebar && sidebar.classList.contains('open')) {
+            closeSidebar();
+        }
+    });
+
+    // Funcionalidad de los elementos del sidebar
+    const sidebarItems = document.querySelectorAll('.sidebar-item');
+    sidebarItems.forEach(item => {
+        // Click en el elemento (reproducir por defecto)
+        item.addEventListener('click', function(e) {
+            const title = this.querySelector('.sidebar-item-title').textContent;
+            const subtitle = this.querySelector('.sidebar-item-subtitle').textContent;
+            
+            // Efecto visual
+            this.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+            
+            // Simular reproducción
+            setTimeout(() => {
+                alert(`Reproduciendo: ${title} - ${subtitle}`);
+            }, 200);
+        });
+    });
+
+    // Funcionalidad del título para abrir detalles
+    const sidebarTitles = document.querySelectorAll('.sidebar-item-title');
+    sidebarTitles.forEach(title => {
+        title.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevenir que se ejecute el click del elemento padre
+            
+            const item = this.closest('.sidebar-item');
+            const subtitle = item.querySelector('.sidebar-item-subtitle').textContent;
+            
+            // Efecto visual
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+            
+            // Simular navegación a detalles
+            setTimeout(() => {
+                alert(`Abriendo detalles de: ${this.textContent} - ${subtitle}`);
+            }, 200);
+        });
+    });
+
+    // Funcionalidad del subtítulo para reproducir
+    const sidebarSubtitles = document.querySelectorAll('.sidebar-item-subtitle');
+    sidebarSubtitles.forEach(subtitle => {
+        subtitle.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevenir que se ejecute el click del elemento padre
+            
+            const item = this.closest('.sidebar-item');
+            const title = item.querySelector('.sidebar-item-title').textContent;
+            
+            // Efecto visual
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+            
+            // Simular reproducción
+            setTimeout(() => {
+                alert(`Reproduciendo: ${title} - ${this.textContent}`);
+            }, 200);
+        });
+    });
+
+    // Funcionalidad de los botones de play del sidebar
+    const sidebarPlayBtns = document.querySelectorAll('.sidebar-play-btn');
+    sidebarPlayBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevenir que se ejecute el click del elemento padre
+            
+            const item = this.closest('.sidebar-item');
+            const title = item.querySelector('.sidebar-item-title').textContent;
+            const subtitle = item.querySelector('.sidebar-item-subtitle').textContent;
+            
+            // Efecto visual
+            this.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1.1)';
+            }, 150);
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 300);
+            
+            // Simular reproducción
+            setTimeout(() => {
+                alert(`Reproduciendo: ${title} - ${subtitle}`);
+            }, 200);
+        });
+    });
+
+    // Funcionalidad de filtros de recomendaciones
+    const recommendationsFilters = document.querySelectorAll('.recommendations-filters .filter-btn');
+    recommendationsFilters.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remover clase active de todos los botones
+            recommendationsFilters.forEach(b => b.classList.remove('active'));
+            // Agregar clase active al botón clickeado
+            this.classList.add('active');
+            
+            const filter = this.getAttribute('data-filter');
+            
+            // Efecto visual
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+            
+            // Simular filtrado
+            setTimeout(() => {
+                const filterText = this.querySelector('span').textContent;
+                alert(`Filtrando por: ${filterText}`);
+            }, 200);
+        });
+    });
 
     // Barra de progreso
     const progressBar = document.querySelector('.progress-bar');

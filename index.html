@@ -22,29 +22,322 @@
         </div>
         
         <div class="header-actions">
-            <button class="notification-btn">
+            <button class="user-btn" id="userBtn">
+                <i class="fas fa-user"></i>
+            </button>
+            <button class="notification-btn" id="notificationBtn">
                 <i class="fas fa-bell"></i>
             </button>
-                <div class="library-menu-container">
-                    <button class="favorites-btn" title="Mi biblioteca">
-                        <i class="fas fa-book"></i>
-                    </button>
-                    <div class="library-menu">
-                        <button class="library-menu-item" data-section="favorites">
-                            <i class="fas fa-heart"></i>
-                            <span>Favoritos</span>
-                        </button>
-                        <button class="library-menu-item" data-section="playlists">
-                            <i class="fas fa-list"></i>
-                            <span>Mis Playlists</span>
-                        </button>
-                    </div>
-                </div>
-            <button class="user-btn">
-                <i class="fas fa-user"></i>
+            <button class="hamburger-btn" id="hamburgerBtn">
+                <i class="fas fa-bars"></i>
             </button>
         </div>
     </header>
+
+    <!-- Panel Lateral -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>Mi Biblioteca</h3>
+            <button class="close-sidebar-btn" id="closeSidebarBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="sidebar-content">
+            <!-- Favoritos -->
+            <div class="sidebar-section">
+                <h4 class="sidebar-section-title" onclick="window.location.href='favorites.html'">
+                    <i class="fas fa-heart"></i>
+                    Mis Favoritos
+                </h4>
+            </div>
+
+            <!-- Playlists -->
+            <div class="sidebar-section">
+                <h4 class="sidebar-section-title">
+                    <i class="fas fa-list"></i>
+                    Mis Playlists
+                </h4>
+                <div class="sidebar-list">
+                    <div class="sidebar-item">
+                        <div class="sidebar-item-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <div class="sidebar-item-info">
+                            <span class="sidebar-item-title">Hora de Gym</span>
+                            <span class="sidebar-item-subtitle">5 canciones</span>
+                        </div>
+                        <button class="sidebar-play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar-item">
+                        <div class="sidebar-item-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="sidebar-item-info">
+                            <span class="sidebar-item-title">Rock Clásico</span>
+                            <span class="sidebar-item-subtitle">12 canciones</span>
+                        </div>
+                        <button class="sidebar-play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar-item">
+                        <div class="sidebar-item-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="sidebar-item-info">
+                            <span class="sidebar-item-title">Energía Total</span>
+                            <span class="sidebar-item-subtitle">8 canciones</span>
+                        </div>
+                        <button class="sidebar-play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Álbumes Guardados -->
+            <div class="sidebar-section">
+                <h4 class="sidebar-section-title">
+                    <i class="fas fa-compact-disc"></i>
+                    Álbumes Guardados
+                </h4>
+                <div class="sidebar-list">
+                    <div class="sidebar-item">
+                        <div class="sidebar-item-icon">
+                            <i class="fas fa-compact-disc"></i>
+                        </div>
+                        <div class="sidebar-item-info">
+                            <span class="sidebar-item-title">The Razors Edge</span>
+                            <span class="sidebar-item-subtitle">AC/DC</span>
+                        </div>
+                        <button class="sidebar-play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar-item">
+                        <div class="sidebar-item-icon">
+                            <i class="fas fa-compact-disc"></i>
+                        </div>
+                        <div class="sidebar-item-info">
+                            <span class="sidebar-item-title">The Wall</span>
+                            <span class="sidebar-item-subtitle">Pink Floyd</span>
+                        </div>
+                        <button class="sidebar-play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay para cerrar el panel -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Panel de Notificaciones -->
+    <div class="notifications-panel" id="notificationsPanel">
+        <div class="notifications-header">
+            <h3>Notificaciones</h3>
+            <button class="close-notifications-btn" id="closeNotificationsBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="notifications-content">
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-music"></i>
+                </div>
+                <div class="notification-info">
+                    <h4 class="notification-title">Nueva canción disponible</h4>
+                    <p class="notification-text">"Thunderstruck" de AC/DC ya está disponible en tu biblioteca</p>
+                    <span class="notification-time">Hace 2 horas</span>
+                </div>
+            </div>
+
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="notification-info">
+                    <h4 class="notification-title">Playlist actualizada</h4>
+                    <p class="notification-text">Tu playlist "Hora de Gym" se ha actualizado con 3 nuevas canciones</p>
+                    <span class="notification-time">Hace 5 horas</span>
+                </div>
+            </div>
+
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="notification-info">
+                    <h4 class="notification-title">Artista seguido</h4>
+                    <p class="notification-text">Pink Floyd ha lanzado un nuevo álbum: "The Wall (Remastered)"</p>
+                    <span class="notification-time">Ayer</span>
+                </div>
+            </div>
+
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="notification-info">
+                    <h4 class="notification-title">Recomendación personalizada</h4>
+                    <p class="notification-text">Basado en tu historial, te recomendamos "Bohemian Rhapsody"</p>
+                    <span class="notification-time">Hace 1 día</span>
+                </div>
+            </div>
+
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-download"></i>
+                </div>
+                <div class="notification-info">
+                    <h4 class="notification-title">Descarga completada</h4>
+                    <p class="notification-text">"Stairway to Heaven" se ha descargado correctamente</p>
+                    <span class="notification-time">Hace 2 días</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="notifications-footer">
+            <button class="view-all-btn">
+                <i class="fas fa-list"></i>
+                Ver todas las notificaciones
+            </button>
+        </div>
+    </div>
+
+    <!-- Overlay para cerrar notificaciones -->
+    <div class="notifications-overlay" id="notificationsOverlay"></div>
+
+    <!-- Panel de Ajustes de Usuario -->
+    <div class="user-settings-panel" id="userSettingsPanel">
+        <div class="user-settings-header">
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="user-info">
+                    <h3>Ariel Vincennao</h3>
+                    <p>Plan Premium</p>
+                </div>
+            </div>
+            <button class="close-settings-btn" id="closeSettingsBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="user-settings-content">
+            <!-- Cuenta -->
+            <div class="settings-section">
+                <h4 class="settings-section-title">
+                    <i class="fas fa-user"></i>
+                    Cuenta
+                </h4>
+                <div class="settings-list">
+                    <div class="settings-item">
+                        <i class="fas fa-user-edit"></i>
+                        <span>Perfil</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="settings-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Configuración</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="settings-item">
+                        <i class="fas fa-palette"></i>
+                        <span>Apariencia</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suscripción -->
+            <div class="settings-section">
+                <h4 class="settings-section-title">
+                    <i class="fas fa-crown"></i>
+                    Suscripción
+                </h4>
+                <div class="settings-list">
+                    <div class="settings-item" onclick="window.location.href='plans.html'">
+                        <i class="fas fa-star"></i>
+                        <span>Plan</span>
+                        <span class="settings-value">Premium</span>
+                    </div>
+                    <div class="settings-item">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Método de pago</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="settings-item">
+                        <i class="fas fa-receipt"></i>
+                        <span>Facturación</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Privacidad -->
+            <div class="settings-section">
+                <h4 class="settings-section-title">
+                    <i class="fas fa-shield-alt"></i>
+                    Privacidad
+                </h4>
+                <div class="settings-list">
+                    <div class="settings-item">
+                        <i class="fas fa-lock"></i>
+                        <span>Privacidad</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="settings-item">
+                        <i class="fas fa-eye"></i>
+                        <span>Actividad</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soporte -->
+            <div class="settings-section">
+                <h4 class="settings-section-title">
+                    <i class="fas fa-question-circle"></i>
+                    Soporte
+                </h4>
+                <div class="settings-list">
+                    <div class="settings-item">
+                        <i class="fas fa-headset"></i>
+                        <span>Ayuda</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="settings-item">
+                        <i class="fas fa-comment"></i>
+                        <span>Contacto</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="settings-item">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Acerca de</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="user-settings-footer">
+            <button class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+                Cerrar sesión
+            </button>
+        </div>
+    </div>
+
+    <!-- Overlay para cerrar ajustes -->
+    <div class="settings-overlay" id="settingsOverlay"></div>
 
     <main class="main-content">
         <!-- Sección Hero -->
@@ -78,6 +371,33 @@
             </div>
         </section>
 
+        <!-- Filtros de Recomendaciones -->
+        <div class="recommendations-filters">
+            <button class="filter-btn active" data-filter="all">
+                <i class="fas fa-th"></i>
+                <span>Todos</span>
+            </button>
+            <button class="filter-btn" data-filter="music">
+                <i class="fas fa-music"></i>
+                <span>Canciones</span>
+            </button>
+            <button class="filter-btn" data-filter="artists">
+                <i class="fas fa-user"></i>
+                <span>Artistas</span>
+            </button>
+            <button class="filter-btn" data-filter="playlists">
+                <i class="fas fa-list"></i>
+                <span>Playlists</span>
+            </button>
+            <button class="filter-btn" data-filter="albums">
+                <i class="fas fa-compact-disc"></i>
+                <span>Álbumes</span>
+            </button>
+            <button class="filter-btn" data-filter="podcasts">
+                <i class="fas fa-microphone"></i>
+                <span>Podcasts</span>
+            </button>
+        </div>
         <section class="section">
             <div class="section-header">
                 <div class="section-title-group">
@@ -85,6 +405,8 @@
                     <p class="section-subtitle">Hechos para vos</p>
                 </div>
             </div>
+            
+            
             <div class="carousel-container">
                 <div class="carousel-controls">
                     <button class="carousel-btn prev" data-carousel="recent">
@@ -169,7 +491,7 @@
                     </div>
                     <div class="card-tag album-tag">Álbum</div>
                     <h3 class="card-title">My Head Is An Animal</h3>
-                    <p class="card-subtitle">2011 · Por Of Monsters and Men.</p>
+                    <p class="card-subtitle">Por Of Monsters and Men · 2011 </p>
                     <div class="card-actions">
                         <button class="play-btn">
                             <i class="fas fa-play"></i>
@@ -339,7 +661,7 @@
                     </div>
                     <div class="card-tag song-tag">Canción</div>
                     <h3 class="card-title">Electric Dreams</h3>
-                    <p class="card-subtitle">De The Weeknd</p>
+                    <p class="card-subtitle">Por The Weeknd</p>
                         <div class="card-actions">
                             <button class="play-btn">
                                 <i class="fas fa-play"></i>
@@ -366,41 +688,7 @@
                             </div>
                         </div>
                 </div>
-
-                <div class="content-card">
-                    <div class="card-image">
-                        <i class="fas fa-guitar"></i>
-                    </div>
-                    <div class="card-tag playlist-tag">Playlist</div>
-                    <h3 class="card-title">Indie Vibes</h3>
-                    <p class="card-subtitle">Música independiente y alternativa</p>
-                        <div class="card-actions">
-                            <button class="play-btn">
-                                <i class="fas fa-play"></i>
-                            </button>
-                            <div class="action-buttons-group">
-                                <button class="action-btn">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                                <div class="context-menu-container">
-                                    <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
-                                    </button>
-                                    <div class="context-menu">
-                                        <button class="context-menu-item save-item">
-                                            <i class="fas fa-bookmark"></i>
-                                            <span>Guardar en mi biblioteca</span>
-                                        </button>
-                                        <button class="context-menu-item share-item">
-                                            <i class="fas fa-share"></i>
-                                            <span>Compartir</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            </div>
             </div>
         </section>
 

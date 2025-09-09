@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hora de Gym - Spoiler Five</title>
+    <title>Mis Favoritos - Spoiler Five</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -133,7 +133,7 @@
         </div>
     </div>
 
-    <!-- Overlay para cerrar el panel -->
+    <!-- Overlay para cerrar sidebar -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
     <!-- Panel de Notificaciones -->
@@ -144,15 +144,14 @@
                 <i class="fas fa-times"></i>
             </button>
         </div>
-        
         <div class="notifications-content">
             <div class="notification-item">
                 <div class="notification-icon">
                     <i class="fas fa-music"></i>
                 </div>
                 <div class="notification-info">
-                    <h4 class="notification-title">Nueva canción disponible</h4>
-                    <p class="notification-text">"Thunderstruck" de AC/DC ya está disponible en tu biblioteca</p>
+                    <h4 class="notification-title">Nueva canción</h4>
+                    <p class="notification-text">AC/DC ha lanzado "Thunderstruck (Live)"</p>
                     <span class="notification-time">Hace 2 horas</span>
                 </div>
             </div>
@@ -340,55 +339,23 @@
 
     <!-- Contenido Principal -->
     <main class="main-content">
-        <!-- Hero de la Playlist -->
-        <section class="playlist-hero">
+        <!-- Hero de los Favoritos -->
+        <section class="playlist-hero favorites-hero">
             <div class="playlist-hero-content">
                 <div class="playlist-image">
-                    <img src="images/p1.png" alt="Hora de Gym">
+                    <i class="fas fa-heart"></i>
                 </div>
                 <div class="playlist-info">
                     <div class="playlist-type">Playlist</div>
-                    <h1 class="playlist-title">Hora de Gym</h1>
-                    <p class="playlist-description">Por AC/DC, Pink Floyd, Led Zeppelin y más...</p>
+                    <h1 class="playlist-title">Mis Favoritos</h1>
                     <div class="playlist-meta">
-                        <span class="playlist-creator">Creada por Juan Cruz López • 2025</span>
-                        <span class="playlist-stats">• 5 canciones • 1h 45min • 2.3M visualizaciones</span>
-                    </div>
-                    <div class="playlist-rating">
-                        <div class="rating-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <span class="rating-text">4.5 (1,247 calificaciones)</span>
+                        <span class="playlist-creator">Creada por Ariel Vincennao</span>
+                        <span class="playlist-stats">• 3 canciones • 18min</span>
                     </div>
                     <div class="playlist-actions">
                         <button class="play-btn-large">
                             <i class="fas fa-play"></i>
                         </button>
-                        <button class="action-btn-large">
-                            <i class="fas fa-heart"></i>
-                        </button>
-                        <button class="action-btn-large">
-                            <i class="fas fa-share"></i>
-                        </button>
-                        <div class="context-menu-container">
-                            <button class="context-menu-btn" title="Más opciones">
-                                <i class="fas fa-ellipsis-h"></i>
-                            </button>
-                            <div class="context-menu">
-                                <button class="context-menu-item">
-                                    <i class="fas fa-download"></i>
-                                    <span>Descargar</span>
-                                </button>
-                                <button class="context-menu-item">
-                                    <i class="fas fa-flag"></i>
-                                    <span>Reportar</span>
-                                </button>   
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -423,7 +390,7 @@
                     <div class="song-duration">4:52</div>
                     <div class="song-actions">
                         <button class="song-action-btn">
-                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-heart" style="color: #e74c3c;"></i>
                         </button>
                         <button class="song-action-btn">
                             <i class="fas fa-ellipsis-h"></i>
@@ -439,15 +406,15 @@
                             <i class="fas fa-music"></i>
                         </div>
                         <div class="song-details">
-                            <h3 class="song-title">Another Brick in the Wall, Pt. 2</h3>
-                            <p class="song-artist">Pink Floyd</p>
+                            <h3 class="song-title">Bohemian Rhapsody</h3>
+                            <p class="song-artist">Queen</p>
                         </div>
                     </div>
-                    <div class="song-album">The Wall</div>
-                    <div class="song-duration">3:59</div>
+                    <div class="song-album">A Night at the Opera</div>
+                    <div class="song-duration">5:55</div>
                     <div class="song-actions">
                         <button class="song-action-btn">
-                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-heart" style="color: #e74c3c;"></i>
                         </button>
                         <button class="song-action-btn">
                             <i class="fas fa-ellipsis-h"></i>
@@ -471,182 +438,11 @@
                     <div class="song-duration">8:02</div>
                     <div class="song-actions">
                         <button class="song-action-btn">
-                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-heart" style="color: #e74c3c;"></i>
                         </button>
                         <button class="song-action-btn">
                             <i class="fas fa-ellipsis-h"></i>
                         </button>
-                    </div>
-                </div>
-
-                <!-- Canción 4 -->
-                <div class="song-item">
-                    <div class="song-number">4</div>
-                    <div class="song-info">
-                        <div class="song-image">
-                            <i class="fas fa-music"></i>
-                        </div>
-                        <div class="song-details">
-                            <h3 class="song-title">Bohemian Rhapsody</h3>
-                            <p class="song-artist">Queen</p>
-                        </div>
-                    </div>
-                    <div class="song-album">A Night at the Opera</div>
-                    <div class="song-duration">5:55</div>
-                    <div class="song-actions">
-                        <button class="song-action-btn">
-                            <i class="fas fa-heart"></i>
-                        </button>
-                        <button class="song-action-btn">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Canción 5 -->
-                <div class="song-item">
-                    <div class="song-number">5</div>
-                    <div class="song-info">
-                        <div class="song-image">
-                            <i class="fas fa-music"></i>
-                        </div>
-                        <div class="song-details">
-                            <h3 class="song-title">Eye of the Tiger</h3>
-                            <p class="song-artist">Survivor</p>
-                        </div>
-                    </div>
-                    <div class="song-album">Eye of the Tiger</div>
-                    <div class="song-duration">4:04</div>
-                    <div class="song-actions">
-                        <button class="song-action-btn">
-                            <i class="fas fa-heart"></i>
-                        </button>
-                        <button class="song-action-btn">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Playlists Relacionadas -->
-        <section class="section">
-            <div class="section-header">
-                <div class="section-title-group">
-                    <h2 class="section-title">Más como esta</h2>
-                    <p class="section-subtitle">Playlists similares que te pueden gustar</p>
-                </div>
-            </div>
-            <div class="carousel-container">
-                <div class="carousel-controls">
-                    <button class="carousel-btn prev" data-carousel="related">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="carousel-btn next" data-carousel="related">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-                <div class="carousel-track" id="related-carousel">
-                    <div class="content-card">
-                        <div class="card-image">
-                            <i class="fas fa-headphones"></i>
-                        </div>
-                        <div class="card-tag playlist-tag">Playlist</div>
-                        <h3 class="card-title">Rock Clásico</h3>
-                        <p class="card-subtitle">Por The Rolling Stones, Aerosmith, Jimi Hendrix y más...</p>
-                        <div class="card-actions">
-                            <button class="play-btn">
-                                <i class="fas fa-play"></i>
-                            </button>
-                            <div class="action-buttons-group">
-                                <button class="action-btn">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                                <div class="context-menu-container">
-                                    <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
-                                    </button>
-                                    <div class="context-menu">
-                                        <button class="context-menu-item save-item">
-                                            <i class="fas fa-bookmark"></i>
-                                            <span>Guardar en mi biblioteca</span>
-                                        </button>
-                                        <button class="context-menu-item share-item">
-                                            <i class="fas fa-share"></i>
-                                            <span>Compartir</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="content-card">
-                        <div class="card-image">
-                            <i class="fas fa-dumbbell"></i>
-                        </div>
-                        <div class="card-tag playlist-tag">Playlist</div>
-                        <h3 class="card-title">Entrenamiento Intenso</h3>
-                        <p class="card-subtitle">Música para maximizar tu rendimiento</p>
-                        <div class="card-actions">
-                            <button class="play-btn">
-                                <i class="fas fa-play"></i>
-                            </button>
-                            <div class="action-buttons-group">
-                                <button class="action-btn">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                                <div class="context-menu-container">
-                                    <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
-                                    </button>
-                                    <div class="context-menu">
-                                        <button class="context-menu-item save-item">
-                                            <i class="fas fa-bookmark"></i>
-                                            <span>Guardar en mi biblioteca</span>
-                                        </button>
-                                        <button class="context-menu-item share-item">
-                                            <i class="fas fa-share"></i>
-                                            <span>Compartir</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="content-card">
-                        <div class="card-image">
-                            <i class="fas fa-fire"></i>
-                        </div>
-                        <div class="card-tag playlist-tag">Playlist</div>
-                        <h3 class="card-title">Energía Total</h3>
-                        <p class="card-subtitle">Canciones para mantenerte motivado</p>
-                        <div class="card-actions">
-                            <button class="play-btn">
-                                <i class="fas fa-play"></i>
-                            </button>
-                            <div class="action-buttons-group">
-                                <button class="action-btn">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                                <div class="context-menu-container">
-                                    <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
-                                    </button>
-                                    <div class="context-menu">
-                                        <button class="context-menu-item save-item">
-                                            <i class="fas fa-bookmark"></i>
-                                            <span>Guardar en mi biblioteca</span>
-                                        </button>
-                                        <button class="context-menu-item share-item">
-                                            <i class="fas fa-share"></i>
-                                            <span>Compartir</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -670,8 +466,8 @@
                 <div class="time-display">
                     <span class="current-time">0:00</span>
                 </div>
-                <div class="progress-bar">
-                    <div class="progress-fill"></div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
                 </div>
                 <div class="time-display">
                     <span class="total-time">0:00</span>
