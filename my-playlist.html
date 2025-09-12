@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hora de Gym - Spoiler Five</title>
+    <title>Mi Playlist - Spoiler Five</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -66,7 +66,6 @@
                 </div>
             </div>
 
-
             <!-- Lista de Contenido -->
             <div class="sidebar-section">
                 <button class="create-playlist-btn">
@@ -94,13 +93,13 @@
                         </button>
                     </div>
                     
-                    <div class="sidebar-item" data-type="playlist">
+                    <div class="sidebar-item" data-type="playlist" onclick="window.location.href='my-playlist.html'">
                         <div class="sidebar-item-icon">
                             <i class="fas fa-dumbbell"></i>
                         </div>
                         <div class="sidebar-item-info">
-                            <span class="sidebar-item-title">Hora de Gym</span>
-                            <span class="sidebar-item-subtitle">Ariel Vincennao • 5 canciones</span>
+                            <span class="sidebar-item-title">Mi Playlist Personal</span>
+                            <span class="sidebar-item-subtitle">Ariel Vincennao • 8 canciones</span>
                         </div>
                         <div class="sidebar-item-badge playlist-badge">Playlist</div>
                         <button class="sidebar-play-btn">
@@ -165,10 +164,10 @@
                         </button>
                     </div>
 
-                    <!-- Canciones -->
-                    <div class="sidebar-item" data-type="song">
+                    <!-- Podcasts -->
+                    <div class="sidebar-item" data-type="podcast">
                         <div class="sidebar-item-icon">
-                            <i class="fas fa-music"></i>
+                            <i class="fas fa-microphone"></i>
                         </div>
                         <div class="sidebar-item-info">
                             <span class="sidebar-item-title">Música y Más</span>
@@ -180,9 +179,9 @@
                         </button>
                     </div>
                     
-                    <div class="sidebar-item" data-type="song">
+                    <div class="sidebar-item" data-type="podcast">
                         <div class="sidebar-item-icon">
-                            <i class="fas fa-music"></i>
+                            <i class="fas fa-microphone"></i>
                         </div>
                         <div class="sidebar-item-info">
                             <span class="sidebar-item-title">Rock Clásico Podcast</span>
@@ -193,8 +192,6 @@
                             <i class="fas fa-play"></i>
                         </button>
                     </div>
-
-                    <!-- Artistas -->
 
                     <!-- Más Playlists -->
                     <div class="sidebar-item" data-type="playlist">
@@ -345,7 +342,7 @@
                 </div>
                 <div class="notification-info">
                     <h4 class="notification-title">Playlist actualizada</h4>
-                    <p class="notification-text">Tu playlist "Hora de Gym" se ha actualizado con 3 nuevas canciones</p>
+                    <p class="notification-text">Tu playlist "Mi Playlist Personal" se ha actualizado con 2 nuevas canciones</p>
                     <span class="notification-time">Hace 5 horas</span>
                 </div>
             </div>
@@ -404,7 +401,7 @@
                 </div>
                 <div class="user-info">
                     <h3>Ariel Vincennao</h3>
-                    <p>Plan Premium</p>
+                    <p>ariel.vincennao@spoilerfive.com</p>
                 </div>
             </div>
             <button class="close-settings-btn" id="closeSettingsBtn">
@@ -413,16 +410,12 @@
         </div>
         
         <div class="user-settings-content">
-            <!-- Cuenta -->
             <div class="settings-section">
-                <h4 class="settings-section-title">
-                    <i class="fas fa-user"></i>
-                    Cuenta
-                </h4>
-                <div class="settings-list">
+                <h4>Cuenta</h4>
+                <div class="settings-items">
                     <div class="settings-item">
                         <i class="fas fa-user-edit"></i>
-                        <span>Perfil</span>
+                        <span>Editar perfil</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
                     <div class="settings-item">
@@ -438,21 +431,17 @@
                 </div>
             </div>
 
-            <!-- Suscripción -->
             <div class="settings-section">
-                <h4 class="settings-section-title">
-                    <i class="fas fa-crown"></i>
-                    Suscripción
-                </h4>
-                <div class="settings-list">
-                    <div class="settings-item" onclick="window.location.href='plans.html'">
-                        <i class="fas fa-star"></i>
-                        <span>Plan</span>
-                        <span class="settings-value">Premium</span>
+                <h4>Premium</h4>
+                <div class="settings-items">
+                    <div class="settings-item">
+                        <i class="fas fa-crown"></i>
+                        <span>Gestionar suscripción</span>
+                        <i class="fas fa-chevron-right"></i>
                     </div>
                     <div class="settings-item">
                         <i class="fas fa-credit-card"></i>
-                        <span>Método de pago</span>
+                        <span>Métodos de pago</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
                     <div class="settings-item">
@@ -463,40 +452,37 @@
                 </div>
             </div>
 
-            <!-- Privacidad -->
             <div class="settings-section">
-                <h4 class="settings-section-title">
-                    <i class="fas fa-shield-alt"></i>
-                    Privacidad
-                </h4>
-                <div class="settings-list">
+                <h4>Privacidad</h4>
+                <div class="settings-items">
+                    <div class="settings-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Privacidad y seguridad</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
                     <div class="settings-item">
                         <i class="fas fa-lock"></i>
-                        <span>Privacidad</span>
+                        <span>Cambiar contraseña</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
                     <div class="settings-item">
                         <i class="fas fa-eye"></i>
-                        <span>Actividad</span>
+                        <span>Actividad reciente</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
                 </div>
             </div>
 
-            <!-- Soporte -->
             <div class="settings-section">
-                <h4 class="settings-section-title">
-                    <i class="fas fa-question-circle"></i>
-                    Soporte
-                </h4>
-                <div class="settings-list">
+                <h4>Soporte</h4>
+                <div class="settings-items">
                     <div class="settings-item">
-                        <i class="fas fa-headset"></i>
-                        <span>Ayuda</span>
+                        <i class="fas fa-question-circle"></i>
+                        <span>Centro de ayuda</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
                     <div class="settings-item">
-                        <i class="fas fa-comment"></i>
+                        <i class="fas fa-headset"></i>
                         <span>Contacto</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
@@ -526,15 +512,15 @@
         <section class="playlist-hero">
             <div class="playlist-hero-content">
                 <div class="playlist-image">
-                    <img src="images/p1.png" alt="Hora de Gym">
+                    <img src="images/p1.png" alt="Mi Playlist Personal">
                 </div>
                 <div class="playlist-info">
                     <div class="playlist-type">Playlist</div>
-                    <h1 class="playlist-title">Hora de Gym</h1>
+                    <h1 class="playlist-title">Mi Playlist Personal</h1>
                     <p class="playlist-description">Por AC/DC, Pink Floyd, Led Zeppelin y más...</p>
                     <div class="playlist-meta">
-                        <span class="playlist-creator">Creada por Juan Cruz López • 2025</span>
-                        <span class="playlist-stats">• 5 canciones • 1h 45min • 2.3M visualizaciones</span>
+                        <span class="playlist-creator">Creada por Ariel Vincennao • 2025</span>
+                        <span class="playlist-stats">• 8 canciones • 2h 15min • 1.2M visualizaciones</span>
                     </div>
                     <div class="playlist-rating">
                         <div class="rating-stars">
@@ -542,9 +528,9 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
+                            <i class="fas fa-star"></i>
                         </div>
-                        <span class="rating-text">4.5 (1,247 calificaciones)</span>
+                        <span class="rating-text">5.0 (892 calificaciones)</span>
                     </div>
                     <div class="playlist-actions">
                         <button class="play-btn-large">
@@ -562,13 +548,21 @@
                             </button>
                             <div class="context-menu">
                                 <button class="context-menu-item">
+                                    <i class="fas fa-edit"></i>
+                                    <span>Editar playlist</span>
+                                </button>
+                                <button class="context-menu-item">
+                                    <i class="fas fa-plus"></i>
+                                    <span>Agregar canciones</span>
+                                </button>
+                                <button class="context-menu-item">
                                     <i class="fas fa-download"></i>
                                     <span>Descargar</span>
                                 </button>
-                                <button class="context-menu-item">
-                                    <i class="fas fa-flag"></i>
-                                    <span>Reportar</span>
-                                </button>   
+                                <button class="context-menu-item delete-option">
+                                    <i class="fas fa-trash"></i>
+                                    <span>Eliminar playlist</span>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -585,20 +579,18 @@
                         <i class="fas fa-random"></i>
                         <span>Aleatorio</span>
                     </button>
+                    <button class="edit-playlist-btn">
+                        <i class="fas fa-edit"></i>
+                        <span>Editar</span>
+                    </button>
+                    <button class="delete-playlist-btn">
+                        <i class="fas fa-trash"></i>
+                        <span>Eliminar</span>
+                    </button>
                 </div>
             </div>
             
             <div class="songs-list">
-                <!-- Encabezado de la tabla -->
-                <div class="song-header">
-                    <div class="song-header-number">#</div>
-                    <div class="song-header-info">TÍTULO</div>
-                    <div class="song-header-album">ÁLBUM</div>
-                    <div class="song-header-date">FECHA AGREGADA</div>
-                    <div class="song-header-duration">DURACIÓN</div>
-                    <div class="song-header-actions"></div>
-                </div>
-                
                 <!-- Canción 1 -->
                 <div class="song-item">
                     <div class="song-number">1</div>
@@ -607,19 +599,20 @@
                             <i class="fas fa-music"></i>
                         </div>
                         <div class="song-details">
-                            <h3 class="song-title">Thunderstruck</h3>
+                            <h4 class="song-title">Thunderstruck</h4>
                             <p class="song-artist">AC/DC</p>
                         </div>
                     </div>
-                    <div class="song-album">The Razors Edge</div>
-                    <div class="song-date">15 de enero, 2024</div>
                     <div class="song-duration">4:52</div>
                     <div class="song-actions">
-                        <button class="song-action-btn">
+                        <button class="song-action-btn" title="Agregar a favoritos">
                             <i class="fas fa-heart"></i>
                         </button>
-                        <button class="song-action-btn context-menu-btn" data-song-id="1">
-                            <i class="fas fa-ellipsis-h"></i>
+                        <button class="song-action-btn" title="Más opciones">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <button class="song-remove-btn" title="Eliminar de playlist">
+                            <i class="fas fa-times"></i>
                         </button>
                     </div>
                 </div>
@@ -632,19 +625,20 @@
                             <i class="fas fa-music"></i>
                         </div>
                         <div class="song-details">
-                            <h3 class="song-title">Another Brick in the Wall, Pt. 2</h3>
+                            <h4 class="song-title">Another Brick in the Wall</h4>
                             <p class="song-artist">Pink Floyd</p>
                         </div>
                     </div>
-                    <div class="song-album">The Wall</div>
-                    <div class="song-date">22 de enero, 2024</div>
                     <div class="song-duration">3:59</div>
                     <div class="song-actions">
-                        <button class="song-action-btn">
+                        <button class="song-action-btn" title="Agregar a favoritos">
                             <i class="fas fa-heart"></i>
                         </button>
-                        <button class="song-action-btn context-menu-btn" data-song-id="2">
-                            <i class="fas fa-ellipsis-h"></i>
+                        <button class="song-action-btn" title="Más opciones">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <button class="song-remove-btn" title="Eliminar de playlist">
+                            <i class="fas fa-times"></i>
                         </button>
                     </div>
                 </div>
@@ -657,19 +651,20 @@
                             <i class="fas fa-music"></i>
                         </div>
                         <div class="song-details">
-                            <h3 class="song-title">Stairway to Heaven</h3>
+                            <h4 class="song-title">Stairway to Heaven</h4>
                             <p class="song-artist">Led Zeppelin</p>
                         </div>
                     </div>
-                    <div class="song-album">Led Zeppelin IV</div>
-                    <div class="song-date">28 de enero, 2024</div>
                     <div class="song-duration">8:02</div>
                     <div class="song-actions">
-                        <button class="song-action-btn">
+                        <button class="song-action-btn" title="Agregar a favoritos">
                             <i class="fas fa-heart"></i>
                         </button>
-                        <button class="song-action-btn context-menu-btn" data-song-id="3">
-                            <i class="fas fa-ellipsis-h"></i>
+                        <button class="song-action-btn" title="Más opciones">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <button class="song-remove-btn" title="Eliminar de playlist">
+                            <i class="fas fa-times"></i>
                         </button>
                     </div>
                 </div>
@@ -682,19 +677,20 @@
                             <i class="fas fa-music"></i>
                         </div>
                         <div class="song-details">
-                            <h3 class="song-title">Bohemian Rhapsody</h3>
+                            <h4 class="song-title">Bohemian Rhapsody</h4>
                             <p class="song-artist">Queen</p>
                         </div>
                     </div>
-                    <div class="song-album">A Night at the Opera</div>
-                    <div class="song-date">5 de febrero, 2024</div>
                     <div class="song-duration">5:55</div>
                     <div class="song-actions">
-                        <button class="song-action-btn">
+                        <button class="song-action-btn" title="Agregar a favoritos">
                             <i class="fas fa-heart"></i>
                         </button>
-                        <button class="song-action-btn context-menu-btn" data-song-id="4">
-                            <i class="fas fa-ellipsis-h"></i>
+                        <button class="song-action-btn" title="Más opciones">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <button class="song-remove-btn" title="Eliminar de playlist">
+                            <i class="fas fa-times"></i>
                         </button>
                     </div>
                 </div>
@@ -707,143 +703,99 @@
                             <i class="fas fa-music"></i>
                         </div>
                         <div class="song-details">
-                            <h3 class="song-title">Eye of the Tiger</h3>
-                            <p class="song-artist">Survivor</p>
+                            <h4 class="song-title">Hotel California</h4>
+                            <p class="song-artist">Eagles</p>
                         </div>
                     </div>
-                    <div class="song-album">Eye of the Tiger</div>
-                    <div class="song-date">12 de febrero, 2024</div>
-                    <div class="song-duration">4:04</div>
+                    <div class="song-duration">6:30</div>
                     <div class="song-actions">
-                        <button class="song-action-btn">
+                        <button class="song-action-btn" title="Agregar a favoritos">
                             <i class="fas fa-heart"></i>
                         </button>
-                        <button class="song-action-btn context-menu-btn" data-song-id="5">
-                            <i class="fas fa-ellipsis-h"></i>
+                        <button class="song-action-btn" title="Más opciones">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <button class="song-remove-btn" title="Eliminar de playlist">
+                            <i class="fas fa-times"></i>
                         </button>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Playlists Relacionadas -->
-        <section class="section">
-            <div class="section-header">
-                <div class="section-title-group">
-                    <h2 class="section-title">Más como esta</h2>
-                    <p class="section-subtitle">Playlists similares que te pueden gustar</p>
-                </div>
-            </div>
-            <div class="carousel-container">
-                <div class="carousel-controls">
-                    <button class="carousel-btn prev" data-carousel="related">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="carousel-btn next" data-carousel="related">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-                <div class="carousel-track" id="related-carousel">
-                    <div class="content-card">
-                        <div class="card-image">
-                            <i class="fas fa-headphones"></i>
+                <!-- Canción 6 -->
+                <div class="song-item">
+                    <div class="song-number">6</div>
+                    <div class="song-info">
+                        <div class="song-image">
+                            <i class="fas fa-music"></i>
                         </div>
-                        <div class="card-tag playlist-tag">Playlist</div>
-                        <h3 class="card-title">Rock Clásico</h3>
-                        <p class="card-subtitle">Por The Rolling Stones, Aerosmith, Jimi Hendrix y más...</p>
-                        <div class="card-actions">
-                            <button class="play-btn">
-                                <i class="fas fa-play"></i>
-                            </button>
-                            <div class="action-buttons-group">
-                                <button class="action-btn">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                                <div class="context-menu-container">
-                                    <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
-                                    </button>
-                                    <div class="context-menu">
-                                        <button class="context-menu-item save-item">
-                                            <i class="fas fa-bookmark"></i>
-                                            <span>Guardar en mi biblioteca</span>
-                                        </button>
-                                        <button class="context-menu-item share-item">
-                                            <i class="fas fa-share"></i>
-                                            <span>Compartir</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="song-details">
+                            <h4 class="song-title">Sweet Child O' Mine</h4>
+                            <p class="song-artist">Guns N' Roses</p>
                         </div>
                     </div>
+                    <div class="song-duration">5:56</div>
+                    <div class="song-actions">
+                        <button class="song-action-btn" title="Agregar a favoritos">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="song-action-btn" title="Más opciones">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <button class="song-remove-btn" title="Eliminar de playlist">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
 
-                    <div class="content-card">
-                        <div class="card-image">
-                            <i class="fas fa-dumbbell"></i>
+                <!-- Canción 7 -->
+                <div class="song-item">
+                    <div class="song-number">7</div>
+                    <div class="song-info">
+                        <div class="song-image">
+                            <i class="fas fa-music"></i>
                         </div>
-                        <div class="card-tag playlist-tag">Playlist</div>
-                        <h3 class="card-title">Entrenamiento Intenso</h3>
-                        <p class="card-subtitle">Música para maximizar tu rendimiento</p>
-                        <div class="card-actions">
-                            <button class="play-btn">
-                                <i class="fas fa-play"></i>
-                            </button>
-                            <div class="action-buttons-group">
-                                <button class="action-btn">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                                <div class="context-menu-container">
-                                    <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
-                                    </button>
-                                    <div class="context-menu">
-                                        <button class="context-menu-item save-item">
-                                            <i class="fas fa-bookmark"></i>
-                                            <span>Guardar en mi biblioteca</span>
-                                        </button>
-                                        <button class="context-menu-item share-item">
-                                            <i class="fas fa-share"></i>
-                                            <span>Compartir</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="song-details">
+                            <h4 class="song-title">Don't Stop Believin'</h4>
+                            <p class="song-artist">Journey</p>
                         </div>
                     </div>
+                    <div class="song-duration">4:10</div>
+                    <div class="song-actions">
+                        <button class="song-action-btn" title="Agregar a favoritos">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="song-action-btn" title="Más opciones">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <button class="song-remove-btn" title="Eliminar de playlist">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
 
-                    <div class="content-card">
-                        <div class="card-image">
-                            <i class="fas fa-fire"></i>
+                <!-- Canción 8 -->
+                <div class="song-item">
+                    <div class="song-number">8</div>
+                    <div class="song-info">
+                        <div class="song-image">
+                            <i class="fas fa-music"></i>
                         </div>
-                        <div class="card-tag playlist-tag">Playlist</div>
-                        <h3 class="card-title">Energía Total</h3>
-                        <p class="card-subtitle">Canciones para mantenerte motivado</p>
-                        <div class="card-actions">
-                            <button class="play-btn">
-                                <i class="fas fa-play"></i>
-                            </button>
-                            <div class="action-buttons-group">
-                                <button class="action-btn">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                                <div class="context-menu-container">
-                                    <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
-                                    </button>
-                                    <div class="context-menu">
-                                        <button class="context-menu-item save-item">
-                                            <i class="fas fa-bookmark"></i>
-                                            <span>Guardar en mi biblioteca</span>
-                                        </button>
-                                        <button class="context-menu-item share-item">
-                                            <i class="fas fa-share"></i>
-                                            <span>Compartir</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="song-details">
+                            <h4 class="song-title">Livin' on a Prayer</h4>
+                            <p class="song-artist">Bon Jovi</p>
                         </div>
+                    </div>
+                    <div class="song-duration">4:09</div>
+                    <div class="song-actions">
+                        <button class="song-action-btn" title="Agregar a favoritos">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="song-action-btn" title="Más opciones">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <button class="song-remove-btn" title="Eliminar de playlist">
+                            <i class="fas fa-times"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -903,22 +855,168 @@
         </div>
     </div>
 
-    <!-- Menú Contextual -->
-    <div class="context-menu" id="contextMenu">
-        <div class="context-menu-item" onclick="addToFavorites()">
-            <i class="fas fa-heart"></i>
-            <span>Agregar a Canciones que te gustan</span>
+    <!-- Modal de Confirmación de Eliminación -->
+    <div class="modal-overlay" id="deleteModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Eliminar Playlist</h3>
+                <button class="close-modal-btn" id="closeDeleteModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <p>¿Estás seguro de que quieres eliminar "Mi Playlist Personal"?</p>
+                <p class="modal-warning">Esta acción no se puede deshacer.</p>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-secondary" id="cancelDelete">Cancelar</button>
+                <button class="btn-danger" id="confirmDelete">Eliminar</button>
+            </div>
         </div>
-        <div class="context-menu-item" onclick="shareSong()">
-            <i class="fas fa-share"></i>
-            <span>Compartir</span>
-        </div>
-        <div class="context-menu-item" onclick="downloadSong()">
-            <i class="fas fa-download"></i>
-            <span>Descargar</span>
+    </div>
+
+    <!-- Modal de Edición de Playlist -->
+    <div class="modal-overlay" id="editModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Editar Playlist</h3>
+                <button class="close-modal-btn" id="closeEditModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="form-group">
+                    <label for="playlistName">Nombre de la playlist:</label>
+                    <input type="text" id="playlistName" value="Mi Playlist Personal" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="playlistDescription">Descripción:</label>
+                    <textarea id="playlistDescription" class="form-textarea" rows="3">Por AC/DC, Pink Floyd, Led Zeppelin y más...</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="playlistPrivacy">Privacidad:</label>
+                    <select id="playlistPrivacy" class="form-select">
+                        <option value="public">Pública</option>
+                        <option value="private">Privada</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-secondary" id="cancelEdit">Cancelar</button>
+                <button class="btn-primary" id="saveEdit">Guardar cambios</button>
+            </div>
         </div>
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // Funcionalidad específica para Mi Playlist
+        document.addEventListener('DOMContentLoaded', function() {
+            // Modal de eliminación
+            const deleteModal = document.getElementById('deleteModal');
+            const closeDeleteModal = document.getElementById('closeDeleteModal');
+            const cancelDelete = document.getElementById('cancelDelete');
+            const confirmDelete = document.getElementById('confirmDelete');
+            const deletePlaylistBtn = document.querySelector('.delete-playlist-btn');
+            const contextDeleteBtn = document.querySelector('.delete-option');
+
+            // Modal de edición
+            const editModal = document.getElementById('editModal');
+            const closeEditModal = document.getElementById('closeEditModal');
+            const cancelEdit = document.getElementById('cancelEdit');
+            const saveEdit = document.getElementById('saveEdit');
+            const editPlaylistBtn = document.querySelector('.edit-playlist-btn');
+
+            // Abrir modal de eliminación
+            function openDeleteModal() {
+                deleteModal.style.display = 'flex';
+            }
+
+            // Cerrar modal de eliminación
+            function closeDeleteModalFunc() {
+                deleteModal.style.display = 'none';
+            }
+
+            // Abrir modal de edición
+            function openEditModal() {
+                editModal.style.display = 'flex';
+            }
+
+            // Cerrar modal de edición
+            function closeEditModalFunc() {
+                editModal.style.display = 'none';
+            }
+
+            // Event listeners para eliminación
+            deletePlaylistBtn.addEventListener('click', openDeleteModal);
+            contextDeleteBtn.addEventListener('click', openDeleteModal);
+            closeDeleteModal.addEventListener('click', closeDeleteModalFunc);
+            cancelDelete.addEventListener('click', closeDeleteModalFunc);
+
+            // Event listeners para edición
+            editPlaylistBtn.addEventListener('click', openEditModal);
+            closeEditModal.addEventListener('click', closeEditModalFunc);
+            cancelEdit.addEventListener('click', closeEditModalFunc);
+
+            // Confirmar eliminación
+            confirmDelete.addEventListener('click', function() {
+                // Aquí iría la lógica para eliminar la playlist
+                alert('Playlist eliminada correctamente');
+                closeDeleteModalFunc();
+                // Redirigir a la biblioteca o página principal
+                window.location.href = 'index.html';
+            });
+
+            // Guardar edición
+            saveEdit.addEventListener('click', function() {
+                const newName = document.getElementById('playlistName').value;
+                const newDescription = document.getElementById('playlistDescription').value;
+                const newPrivacy = document.getElementById('playlistPrivacy').value;
+                
+                // Aquí iría la lógica para guardar los cambios
+                alert('Playlist actualizada correctamente');
+                closeEditModalFunc();
+                
+                // Actualizar el título en la página
+                document.querySelector('.playlist-title').textContent = newName;
+                document.querySelector('.playlist-description').textContent = newDescription;
+            });
+
+            // Cerrar modales al hacer clic en el overlay
+            deleteModal.addEventListener('click', function(e) {
+                if (e.target === deleteModal) {
+                    closeDeleteModalFunc();
+                }
+            });
+
+            editModal.addEventListener('click', function(e) {
+                if (e.target === editModal) {
+                    closeEditModalFunc();
+                }
+            });
+
+            // Botones de eliminar canción individual
+            const removeButtons = document.querySelectorAll('.song-remove-btn');
+            removeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const songItem = this.closest('.song-item');
+                    if (confirm('¿Eliminar esta canción de la playlist?')) {
+                        songItem.remove();
+                        // Actualizar números de canción
+                        updateSongNumbers();
+                    }
+                });
+            });
+
+            // Función para actualizar números de canción
+            function updateSongNumbers() {
+                const songItems = document.querySelectorAll('.song-item');
+                songItems.forEach((item, index) => {
+                    const numberElement = item.querySelector('.song-number');
+                    numberElement.textContent = index + 1;
+                });
+            }
+        });
+    </script>
 </body>
 </html>

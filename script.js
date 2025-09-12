@@ -210,6 +210,36 @@ document.addEventListener('DOMContentLoaded', function() {
     contextMenuButtons.forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.stopPropagation();
+            
+            // Verificar si es el menú contextual de favorites.html o playlist-details.html
+            if (window.location.pathname.includes('favorites.html') || window.location.pathname.includes('playlist-details.html')) {
+                const songId = this.getAttribute('data-song-id');
+                if (songId) {
+                    // Usar nuestro menú contextual
+                    currentSongId = songId;
+                    const contextMenu = document.getElementById('contextMenu');
+                    if (contextMenu) {
+                        // Cerrar otros menús
+                        document.querySelectorAll('.context-menu').forEach(otherMenu => {
+                            if (otherMenu !== contextMenu) {
+                                otherMenu.style.opacity = '0';
+                                otherMenu.style.visibility = 'hidden';
+                                otherMenu.style.transform = 'translateY(10px)';
+                                otherMenu.classList.remove('show');
+                            }
+                        });
+                        
+                        // Posicionar y mostrar nuestro menú
+                        const rect = this.getBoundingClientRect();
+                        contextMenu.style.left = (rect.left - 180) + 'px';
+                        contextMenu.style.top = (rect.bottom + 5) + 'px';
+                        contextMenu.classList.add('show');
+                        return;
+                    }
+                }
+            }
+            
+            // Lógica original para otros menús contextuales
             const menu = this.nextElementSibling;
             if (menu && menu.classList.contains('context-menu')) {
                 // Cerrar otros menús
@@ -218,6 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         otherMenu.style.opacity = '0';
                         otherMenu.style.visibility = 'hidden';
                         otherMenu.style.transform = 'translateY(10px)';
+                        otherMenu.classList.remove('show');
                     }
                 });
                 
@@ -405,11 +436,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     document.addEventListener('click', function(e) {
-        if (!e.target.closest('.context-menu-container') && !e.target.closest('.context-menu-btn')) {
+        if (!e.target.closest('.context-menu-container') && !e.target.closest('.context-menu-btn') && !e.target.closest('.context-menu')) {
             document.querySelectorAll('.context-menu').forEach(menu => {
                 menu.style.opacity = '0';
                 menu.style.visibility = 'hidden';
                 menu.style.transform = 'translateY(10px)';
+                menu.classList.remove('show');
             });
         }
     });
@@ -762,6 +794,11 @@ document.addEventListener('DOMContentLoaded', function() {
     sidebarItems.forEach(item => {
         // Click en el elemento (reproducir por defecto)
         item.addEventListener('click', function(e) {
+            // Si el elemento tiene un onclick definido, no hacer nada (dejar que se ejecute)
+            if (this.hasAttribute('onclick')) {
+                return;
+            }
+            
             const title = this.querySelector('.sidebar-item-title').textContent;
             const subtitle = this.querySelector('.sidebar-item-subtitle').textContent;
             
@@ -782,9 +819,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const sidebarTitles = document.querySelectorAll('.sidebar-item-title');
     sidebarTitles.forEach(title => {
         title.addEventListener('click', function(e) {
+            const item = this.closest('.sidebar-item');
+            
+            // Si el elemento padre tiene un onclick definido, no hacer nada (dejar que se ejecute)
+            if (item && item.hasAttribute('onclick')) {
+                return;
+            }
+            
             e.stopPropagation(); // Prevenir que se ejecute el click del elemento padre
             
-            const item = this.closest('.sidebar-item');
             const subtitle = item.querySelector('.sidebar-item-subtitle').textContent;
             
             // Efecto visual
@@ -804,9 +847,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const sidebarSubtitles = document.querySelectorAll('.sidebar-item-subtitle');
     sidebarSubtitles.forEach(subtitle => {
         subtitle.addEventListener('click', function(e) {
+            const item = this.closest('.sidebar-item');
+            
+            // Si el elemento padre tiene un onclick definido, no hacer nada (dejar que se ejecute)
+            if (item && item.hasAttribute('onclick')) {
+                return;
+            }
+            
             e.stopPropagation(); // Prevenir que se ejecute el click del elemento padre
             
-            const item = this.closest('.sidebar-item');
             const title = item.querySelector('.sidebar-item-title').textContent;
             
             // Efecto visual
@@ -1199,6 +1248,185 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
             });
+        });
+    }
+});
+
+// Variables globales para el menú contextual
+let currentSongId = null;
+let contextMenu = null;
+
+// Funciones globales del menú contextual
+window.removeFromFavorites = function() {
+    if (currentSongId) {
+        const songItem = document.querySelector(`[data-song-id="${currentSongId}"]`).closest('.song-item');
+        if (songItem) {
+            songItem.style.transition = 'all 0.3s ease';
+            songItem.style.opacity = '0';
+            songItem.style.transform = 'translateX(-100%)';
+            
+            setTimeout(() => {
+                songItem.remove();
+                updateSongNumbers();
+            }, 300);
+        }
+    }
+    if (contextMenu) {
+        contextMenu.classList.remove('show');
+    }
+};
+
+window.shareSong = function() {
+    if (currentSongId) {
+        const songItem = document.querySelector(`[data-song-id="${currentSongId}"]`).closest('.song-item');
+        const songTitle = songItem.querySelector('.song-title').textContent;
+        const songArtist = songItem.querySelector('.song-artist').textContent;
+        
+        if (navigator.share) {
+            navigator.share({
+                title: `${songTitle} - ${songArtist}`,
+                text: `Escucha "${songTitle}" de ${songArtist} en Spoiler Five`,
+                url: window.location.href
+            });
+        } else {
+            // Fallback para navegadores que no soportan Web Share API
+            const shareText = `Escucha "${songTitle}" de ${songArtist} en Spoiler Five: ${window.location.href}`;
+            navigator.clipboard.writeText(shareText).then(() => {
+                alert('Enlace copiado al portapapeles');
+            }).catch(() => {
+                alert(shareText);
+            });
+        }
+    }
+    if (contextMenu) {
+        contextMenu.classList.remove('show');
+    }
+};
+
+// Funciones específicas para playlist-details.html
+window.addToFavorites = function() {
+    if (currentSongId) {
+        const songItem = document.querySelector(`[data-song-id="${currentSongId}"]`).closest('.song-item');
+        const songTitle = songItem.querySelector('.song-title').textContent;
+        const songArtist = songItem.querySelector('.song-artist').textContent;
+        
+        // Efecto visual en el botón de favoritos
+        const heartBtn = songItem.querySelector('.song-action-btn i.fa-heart');
+        if (heartBtn) {
+            heartBtn.style.color = '#e74c3c';
+            setTimeout(() => {
+                heartBtn.style.color = '';
+            }, 200);
+        }
+        
+        alert(`"${songTitle}" de ${songArtist} agregada a Canciones que te gustan`);
+    }
+    if (contextMenu) {
+        contextMenu.classList.remove('show');
+    }
+};
+
+window.downloadSong = function() {
+    if (currentSongId) {
+        const songItem = document.querySelector(`[data-song-id="${currentSongId}"]`).closest('.song-item');
+        const songTitle = songItem.querySelector('.song-title').textContent;
+        const songArtist = songItem.querySelector('.song-artist').textContent;
+        
+        alert(`Descargando "${songTitle}" de ${songArtist}...`);
+    }
+    if (contextMenu) {
+        contextMenu.classList.remove('show');
+    }
+};
+
+// Función para actualizar números de canciones después de eliminar
+function updateSongNumbers() {
+    const songItems = document.querySelectorAll('.song-item');
+    songItems.forEach((item, index) => {
+        const numberElement = item.querySelector('.song-number');
+        if (numberElement) {
+            numberElement.textContent = index + 1;
+        }
+    });
+}
+
+// Funcionalidad del menú contextual para favorites.html
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.pathname.includes('favorites.html')) {
+        contextMenu = document.getElementById('contextMenu');
+        
+        // El menú contextual se maneja en el event listener global de context-menu-btn
+        
+        // Cerrar menú al hacer scroll
+        window.addEventListener('scroll', function() {
+            if (contextMenu) {
+                contextMenu.classList.remove('show');
+            }
+        });
+        
+        // Funcionalidad de hover para reproducir y ver detalles
+        const songItems = document.querySelectorAll('.song-item');
+        songItems.forEach(item => {
+            // Click en la imagen para reproducir
+            const songImage = item.querySelector('.song-image');
+            if (songImage) {
+                songImage.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const songTitle = item.querySelector('.song-title').textContent;
+                    const songArtist = item.querySelector('.song-artist').textContent;
+                    
+                    // Efecto visual
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                    
+                    // Simular reproducción
+                    setTimeout(() => {
+                        alert(`Reproduciendo: ${songTitle} - ${songArtist}`);
+                    }, 200);
+                });
+            }
+            
+            // Click en el título o artista para ver detalles
+            const songTitle = item.querySelector('.song-title');
+            const songArtist = item.querySelector('.song-artist');
+            
+            if (songTitle) {
+                songTitle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const artist = item.querySelector('.song-artist').textContent;
+                    
+                    // Efecto visual
+                    this.style.color = '#2a9d8a';
+                    setTimeout(() => {
+                        this.style.color = '';
+                    }, 200);
+                    
+                    // Simular navegación a detalles
+                    setTimeout(() => {
+                        alert(`Abriendo detalles de: ${this.textContent} - ${artist}`);
+                    }, 200);
+                });
+            }
+            
+            if (songArtist) {
+                songArtist.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const title = item.querySelector('.song-title').textContent;
+                    
+                    // Efecto visual
+                    this.style.color = '#2a9d8a';
+                    setTimeout(() => {
+                        this.style.color = '';
+                    }, 200);
+                    
+                    // Simular navegación a detalles
+                    setTimeout(() => {
+                        alert(`Abriendo detalles de: ${title} - ${this.textContent}`);
+                    }, 200);
+                });
+            }
         });
     }
 });

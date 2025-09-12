@@ -43,91 +43,272 @@
         </div>
         
         <div class="sidebar-content">
-            <!-- Favoritos -->
-            <div class="sidebar-section">
-                <h4 class="sidebar-section-title" onclick="window.location.href='favorites.html'">
-                    <i class="fas fa-heart"></i>
-                    Mis Favoritos
-                </h4>
+            <!-- Filtros de Biblioteca -->
+            <div class="library-filters">
+                <div class="filter-group">
+                    <label class="filter-label">Tipo:</label>
+                    <select class="library-filter-select" id="libraryTypeFilter">
+                        <option value="all">Todos</option>
+                        <option value="playlists">Playlists</option>
+                        <option value="albums">Albums</option>
+                        <option value="podcasts">Podcasts</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label class="filter-label">Ordenar:</label>
+                    <select class="library-filter-select" id="librarySortFilter">
+                        <option value="recent">Recientes</option>
+                        <option value="alphabetical">A-Z</option>
+                        <option value="artist">Por artista</option>
+                        <option value="date">Por fecha</option>
+                    </select>
+                </div>
             </div>
 
-            <!-- Playlists -->
+
+            <!-- Lista de Contenido -->
             <div class="sidebar-section">
-                <h4 class="sidebar-section-title">
-                    <i class="fas fa-list"></i>
-                    Mis Playlists
-                </h4>
+                <button class="create-playlist-btn">
+                    <i class="fas fa-plus"></i>
+                    Crear playlist
+                </button>
                 <div class="sidebar-list">
-                    <div class="sidebar-item">
+                    <!-- Playlists -->
+                    <div class="sidebar-item pinned-item" data-type="playlist" onclick="window.location.href='favorites.html'">
+                        <div class="sidebar-item-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="sidebar-item-info">
+                            <span class="sidebar-item-title">
+                                <span class="pinned-indicator">
+                                    <i class="fas fa-thumbtack"></i>
+                                </span>
+                                Canciones que te gustan
+                            </span>
+                            <span class="sidebar-item-subtitle">Ariel Vincennao • 12 canciones</span>
+                        </div>
+                        <div class="sidebar-item-badge playlist-badge">Playlist</div>
+                        <button class="sidebar-play-btn" onclick="event.stopPropagation(); window.location.href='favorites.html'">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="sidebar-item" data-type="playlist">
                         <div class="sidebar-item-icon">
                             <i class="fas fa-dumbbell"></i>
                         </div>
                         <div class="sidebar-item-info">
                             <span class="sidebar-item-title">Hora de Gym</span>
-                            <span class="sidebar-item-subtitle">5 canciones</span>
+                            <span class="sidebar-item-subtitle">Ariel Vincennao • 5 canciones</span>
                         </div>
+                        <div class="sidebar-item-badge playlist-badge">Playlist</div>
                         <button class="sidebar-play-btn">
                             <i class="fas fa-play"></i>
                         </button>
                     </div>
-                    <div class="sidebar-item">
+                    
+                    <div class="sidebar-item" data-type="playlist">
                         <div class="sidebar-item-icon">
                             <i class="fas fa-heart"></i>
                         </div>
                         <div class="sidebar-item-info">
                             <span class="sidebar-item-title">Rock Clásico</span>
-                            <span class="sidebar-item-subtitle">12 canciones</span>
+                            <span class="sidebar-item-subtitle">Ariel Vincennao • 12 canciones</span>
                         </div>
+                        <div class="sidebar-item-badge playlist-badge">Playlist</div>
                         <button class="sidebar-play-btn">
                             <i class="fas fa-play"></i>
                         </button>
                     </div>
-                    <div class="sidebar-item">
+                    
+                    <div class="sidebar-item" data-type="playlist">
                         <div class="sidebar-item-icon">
                             <i class="fas fa-fire"></i>
                         </div>
                         <div class="sidebar-item-info">
                             <span class="sidebar-item-title">Energía Total</span>
-                            <span class="sidebar-item-subtitle">8 canciones</span>
+                            <span class="sidebar-item-subtitle">Ariel Vincennao • 8 canciones</span>
                         </div>
+                        <div class="sidebar-item-badge playlist-badge">Playlist</div>
                         <button class="sidebar-play-btn">
                             <i class="fas fa-play"></i>
                         </button>
                     </div>
-                </div>
-            </div>
 
-            <!-- Álbumes Guardados -->
-            <div class="sidebar-section">
-                <h4 class="sidebar-section-title">
-                    <i class="fas fa-compact-disc"></i>
-                    Álbumes Guardados
-                </h4>
-                <div class="sidebar-list">
-                    <div class="sidebar-item">
+                    <!-- Álbumes -->
+                    <div class="sidebar-item" data-type="album">
                         <div class="sidebar-item-icon">
                             <i class="fas fa-compact-disc"></i>
                         </div>
                         <div class="sidebar-item-info">
                             <span class="sidebar-item-title">The Razors Edge</span>
-                            <span class="sidebar-item-subtitle">AC/DC</span>
+                            <span class="sidebar-item-subtitle">AC/DC • 12 canciones</span>
                         </div>
+                        <div class="sidebar-item-badge album-badge">Album</div>
                         <button class="sidebar-play-btn">
                             <i class="fas fa-play"></i>
                         </button>
                     </div>
-                    <div class="sidebar-item">
+                    
+                    <div class="sidebar-item" data-type="album">
                         <div class="sidebar-item-icon">
                             <i class="fas fa-compact-disc"></i>
                         </div>
                         <div class="sidebar-item-info">
                             <span class="sidebar-item-title">The Wall</span>
-                            <span class="sidebar-item-subtitle">Pink Floyd</span>
+                            <span class="sidebar-item-subtitle">Pink Floyd • 26 canciones</span>
                         </div>
+                        <div class="sidebar-item-badge album-badge">Album</div>
                         <button class="sidebar-play-btn">
                             <i class="fas fa-play"></i>
                         </button>
                     </div>
+
+                    <!-- Podcasts -->
+                    <div class="sidebar-item" data-type="podcast">
+                        <div class="sidebar-item-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="sidebar-item-info">
+                            <span class="sidebar-item-title">Música y Más</span>
+                            <span class="sidebar-item-subtitle">Ariel Vincennao • 15 canciones</span>
+                        </div>
+                        <div class="sidebar-item-badge podcast-badge">Podcast</div>
+                        <button class="sidebar-play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="sidebar-item" data-type="podcast">
+                        <div class="sidebar-item-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="sidebar-item-info">
+                            <span class="sidebar-item-title">Rock Clásico Podcast</span>
+                            <span class="sidebar-item-subtitle">Ariel Vincennao • 8 canciones</span>
+                        </div>
+                        <div class="sidebar-item-badge podcast-badge">Podcast</div>
+                        <button class="sidebar-play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+
+                    <!-- Más Playlists -->
+                    <div class="sidebar-item" data-type="playlist">
+                        <div class="sidebar-item-icon">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                        <div class="sidebar-item-info">
+                            <span class="sidebar-item-title">Relajación Nocturna</span>
+                            <span class="sidebar-item-subtitle">Ariel Vincennao • 15 canciones</span>
+                        </div>
+                        <div class="sidebar-item-badge playlist-badge">Playlist</div>
+                        <button class="sidebar-play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="sidebar-item" data-type="playlist">
+                        <div class="sidebar-item-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="sidebar-item-info">
+                            <span class="sidebar-item-title">Viaje en Carretera</span>
+                            <span class="sidebar-item-subtitle">Ariel Vincennao • 22 canciones</span>
+                        </div>
+                        <div class="sidebar-item-badge playlist-badge">Playlist</div>
+                        <button class="sidebar-play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="sidebar-item" data-type="playlist">
+                        <div class="sidebar-item-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="sidebar-item-info">
+                            <span class="sidebar-item-title">Éxitos de los 80s</span>
+                            <span class="sidebar-item-subtitle">Ariel Vincennao • 18 canciones</span>
+                        </div>
+                        <div class="sidebar-item-badge playlist-badge">Playlist</div>
+                        <button class="sidebar-play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+
+                    <!-- Más Álbumes -->
+                    <div class="sidebar-item" data-type="album">
+                        <div class="sidebar-item-icon">
+                            <i class="fas fa-compact-disc"></i>
+                        </div>
+                        <div class="sidebar-item-info">
+                            <span class="sidebar-item-title">Dark Side of the Moon</span>
+                            <span class="sidebar-item-subtitle">Pink Floyd • 9 canciones</span>
+                        </div>
+                        <div class="sidebar-item-badge album-badge">Album</div>
+                        <button class="sidebar-play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="sidebar-item" data-type="album">
+                        <div class="sidebar-item-icon">
+                            <i class="fas fa-compact-disc"></i>
+                        </div>
+                        <div class="sidebar-item-info">
+                            <span class="sidebar-item-title">Back in Black</span>
+                            <span class="sidebar-item-subtitle">AC/DC • 10 canciones</span>
+                        </div>
+                        <div class="sidebar-item-badge album-badge">Album</div>
+                        <button class="sidebar-play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="sidebar-item" data-type="album">
+                        <div class="sidebar-item-icon">
+                            <i class="fas fa-compact-disc"></i>
+                        </div>
+                        <div class="sidebar-item-info">
+                            <span class="sidebar-item-title">Led Zeppelin IV</span>
+                            <span class="sidebar-item-subtitle">Led Zeppelin • 8 canciones</span>
+                        </div>
+                        <div class="sidebar-item-badge album-badge">Album</div>
+                        <button class="sidebar-play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+
+                    <!-- Más Podcasts -->
+                    <div class="sidebar-item" data-type="podcast">
+                        <div class="sidebar-item-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="sidebar-item-info">
+                            <span class="sidebar-item-title">Historia del Rock</span>
+                            <span class="sidebar-item-subtitle">Ariel Vincennao • 12 canciones</span>
+                        </div>
+                        <div class="sidebar-item-badge podcast-badge">Podcast</div>
+                        <button class="sidebar-play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="sidebar-item" data-type="podcast">
+                        <div class="sidebar-item-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="sidebar-item-info">
+                            <span class="sidebar-item-title">Música Indie</span>
+                            <span class="sidebar-item-subtitle">Ariel Vincennao • 6 canciones</span>
+                        </div>
+                        <div class="sidebar-item-badge podcast-badge">Podcast</div>
+                        <button class="sidebar-play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -357,10 +538,6 @@
                     <i class="fas fa-music"></i>
                     <span>Canciones</span>
                 </button>
-                <button class="filter-btn" data-filter="artists">
-                    <i class="fas fa-user"></i>
-                    <span>Artistas</span>
-                </button>
                 <button class="filter-btn" data-filter="playlists">
                     <i class="fas fa-list"></i>
                     <span>Playlists</span>
@@ -374,6 +551,66 @@
                     <span>Podcasts</span>
                 </button>
             </div>
+
+                        <!-- Filtros Adicionales -->
+                        <div class="additional-filters">
+                            <div class="filter-group">
+                                <label class="filter-label">Género:</label>
+                                <select class="filter-select" id="genreFilter">
+                                    <option value="">Todos los géneros</option>
+                                    <option value="rock">Rock</option>
+                                    <option value="pop">Pop</option>
+                                    <option value="jazz">Jazz</option>
+                                    <option value="classical">Clásica</option>
+                                    <option value="electronic">Electrónica</option>
+                                    <option value="hip-hop">Hip Hop</option>
+                                    <option value="country">Country</option>
+                                    <option value="reggae">Reggae</option>
+                                </select>
+                            </div>
+            
+                            <div class="filter-group">
+                                <label class="filter-label">Duración:</label>
+                                <select class="filter-select" id="durationFilter">
+                                    <option value="">Cualquier duración</option>
+                                    <option value="short">Menos de 3 min</option>
+                                    <option value="medium">3-6 min</option>
+                                    <option value="long">Más de 6 min</option>
+                                </select>
+                            </div>
+            
+                            <div class="filter-group">
+                                <label class="filter-label">Año:</label>
+                                <select class="filter-select" id="yearFilter">
+                                    <option value="">Cualquier año</option>
+                                    <option value="2020s">2020s</option>
+                                    <option value="2010s">2010s</option>
+                                    <option value="2000s">2000s</option>
+                                    <option value="1990s">1990s</option>
+                                    <option value="1980s">1980s</option>
+                                    <option value="1970s">1970s</option>
+                                    <option value="1960s">1960s</option>
+                                    <option value="before">Antes de 1960</option>
+                                </select>
+                            </div>
+            
+                            <div class="filter-group">
+                                <label class="filter-label">Ordenar por:</label>
+                                <select class="filter-select" id="sortFilter">
+                                    <option value="relevance">Relevancia</option>
+                                    <option value="popularity">Popularidad</option>
+                                    <option value="newest">Más reciente</option>
+                                    <option value="oldest">Más antiguo</option>
+                                    <option value="alphabetical">A-Z</option>
+                                    <option value="duration">Duración</option>
+                                </select>
+                            </div>
+            
+                            <button class="clear-filters-btn" id="clearFiltersBtn">
+                                <i class="fas fa-times"></i>
+                                <span>Limpiar filtros</span>
+                            </button>
+                        </div>
 
             <!-- Resultados -->
             <div class="search-results-content">
@@ -429,29 +666,9 @@
                     </div>
                 </div>
 
-                <!-- Artistas -->
-                <div class="results-section" id="artists-results">
-                    <h2 class="results-section-title">Artistas</h2>
-                    <div class="artists-grid">
-                        <div class="artist-card">
-                            <div class="artist-image">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <h3 class="artist-name">AC/DC</h3>
-                            <p class="artist-genre">Rock</p>
-                        </div>
-                        <div class="artist-card">
-                            <div class="artist-image">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <h3 class="artist-name">Pink Floyd</h3>
-                            <p class="artist-genre">Progressive Rock</p>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Playlists -->
-                <div class="results-section" id="playlists-results">
+                <div class="results-section has-more" id="playlists-results">
                     <h2 class="results-section-title">Playlists</h2>
                     <div class="playlists-grid">
                         <div class="content-card">
@@ -461,6 +678,210 @@
                             <div class="card-tag playlist-tag">Playlist</div>
                             <h3 class="card-title">Hora de Gym</h3>
                             <p class="card-subtitle">Por AC/DC, Pink Floyd, Led Zeppelin y más...</p>
+                            <div class="card-actions">
+                                <button class="play-btn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="action-buttons-group">
+                                    <button class="action-btn">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <div class="context-menu-container">
+                                        <button class="context-menu-btn" title="Más opciones">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <div class="context-menu">
+                                            <button class="context-menu-item save-item">
+                                                <i class="fas fa-bookmark"></i>
+                                                <span>Guardar en mi biblioteca</span>
+                                            </button>
+                                            <button class="context-menu-item share-item">
+                                                <i class="fas fa-share"></i>
+                                                <span>Compartir</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-card">
+                            <div class="card-image">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="card-tag playlist-tag">Playlist</div>
+                            <h3 class="card-title">Rock Clásico</h3>
+                            <p class="card-subtitle">Por Pink Floyd, AC/DC, Led Zeppelin y más...</p>
+                            <div class="card-actions">
+                                <button class="play-btn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="action-buttons-group">
+                                    <button class="action-btn">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <div class="context-menu-container">
+                                        <button class="context-menu-btn" title="Más opciones">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <div class="context-menu">
+                                            <button class="context-menu-item save-item">
+                                                <i class="fas fa-bookmark"></i>
+                                                <span>Guardar en mi biblioteca</span>
+                                            </button>
+                                            <button class="context-menu-item share-item">
+                                                <i class="fas fa-share"></i>
+                                                <span>Compartir</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-card">
+                            <div class="card-image">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="card-tag playlist-tag">Playlist</div>
+                            <h3 class="card-title">Energía Total</h3>
+                            <p class="card-subtitle">Por AC/DC, Metallica, Iron Maiden y más...</p>
+                            <div class="card-actions">
+                                <button class="play-btn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="action-buttons-group">
+                                    <button class="action-btn">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <div class="context-menu-container">
+                                        <button class="context-menu-btn" title="Más opciones">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <div class="context-menu">
+                                            <button class="context-menu-item save-item">
+                                                <i class="fas fa-bookmark"></i>
+                                                <span>Guardar en mi biblioteca</span>
+                                            </button>
+                                            <button class="context-menu-item share-item">
+                                                <i class="fas fa-share"></i>
+                                                <span>Compartir</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-card">
+                            <div class="card-image">
+                                <i class="fas fa-moon"></i>
+                            </div>
+                            <div class="card-tag playlist-tag">Playlist</div>
+                            <h3 class="card-title">Relajación Nocturna</h3>
+                            <p class="card-subtitle">Por Pink Floyd, Radiohead, Coldplay y más...</p>
+                            <div class="card-actions">
+                                <button class="play-btn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="action-buttons-group">
+                                    <button class="action-btn">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <div class="context-menu-container">
+                                        <button class="context-menu-btn" title="Más opciones">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <div class="context-menu">
+                                            <button class="context-menu-item save-item">
+                                                <i class="fas fa-bookmark"></i>
+                                                <span>Guardar en mi biblioteca</span>
+                                            </button>
+                                            <button class="context-menu-item share-item">
+                                                <i class="fas fa-share"></i>
+                                                <span>Compartir</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-card">
+                            <div class="card-image">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <div class="card-tag playlist-tag">Playlist</div>
+                            <h3 class="card-title">Viaje en Carretera</h3>
+                            <p class="card-subtitle">Por Queen, The Beatles, Eagles y más...</p>
+                            <div class="card-actions">
+                                <button class="play-btn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="action-buttons-group">
+                                    <button class="action-btn">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <div class="context-menu-container">
+                                        <button class="context-menu-btn" title="Más opciones">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <div class="context-menu">
+                                            <button class="context-menu-item save-item">
+                                                <i class="fas fa-bookmark"></i>
+                                                <span>Guardar en mi biblioteca</span>
+                                            </button>
+                                            <button class="context-menu-item share-item">
+                                                <i class="fas fa-share"></i>
+                                                <span>Compartir</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-card">
+                            <div class="card-image">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="card-tag playlist-tag">Playlist</div>
+                            <h3 class="card-title">Éxitos de los 80s</h3>
+                            <p class="card-subtitle">Por Michael Jackson, Madonna, Prince y más...</p>
+                            <div class="card-actions">
+                                <button class="play-btn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="action-buttons-group">
+                                    <button class="action-btn">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <div class="context-menu-container">
+                                        <button class="context-menu-btn" title="Más opciones">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <div class="context-menu">
+                                            <button class="context-menu-item save-item">
+                                                <i class="fas fa-bookmark"></i>
+                                                <span>Guardar en mi biblioteca</span>
+                                            </button>
+                                            <button class="context-menu-item share-item">
+                                                <i class="fas fa-share"></i>
+                                                <span>Compartir</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-card">
+                            <div class="card-image">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="card-tag playlist-tag">Playlist</div>
+                            <h3 class="card-title">Estudio y Concentración</h3>
+                            <p class="card-subtitle">Por Ludovico Einaudi, Max Richter, Ólafur Arnalds y más...</p>
                             <div class="card-actions">
                                 <button class="play-btn">
                                     <i class="fas fa-play"></i>
@@ -527,6 +948,14 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Podcasts -->
+                <div class="results-section" id="podcasts-results">
+                    <h2 class="results-section-title">Podcasts</h2>
+                    <div class="simple-no-results">
+                        <p>No se encontraron podcasts</p>
                     </div>
                 </div>
             </div>
@@ -641,6 +1070,7 @@
                     });
                 });
             });
+
 
             // Funcionalidad del panel lateral
             const hamburgerBtn = document.getElementById('hamburgerBtn');
