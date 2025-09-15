@@ -1430,3 +1430,73 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// ===== FUNCIONALIDAD DE CALIFICACIÓN =====
+document.addEventListener('DOMContentLoaded', function() {
+    const ratingStars = document.querySelectorAll('#ratingStars i');
+    const ratingText = document.getElementById('ratingText');
+    const ratingSubmitBtn = document.getElementById('ratingSubmitBtn');
+    let currentRating = 0;
+
+    if (ratingStars.length > 0) {
+        ratingStars.forEach((star, index) => {
+            star.addEventListener('click', function() {
+                currentRating = parseInt(this.dataset.rating);
+                updateRatingDisplay();
+                ratingSubmitBtn.disabled = false;
+            });
+
+            star.addEventListener('mouseenter', function() {
+                const hoverRating = parseInt(this.dataset.rating);
+                highlightStars(hoverRating);
+            });
+        });
+
+        document.getElementById('ratingStars').addEventListener('mouseleave', function() {
+            highlightStars(currentRating);
+        });
+
+        ratingSubmitBtn.addEventListener('click', function() {
+            if (currentRating > 0) {
+                // Simular envío de calificación
+                this.innerHTML = '<i class="fas fa-check"></i> Calificación enviada';
+                this.style.background = '#45b7b8';
+                this.disabled = true;
+                
+                // Mostrar mensaje de agradecimiento
+                ratingText.textContent = `¡Gracias por tu calificación de ${currentRating} estrellas!`;
+                ratingText.style.color = '#2a9d8a';
+                
+                // Efecto visual
+                this.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 200);
+            }
+        });
+    }
+
+    function updateRatingDisplay() {
+        const ratingTexts = [
+            '',
+            'Muy malo',
+            'Malo', 
+            'Regular',
+            'Bueno',
+            'Excelente'
+        ];
+        
+        ratingText.textContent = ratingTexts[currentRating];
+        highlightStars(currentRating);
+    }
+
+    function highlightStars(rating) {
+        ratingStars.forEach((star, index) => {
+            if (index < rating) {
+                star.className = 'fas fa-star';
+            } else {
+                star.className = 'far fa-star';
+            }
+        });
+    }
+});

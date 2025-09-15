@@ -550,8 +550,8 @@
                         <button class="play-btn-large">
                             <i class="fas fa-play"></i>
                         </button>
-                        <button class="action-btn-large">
-                            <i class="fas fa-heart"></i>
+                        <button class="action-btn-large" title="Agregar a Mi Biblioteca">
+                            <i class="fas fa-plus"></i>
                         </button>
                         <button class="action-btn-large">
                             <i class="fas fa-share"></i>
@@ -615,8 +615,8 @@
                     <div class="song-date">15 de enero, 2024</div>
                     <div class="song-duration">4:52</div>
                     <div class="song-actions">
-                        <button class="song-action-btn">
-                            <i class="fas fa-heart"></i>
+                        <button class="song-action-btn" title="Agregar a Mi Biblioteca">
+                            <i class="fas fa-plus"></i>
                         </button>
                         <button class="song-action-btn context-menu-btn" data-song-id="1">
                             <i class="fas fa-ellipsis-h"></i>
@@ -640,8 +640,8 @@
                     <div class="song-date">22 de enero, 2024</div>
                     <div class="song-duration">3:59</div>
                     <div class="song-actions">
-                        <button class="song-action-btn">
-                            <i class="fas fa-heart"></i>
+                        <button class="song-action-btn" title="Agregar a Mi Biblioteca">
+                            <i class="fas fa-plus"></i>
                         </button>
                         <button class="song-action-btn context-menu-btn" data-song-id="2">
                             <i class="fas fa-ellipsis-h"></i>
@@ -665,8 +665,8 @@
                     <div class="song-date">28 de enero, 2024</div>
                     <div class="song-duration">8:02</div>
                     <div class="song-actions">
-                        <button class="song-action-btn">
-                            <i class="fas fa-heart"></i>
+                        <button class="song-action-btn" title="Agregar a Mi Biblioteca">
+                            <i class="fas fa-plus"></i>
                         </button>
                         <button class="song-action-btn context-menu-btn" data-song-id="3">
                             <i class="fas fa-ellipsis-h"></i>
@@ -690,8 +690,8 @@
                     <div class="song-date">5 de febrero, 2024</div>
                     <div class="song-duration">5:55</div>
                     <div class="song-actions">
-                        <button class="song-action-btn">
-                            <i class="fas fa-heart"></i>
+                        <button class="song-action-btn" title="Agregar a Mi Biblioteca">
+                            <i class="fas fa-plus"></i>
                         </button>
                         <button class="song-action-btn context-menu-btn" data-song-id="4">
                             <i class="fas fa-ellipsis-h"></i>
@@ -715,14 +715,185 @@
                     <div class="song-date">12 de febrero, 2024</div>
                     <div class="song-duration">4:04</div>
                     <div class="song-actions">
-                        <button class="song-action-btn">
-                            <i class="fas fa-heart"></i>
+                        <button class="song-action-btn" title="Agregar a Mi Biblioteca">
+                            <i class="fas fa-plus"></i>
                         </button>
                         <button class="song-action-btn context-menu-btn" data-song-id="5">
                             <i class="fas fa-ellipsis-h"></i>
                         </button>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Sección de Calificación -->
+        <section class="rating-section">
+            <div class="rating-container">
+                <h2 class="rating-title">¿Te gustó esta playlist?</h2>
+                <p class="rating-subtitle">Califica y ayuda a otros usuarios a descubrirla</p>
+                
+                <div class="rating-stars-container">
+                    <div class="rating-stars" id="ratingStars">
+                        <i class="far fa-star" data-rating="1"></i>
+                        <i class="far fa-star" data-rating="2"></i>
+                        <i class="far fa-star" data-rating="3"></i>
+                        <i class="far fa-star" data-rating="4"></i>
+                        <i class="far fa-star" data-rating="5"></i>
+                    </div>
+                    <p class="rating-text" id="ratingText">Haz clic en una estrella para calificar</p>
+                </div>
+                
+                <button class="rating-submit-btn" id="ratingSubmitBtn" disabled>
+                    <i class="fas fa-star"></i>
+                    Enviar calificación
+                </button>
+            </div>
+        </section>
+
+        <!-- Sección de Comentarios -->
+        <section class="comments-section">
+            <div class="comments-header">
+                <h2 class="comments-title">Comentarios</h2>
+                <span class="comments-count">8 comentarios</span>
+            </div>
+            
+            <!-- Formulario de nuevo comentario -->
+            <div class="new-comment">
+                <div class="comment-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="comment-form">
+                    <textarea class="comment-input" placeholder="¿Qué opinas de esta playlist? Comparte tu experiencia..."></textarea>
+                    <button class="comment-submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Comentar
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Lista de comentarios -->
+            <div class="comments-list">
+                <div class="comment-item">
+                    <div class="comment-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <span class="comment-author">María González</span>
+                            <span class="comment-time">hace 2 horas</span>
+                        </div>
+                        <p class="comment-text">¡Excelente selección! Me encanta entrenar con estas canciones. Thunderstruck es perfecta para el cardio 💪</p>
+                        <div class="comment-actions">
+                            <button class="comment-action-btn">
+                                <i class="fas fa-thumbs-up"></i>
+                                <span>12</span>
+                            </button>
+                            <button class="comment-action-btn">
+                                <i class="fas fa-reply"></i>
+                                <span>Responder</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comment-item">
+                    <div class="comment-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <span class="comment-author">Carlos Ruiz</span>
+                            <span class="comment-time">hace 5 horas</span>
+                        </div>
+                        <p class="comment-text">Stairway to Heaven es una obra maestra, pero 8 minutos es mucho para el gym. Aún así, gran playlist!</p>
+                        <div class="comment-actions">
+                            <button class="comment-action-btn">
+                                <i class="fas fa-thumbs-up"></i>
+                                <span>8</span>
+                            </button>
+                            <button class="comment-action-btn">
+                                <i class="fas fa-reply"></i>
+                                <span>Responder</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comment-item">
+                    <div class="comment-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <span class="comment-author">Ana Martínez</span>
+                            <span class="comment-time">hace 1 día</span>
+                        </div>
+                        <p class="comment-text">Perfecta para mis rutinas de pesas. La combinación de rock clásico es ideal para mantener la motivación alta 🔥</p>
+                        <div class="comment-actions">
+                            <button class="comment-action-btn">
+                                <i class="fas fa-thumbs-up"></i>
+                                <span>15</span>
+                            </button>
+                            <button class="comment-action-btn">
+                                <i class="fas fa-reply"></i>
+                                <span>Responder</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comment-item">
+                    <div class="comment-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <span class="comment-author">Luis Fernández</span>
+                            <span class="comment-time">hace 2 días</span>
+                        </div>
+                        <p class="comment-text">Bohemian Rhapsody es mi canción favorita de todos los tiempos. Gracias por incluirla en esta playlist épica!</p>
+                        <div class="comment-actions">
+                            <button class="comment-action-btn">
+                                <i class="fas fa-thumbs-up"></i>
+                                <span>23</span>
+                            </button>
+                            <button class="comment-action-btn">
+                                <i class="fas fa-reply"></i>
+                                <span>Responder</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comment-item">
+                    <div class="comment-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <span class="comment-author">Sofia López</span>
+                            <span class="comment-time">hace 3 días</span>
+                        </div>
+                        <p class="comment-text">Eye of the Tiger me da toda la energía que necesito para terminar mi rutina. ¡Playlist salvada! 🐅</p>
+                        <div class="comment-actions">
+                            <button class="comment-action-btn">
+                                <i class="fas fa-thumbs-up"></i>
+                                <span>7</span>
+                            </button>
+                            <button class="comment-action-btn">
+                                <i class="fas fa-reply"></i>
+                                <span>Responder</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="load-more-comments">
+                <button class="load-more-btn">
+                    <i class="fas fa-chevron-down"></i>
+                    Cargar más comentarios
+                </button>
             </div>
         </section>
 
@@ -756,8 +927,8 @@
                                 <i class="fas fa-play"></i>
                             </button>
                             <div class="action-buttons-group">
-                                <button class="action-btn">
-                                    <i class="fas fa-heart"></i>
+                                <button class="action-btn" title="Agregar a Mi Biblioteca">
+                                    <i class="fas fa-plus"></i>
                                 </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
@@ -790,8 +961,8 @@
                                 <i class="fas fa-play"></i>
                             </button>
                             <div class="action-buttons-group">
-                                <button class="action-btn">
-                                    <i class="fas fa-heart"></i>
+                                <button class="action-btn" title="Agregar a Mi Biblioteca">
+                                    <i class="fas fa-plus"></i>
                                 </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
@@ -824,8 +995,8 @@
                                 <i class="fas fa-play"></i>
                             </button>
                             <div class="action-buttons-group">
-                                <button class="action-btn">
-                                    <i class="fas fa-heart"></i>
+                                <button class="action-btn" title="Agregar a Mi Biblioteca">
+                                    <i class="fas fa-plus"></i>
                                 </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
@@ -906,7 +1077,7 @@
     <!-- Menú Contextual -->
     <div class="context-menu" id="contextMenu">
         <div class="context-menu-item" onclick="addToFavorites()">
-            <i class="fas fa-heart"></i>
+            <i class="fas fa-plus"></i>
             <span>Agregar a Canciones que te gustan</span>
         </div>
         <div class="context-menu-item" onclick="shareSong()">

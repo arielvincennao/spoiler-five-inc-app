@@ -528,89 +528,78 @@
                 <p id="resultsCount" class="results-count">Encontrados 0 resultados</p>
             </div>
 
-            <!-- Filtros -->
-            <div class="search-filters">
-                <button class="filter-btn active" data-filter="all">
-                    <i class="fas fa-th"></i>
-                    <span>Todos</span>
-                </button>
-                <button class="filter-btn" data-filter="songs">
-                    <i class="fas fa-music"></i>
-                    <span>Canciones</span>
-                </button>
-                <button class="filter-btn" data-filter="playlists">
-                    <i class="fas fa-list"></i>
-                    <span>Playlists</span>
-                </button>
-                <button class="filter-btn" data-filter="albums">
-                    <i class="fas fa-compact-disc"></i>
-                    <span>Álbumes</span>
-                </button>
-                <button class="filter-btn" data-filter="podcasts">
-                    <i class="fas fa-microphone"></i>
-                    <span>Podcasts</span>
+
+            <!-- Filtros Adicionales -->
+            <div class="additional-filters">
+                <div class="filter-group">
+                    <label class="filter-label">Tipo:</label>
+                    <select class="filter-select" id="typeFilter">
+                        <option value="">Todos los tipos</option>
+                        <option value="songs">Canciones</option>
+                        <option value="playlists">Playlists</option>
+                        <option value="albums">Álbumes</option>
+                        <option value="podcasts">Podcasts</option>
+                        <option value="artists">Artistas</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Género:</label>
+                    <select class="filter-select" id="genreFilter">
+                        <option value="">Todos los géneros</option>
+                        <option value="rock">Rock</option>
+                        <option value="pop">Pop</option>
+                        <option value="jazz">Jazz</option>
+                        <option value="classical">Clásica</option>
+                        <option value="electronic">Electrónica</option>
+                        <option value="hip-hop">Hip Hop</option>
+                        <option value="country">Country</option>
+                        <option value="reggae">Reggae</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Duración:</label>
+                    <select class="filter-select" id="durationFilter">
+                        <option value="">Cualquier duración</option>
+                        <option value="short">Menos de 3 min</option>
+                        <option value="medium">3-6 min</option>
+                        <option value="long">Más de 6 min</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Año:</label>
+                    <select class="filter-select" id="yearFilter">
+                        <option value="">Cualquier año</option>
+                        <option value="2020s">2020s</option>
+                        <option value="2010s">2010s</option>
+                        <option value="2000s">2000s</option>
+                        <option value="1990s">1990s</option>
+                        <option value="1980s">1980s</option>
+                        <option value="1970s">1970s</option>
+                        <option value="1960s">1960s</option>
+                        <option value="before">Antes de 1960</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Ordenar por:</label>
+                    <select class="filter-select" id="sortFilter">
+                        <option value="relevance">Relevancia</option>
+                        <option value="popularity">Popularidad</option>
+                        <option value="newest">Más reciente</option>
+                        <option value="oldest">Más antiguo</option>
+                        <option value="alphabetical">A-Z</option>
+                        <option value="duration">Duración</option>
+                    </select>
+                </div>
+
+                <button class="clear-filters-btn" id="clearFiltersBtn">
+                    <i class="fas fa-times"></i>
+                    <span>Limpiar filtros</span>
                 </button>
             </div>
-
-                        <!-- Filtros Adicionales -->
-                        <div class="additional-filters">
-                            <div class="filter-group">
-                                <label class="filter-label">Género:</label>
-                                <select class="filter-select" id="genreFilter">
-                                    <option value="">Todos los géneros</option>
-                                    <option value="rock">Rock</option>
-                                    <option value="pop">Pop</option>
-                                    <option value="jazz">Jazz</option>
-                                    <option value="classical">Clásica</option>
-                                    <option value="electronic">Electrónica</option>
-                                    <option value="hip-hop">Hip Hop</option>
-                                    <option value="country">Country</option>
-                                    <option value="reggae">Reggae</option>
-                                </select>
-                            </div>
-            
-                            <div class="filter-group">
-                                <label class="filter-label">Duración:</label>
-                                <select class="filter-select" id="durationFilter">
-                                    <option value="">Cualquier duración</option>
-                                    <option value="short">Menos de 3 min</option>
-                                    <option value="medium">3-6 min</option>
-                                    <option value="long">Más de 6 min</option>
-                                </select>
-                            </div>
-            
-                            <div class="filter-group">
-                                <label class="filter-label">Año:</label>
-                                <select class="filter-select" id="yearFilter">
-                                    <option value="">Cualquier año</option>
-                                    <option value="2020s">2020s</option>
-                                    <option value="2010s">2010s</option>
-                                    <option value="2000s">2000s</option>
-                                    <option value="1990s">1990s</option>
-                                    <option value="1980s">1980s</option>
-                                    <option value="1970s">1970s</option>
-                                    <option value="1960s">1960s</option>
-                                    <option value="before">Antes de 1960</option>
-                                </select>
-                            </div>
-            
-                            <div class="filter-group">
-                                <label class="filter-label">Ordenar por:</label>
-                                <select class="filter-select" id="sortFilter">
-                                    <option value="relevance">Relevancia</option>
-                                    <option value="popularity">Popularidad</option>
-                                    <option value="newest">Más reciente</option>
-                                    <option value="oldest">Más antiguo</option>
-                                    <option value="alphabetical">A-Z</option>
-                                    <option value="duration">Duración</option>
-                                </select>
-                            </div>
-            
-                            <button class="clear-filters-btn" id="clearFiltersBtn">
-                                <i class="fas fa-times"></i>
-                                <span>Limpiar filtros</span>
-                            </button>
-                        </div>
 
             <!-- Resultados -->
             <div class="search-results-content">
@@ -1043,21 +1032,16 @@
             }
             
             // Funcionalidad de filtros
-            const filterButtons = document.querySelectorAll('.filter-btn');
+            const typeFilter = document.getElementById('typeFilter');
             const resultSections = document.querySelectorAll('.results-section');
             
-            filterButtons.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Remover clase active de todos los botones
-                    filterButtons.forEach(b => b.classList.remove('active'));
-                    // Agregar clase active al botón clickeado
-                    this.classList.add('active');
-                    
-                    const filter = this.getAttribute('data-filter');
+            if (typeFilter) {
+                typeFilter.addEventListener('change', function() {
+                    const filter = this.value;
                     
                     // Mostrar/ocultar secciones según el filtro
                     resultSections.forEach(section => {
-                        if (filter === 'all') {
+                        if (filter === '' || filter === 'all') {
                             section.style.display = 'block';
                         } else {
                             const sectionId = section.id.replace('-results', '');
@@ -1069,7 +1053,7 @@
                         }
                     });
                 });
-            });
+            }
 
 
             // Funcionalidad del panel lateral
