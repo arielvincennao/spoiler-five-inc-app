@@ -72,12 +72,11 @@ function applyPlayerState() {
     }
 }
 
-// Función para verificar que ambos reproductores estén sincronizados
+// Verificar que ambos reproductores estén sincronizados
 function syncPlayers() {
     const players = document.querySelectorAll('.player');
     if (players.length > 1) {
         console.log('Se detectaron múltiples reproductores, sincronizando...');
-        // Aplicar el mismo estado a todos los reproductores
         players.forEach(player => {
             const playPauseBtn = player.querySelector('.play-pause-btn');
             const playerDetails = player.querySelector('.player-details');
@@ -205,17 +204,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Menús contextuales
+    // Menús contextuales - DESHABILITADOS para index.html
     const contextMenuButtons = document.querySelectorAll('.context-menu-btn');
     contextMenuButtons.forEach(btn => {
         btn.addEventListener('click', function(e) {
+            e.preventDefault();
             e.stopPropagation();
             
-            // Verificar si es el menú contextual de favorites.html o playlist-details.html
-            if (window.location.pathname.includes('favorites.html') || window.location.pathname.includes('playlist-details.html')) {
+            // Verificar si estamos en index.html - deshabilitar funcionalidad
+            if (window.location.pathname.includes('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
+                console.log('Menú contextual clickeado pero funcionalidad deshabilitada en index.html');
+                return;
+            }
+            
+            // Verificar si es el menú contextual de favorites.html, playlist-details.html o my-playlist.html
+            if (window.location.pathname.includes('favorites.html') || window.location.pathname.includes('playlist-details.html') || window.location.pathname.includes('my-playlist.html')) {
                 const songId = this.getAttribute('data-song-id');
                 if (songId) {
-                    // Usar nuestro menú contextual
+                    // Usar nuestro menú contextual global si existe
                     currentSongId = songId;
                     const contextMenu = document.getElementById('contextMenu');
                     if (contextMenu) {
@@ -239,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
             
-            // Lógica original para otros menús contextuales
+            // Lógica para menús contextuales locales (funciona en todas las páginas)
             const menu = this.nextElementSibling;
             if (menu && menu.classList.contains('context-menu')) {
                 // Cerrar otros menús
@@ -1458,16 +1464,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         ratingSubmitBtn.addEventListener('click', function() {
             if (currentRating > 0) {
-                // Simular envío de calificación
                 this.innerHTML = '<i class="fas fa-check"></i> Calificación enviada';
                 this.style.background = '#45b7b8';
                 this.disabled = true;
-                
-                // Mostrar mensaje de agradecimiento
+
                 ratingText.textContent = `¡Gracias por tu calificación de ${currentRating} estrellas!`;
                 ratingText.style.color = '#2a9d8a';
-                
-                // Efecto visual
+            
                 this.style.transform = 'scale(1.05)';
                 setTimeout(() => {
                     this.style.transform = 'scale(1)';

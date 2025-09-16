@@ -43,6 +43,14 @@
         </div>
         
         <div class="sidebar-content">
+            <!-- Búsqueda en Biblioteca -->
+            <div class="library-search">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="librarySearchInput" class="library-search-bar" placeholder="Buscar en tu biblioteca">
+                </div>
+            </div>
+
             <!-- Filtros de Biblioteca -->
             <div class="library-filters">
                 <div class="filter-group">
@@ -517,7 +525,7 @@
                 <div class="playlist-info">
                     <div class="playlist-type">Playlist</div>
                     <h1 class="playlist-title">Mi Playlist Personal</h1>
-                    <p class="playlist-description">Por AC/DC, Pink Floyd, Led Zeppelin y más...</p>
+                    <p class="playlist-description">Playlist para programar como un pro 💻</p>
                     <div class="playlist-meta">
                         <span class="playlist-creator">Creada por Ariel Vincennao • 2025</span>
                         <span class="playlist-stats">• 8 canciones • 2h 15min • 1.2M visualizaciones</span>
@@ -536,8 +544,8 @@
                         <button class="play-btn-large">
                             <i class="fas fa-play"></i>
                         </button>
-                        <button class="action-btn-large">
-                            <i class="fas fa-heart"></i>
+                        <button class="action-btn-large" title="Invitar colaboradores">
+                            <i class="fas fa-user-plus"></i>
                         </button>
                         <button class="action-btn-large">
                             <i class="fas fa-share"></i>
@@ -548,20 +556,28 @@
                             </button>
                             <div class="context-menu">
                                 <button class="context-menu-item">
+                                    <i class="fas fa-user-plus"></i>
+                                    <span>Invitar colaborador</span>
+                                </button>
+                                <button class="context-menu-item">
+                                    <i class="fas fa-share"></i>
+                                    <span>Compartir</span>
+                                </button>
+                                <button class="context-menu-item">
                                     <i class="fas fa-edit"></i>
-                                    <span>Editar playlist</span>
+                                    <span>Editar datos</span>
                                 </button>
                                 <button class="context-menu-item">
                                     <i class="fas fa-plus"></i>
                                     <span>Agregar canciones</span>
                                 </button>
-                                <button class="context-menu-item">
-                                    <i class="fas fa-download"></i>
-                                    <span>Descargar</span>
-                                </button>
-                                <button class="context-menu-item delete-option">
+                                <button class="context-menu-item danger">
                                     <i class="fas fa-trash"></i>
                                     <span>Eliminar playlist</span>
+                                </button>
+                                <button class="context-menu-item">
+                                    <i class="fas fa-flag"></i>
+                                    <span>Reportar un problema</span>
                                 </button>
                             </div>
                         </div>
@@ -575,22 +591,20 @@
             <div class="songs-header">
                 <h2>Canciones</h2>
                 <div class="songs-controls">
-                    <button class="shuffle-btn">
-                        <i class="fas fa-random"></i>
-                        <span>Aleatorio</span>
-                    </button>
-                    <button class="edit-playlist-btn">
-                        <i class="fas fa-edit"></i>
-                        <span>Editar</span>
-                    </button>
-                    <button class="delete-playlist-btn">
-                        <i class="fas fa-trash"></i>
-                        <span>Eliminar</span>
-                    </button>
                 </div>
             </div>
             
             <div class="songs-list">
+                <!-- Encabezado de la tabla -->
+                <div class="song-header">
+                    <div class="song-header-number">#</div>
+                    <div class="song-header-info">TÍTULO</div>
+                    <div class="song-header-album">ÁLBUM</div>
+                    <div class="song-header-date">FECHA AGREGADA</div>
+                    <div class="song-header-duration">DURACIÓN</div>
+                    <div class="song-header-actions"></div>
+                </div>
+                
                 <!-- Canción 1 -->
                 <div class="song-item">
                     <div class="song-number">1</div>
@@ -603,16 +617,15 @@
                             <p class="song-artist">AC/DC</p>
                         </div>
                     </div>
+                    <div class="song-album">The Razors Edge</div>
+                    <div class="song-date">Hace 2 días</div>
                     <div class="song-duration">4:52</div>
                     <div class="song-actions">
-                        <button class="song-action-btn" title="Agregar a favoritos">
-                            <i class="fas fa-heart"></i>
+                        <button class="song-action-btn" title="Agregar a Mi Biblioteca">
+                            <i class="fas fa-plus"></i>
                         </button>
-                        <button class="song-action-btn" title="Más opciones">
-                            <i class="fas fa-ellipsis-v"></i>
-                        </button>
-                        <button class="song-remove-btn" title="Eliminar de playlist">
-                            <i class="fas fa-times"></i>
+                        <button class="song-action-btn context-menu-btn" data-song-id="1">
+                            <i class="fas fa-ellipsis-h"></i>
                         </button>
                     </div>
                 </div>
@@ -629,16 +642,15 @@
                             <p class="song-artist">Pink Floyd</p>
                         </div>
                     </div>
+                    <div class="song-album">The Wall</div>
+                    <div class="song-date">Hace 1 semana</div>
                     <div class="song-duration">3:59</div>
                     <div class="song-actions">
-                        <button class="song-action-btn" title="Agregar a favoritos">
-                            <i class="fas fa-heart"></i>
+                        <button class="song-action-btn" title="Agregar a Mi Biblioteca">
+                            <i class="fas fa-plus"></i>
                         </button>
-                        <button class="song-action-btn" title="Más opciones">
-                            <i class="fas fa-ellipsis-v"></i>
-                        </button>
-                        <button class="song-remove-btn" title="Eliminar de playlist">
-                            <i class="fas fa-times"></i>
+                        <button class="song-action-btn context-menu-btn" data-song-id="2">
+                            <i class="fas fa-ellipsis-h"></i>
                         </button>
                     </div>
                 </div>
@@ -655,16 +667,15 @@
                             <p class="song-artist">Led Zeppelin</p>
                         </div>
                     </div>
+                    <div class="song-album">Led Zeppelin IV</div>
+                    <div class="song-date">Hace 3 días</div>
                     <div class="song-duration">8:02</div>
                     <div class="song-actions">
-                        <button class="song-action-btn" title="Agregar a favoritos">
-                            <i class="fas fa-heart"></i>
+                        <button class="song-action-btn" title="Agregar a Mi Biblioteca">
+                            <i class="fas fa-plus"></i>
                         </button>
-                        <button class="song-action-btn" title="Más opciones">
-                            <i class="fas fa-ellipsis-v"></i>
-                        </button>
-                        <button class="song-remove-btn" title="Eliminar de playlist">
-                            <i class="fas fa-times"></i>
+                        <button class="song-action-btn context-menu-btn" data-song-id="3">
+                            <i class="fas fa-ellipsis-h"></i>
                         </button>
                     </div>
                 </div>
@@ -681,16 +692,15 @@
                             <p class="song-artist">Queen</p>
                         </div>
                     </div>
+                    <div class="song-album">A Night at the Opera</div>
+                    <div class="song-date">Hace 5 días</div>
                     <div class="song-duration">5:55</div>
                     <div class="song-actions">
-                        <button class="song-action-btn" title="Agregar a favoritos">
-                            <i class="fas fa-heart"></i>
+                        <button class="song-action-btn" title="Agregar a Mi Biblioteca">
+                            <i class="fas fa-plus"></i>
                         </button>
-                        <button class="song-action-btn" title="Más opciones">
-                            <i class="fas fa-ellipsis-v"></i>
-                        </button>
-                        <button class="song-remove-btn" title="Eliminar de playlist">
-                            <i class="fas fa-times"></i>
+                        <button class="song-action-btn context-menu-btn" data-song-id="4">
+                            <i class="fas fa-ellipsis-h"></i>
                         </button>
                     </div>
                 </div>
@@ -707,16 +717,15 @@
                             <p class="song-artist">Eagles</p>
                         </div>
                     </div>
+                    <div class="song-album">Hotel California</div>
+                    <div class="song-date">Hace 1 semana</div>
                     <div class="song-duration">6:30</div>
                     <div class="song-actions">
-                        <button class="song-action-btn" title="Agregar a favoritos">
-                            <i class="fas fa-heart"></i>
+                        <button class="song-action-btn" title="Agregar a Mi Biblioteca">
+                            <i class="fas fa-plus"></i>
                         </button>
-                        <button class="song-action-btn" title="Más opciones">
-                            <i class="fas fa-ellipsis-v"></i>
-                        </button>
-                        <button class="song-remove-btn" title="Eliminar de playlist">
-                            <i class="fas fa-times"></i>
+                        <button class="song-action-btn context-menu-btn" data-song-id="5">
+                            <i class="fas fa-ellipsis-h"></i>
                         </button>
                     </div>
                 </div>
@@ -733,16 +742,15 @@
                             <p class="song-artist">Guns N' Roses</p>
                         </div>
                     </div>
+                    <div class="song-album">Appetite for Destruction</div>
+                    <div class="song-date">Hace 2 semanas</div>
                     <div class="song-duration">5:56</div>
                     <div class="song-actions">
-                        <button class="song-action-btn" title="Agregar a favoritos">
-                            <i class="fas fa-heart"></i>
+                        <button class="song-action-btn" title="Agregar a Mi Biblioteca">
+                            <i class="fas fa-plus"></i>
                         </button>
-                        <button class="song-action-btn" title="Más opciones">
-                            <i class="fas fa-ellipsis-v"></i>
-                        </button>
-                        <button class="song-remove-btn" title="Eliminar de playlist">
-                            <i class="fas fa-times"></i>
+                        <button class="song-action-btn context-menu-btn" data-song-id="6">
+                            <i class="fas fa-ellipsis-h"></i>
                         </button>
                     </div>
                 </div>
@@ -759,16 +767,15 @@
                             <p class="song-artist">Journey</p>
                         </div>
                     </div>
+                    <div class="song-album">Escape</div>
+                    <div class="song-date">Hace 4 días</div>
                     <div class="song-duration">4:10</div>
                     <div class="song-actions">
-                        <button class="song-action-btn" title="Agregar a favoritos">
-                            <i class="fas fa-heart"></i>
+                        <button class="song-action-btn" title="Agregar a Mi Biblioteca">
+                            <i class="fas fa-plus"></i>
                         </button>
-                        <button class="song-action-btn" title="Más opciones">
-                            <i class="fas fa-ellipsis-v"></i>
-                        </button>
-                        <button class="song-remove-btn" title="Eliminar de playlist">
-                            <i class="fas fa-times"></i>
+                        <button class="song-action-btn context-menu-btn" data-song-id="7">
+                            <i class="fas fa-ellipsis-h"></i>
                         </button>
                     </div>
                 </div>
@@ -785,16 +792,15 @@
                             <p class="song-artist">Bon Jovi</p>
                         </div>
                     </div>
+                    <div class="song-album">Slippery When Wet</div>
+                    <div class="song-date">Hace 6 días</div>
                     <div class="song-duration">4:09</div>
                     <div class="song-actions">
-                        <button class="song-action-btn" title="Agregar a favoritos">
-                            <i class="fas fa-heart"></i>
+                        <button class="song-action-btn" title="Agregar a Mi Biblioteca">
+                            <i class="fas fa-plus"></i>
                         </button>
-                        <button class="song-action-btn" title="Más opciones">
-                            <i class="fas fa-ellipsis-v"></i>
-                        </button>
-                        <button class="song-remove-btn" title="Eliminar de playlist">
-                            <i class="fas fa-times"></i>
+                        <button class="song-action-btn context-menu-btn" data-song-id="8">
+                            <i class="fas fa-ellipsis-h"></i>
                         </button>
                     </div>
                 </div>
@@ -827,9 +833,6 @@
                 </div>
             </div>
             <div class="control-buttons">
-                <button class="control-btn">
-                    <i class="fas fa-random"></i>
-                </button>
                 <button class="control-btn">
                     <i class="fas fa-step-backward"></i>
                 </button>
@@ -1016,7 +1019,98 @@
                     numberElement.textContent = index + 1;
                 });
             }
+
+            // Funcionalidad específica para menús contextuales de playlist
+            function initContextMenus() {
+                const playlistContextButtons = document.querySelectorAll('.context-menu-btn');
+                console.log('Botones encontrados:', playlistContextButtons.length);
+                
+                playlistContextButtons.forEach((btn, index) => {
+                    console.log(`Configurando botón ${index + 1}:`, btn);
+                    
+                    // Remover listeners existentes
+                    btn.removeEventListener('click', handleContextMenuClick);
+                    
+                    // Agregar nuevo listener
+                    btn.addEventListener('click', handleContextMenuClick);
+                });
+            }
+            
+            function handleContextMenuClick(e) {
+                console.log('Botón clickeado:', this);
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Buscar el menú contextual asociado
+                const container = this.closest('.context-menu-container');
+                const menu = container ? container.querySelector('.context-menu') : null;
+                
+                console.log('Container:', container);
+                console.log('Menú:', menu);
+                
+                if (menu) {
+                    console.log('Menú encontrado, toggleando...');
+                    
+                    // Cerrar otros menús
+                    document.querySelectorAll('.context-menu').forEach(otherMenu => {
+                        if (otherMenu !== menu) {
+                            otherMenu.classList.remove('show');
+                            otherMenu.style.opacity = '0';
+                            otherMenu.style.visibility = 'hidden';
+                            otherMenu.style.transform = 'translateY(10px)';
+                        }
+                    });
+                    
+                    // Toggle del menú actual
+                    const isVisible = menu.classList.contains('show');
+                    if (isVisible) {
+                        menu.classList.remove('show');
+                        menu.style.opacity = '0';
+                        menu.style.visibility = 'hidden';
+                        menu.style.transform = 'translateY(10px)';
+                    } else {
+                        menu.classList.add('show');
+                        menu.style.opacity = '1';
+                        menu.style.visibility = 'visible';
+                        menu.style.transform = 'translateY(0)';
+                    }
+                    console.log('Clase show aplicada:', menu.classList.contains('show'));
+                } else {
+                    console.log('No se encontró menú contextual');
+                }
+            }
+            
+            // Inicializar menús contextuales
+            initContextMenus();
+
+            // Cerrar menús al hacer clic fuera
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.context-menu-container') && !e.target.closest('.context-menu-btn') && !e.target.closest('.context-menu')) {
+                    document.querySelectorAll('.context-menu').forEach(menu => {
+                        menu.style.opacity = '0';
+                        menu.style.visibility = 'hidden';
+                        menu.style.transform = 'translateY(10px)';
+                        menu.classList.remove('show');
+                    });
+                }
+            });
         });
     </script>
+
+    <!-- Menú Contextual Global -->
+    <div class="context-menu" id="contextMenu">
+        <div class="context-menu-item" onclick="addToFavorites()">
+            <i class="fas fa-plus"></i>
+            <span>Agregar a Canciones que te gustan</span>
+        </div>
+        <div class="context-menu-item" onclick="shareSong()">
+            <i class="fas fa-share"></i>
+            <span>Compartir</span>
+        </div>
+        <div class="context-menu-item" onclick="downloadSong()">
+            <i class="fas fa-download"></i>
+            <span>Descargar</span>
+        </div>
+    </div>
 </body>
 </html>

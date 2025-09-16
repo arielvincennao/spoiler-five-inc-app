@@ -43,6 +43,14 @@
         </div>
         
         <div class="sidebar-content">
+            <!-- Búsqueda en Biblioteca -->
+            <div class="library-search">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="librarySearchInput" class="library-search-bar" placeholder="Buscar en tu biblioteca">
+                </div>
+            </div>
+
             <!-- Filtros de Biblioteca -->
             <div class="library-filters">
                 <div class="filter-group">
@@ -531,9 +539,9 @@
                 <div class="playlist-info">
                     <div class="playlist-type">Playlist</div>
                     <h1 class="playlist-title">Hora de Gym</h1>
-                    <p class="playlist-description">Por AC/DC, Pink Floyd, Led Zeppelin y más...</p>
+                    <p class="playlist-description">Música para entrenar y mantener la motivación alta 💪</p>
                     <div class="playlist-meta">
-                        <span class="playlist-creator">Creada por Juan Cruz López • 2025</span>
+                        <span class="playlist-creator">Por Juan Cruz López • 2025</span>
                         <span class="playlist-stats">• 5 canciones • 1h 45min • 2.3M visualizaciones</span>
                     </div>
                     <div class="playlist-rating">
@@ -562,12 +570,20 @@
                             </button>
                             <div class="context-menu">
                                 <button class="context-menu-item">
-                                    <i class="fas fa-download"></i>
-                                    <span>Descargar</span>
+                                    <i class="fas fa-plus"></i>
+                                    <span>Agregar a mi biblioteca</span>
+                                </button>
+                                <button class="context-menu-item">
+                                    <i class="fas fa-share"></i>
+                                    <span>Compartir</span>
+                                </button>
+                                <button class="context-menu-item">
+                                    <i class="fas fa-user"></i>
+                                    <span>Sobre el autor</span>
                                 </button>
                                 <button class="context-menu-item">
                                     <i class="fas fa-flag"></i>
-                                    <span>Reportar</span>
+                                    <span>Reportar un problema</span>
                                 </button>   
                             </div>
                         </div>
@@ -581,10 +597,6 @@
             <div class="songs-header">
                 <h2>Canciones</h2>
                 <div class="songs-controls">
-                    <button class="shuffle-btn">
-                        <i class="fas fa-random"></i>
-                        <span>Aleatorio</span>
-                    </button>
                 </div>
             </div>
             
@@ -805,7 +817,7 @@
                             <span class="comment-author">Carlos Ruiz</span>
                             <span class="comment-time">hace 5 horas</span>
                         </div>
-                        <p class="comment-text">Stairway to Heaven es una obra maestra, pero 8 minutos es mucho para el gym. Aún así, gran playlist!</p>
+                        <p class="comment-text">Stairway to Heaven es una obra maestra, gran playlist!</p>
                         <div class="comment-actions">
                             <button class="comment-action-btn">
                                 <i class="fas fa-thumbs-up"></i>
@@ -828,7 +840,7 @@
                             <span class="comment-author">Ana Martínez</span>
                             <span class="comment-time">hace 1 día</span>
                         </div>
-                        <p class="comment-text">Perfecta para mis rutinas de pesas. La combinación de rock clásico es ideal para mantener la motivación alta 🔥</p>
+                        <p class="comment-text">La combinación de rock clásico es ideal para mantener la motivación alta 🔥</p>
                         <div class="comment-actions">
                             <button class="comment-action-btn">
                                 <i class="fas fa-thumbs-up"></i>
@@ -874,7 +886,7 @@
                             <span class="comment-author">Sofia López</span>
                             <span class="comment-time">hace 3 días</span>
                         </div>
-                        <p class="comment-text">Eye of the Tiger me da toda la energía que necesito para terminar mi rutina. ¡Playlist salvada! 🐅</p>
+                        <p class="comment-text">Eye of the Tiger me da toda la energía que necesito para terminar mi rutina.</p>
                         <div class="comment-actions">
                             <button class="comment-action-btn">
                                 <i class="fas fa-thumbs-up"></i>
@@ -1047,9 +1059,6 @@
             </div>
             <div class="control-buttons">
                 <button class="control-btn">
-                    <i class="fas fa-random"></i>
-                </button>
-                <button class="control-btn">
                     <i class="fas fa-step-backward"></i>
                 </button>
                 <button class="play-pause-btn">
@@ -1091,5 +1100,83 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // Funcionalidad específica para menús contextuales de playlist
+        document.addEventListener('DOMContentLoaded', function() {
+            function initContextMenus() {
+                const playlistContextButtons = document.querySelectorAll('.context-menu-btn');
+                console.log('Botones encontrados en playlist-details:', playlistContextButtons.length);
+                
+                playlistContextButtons.forEach((btn, index) => {
+                    console.log(`Configurando botón ${index + 1}:`, btn);
+                    
+                    // Remover listeners existentes
+                    btn.removeEventListener('click', handleContextMenuClick);
+                    
+                    // Agregar nuevo listener
+                    btn.addEventListener('click', handleContextMenuClick);
+                });
+            }
+            
+            function handleContextMenuClick(e) {
+                console.log('Botón clickeado:', this);
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Buscar el menú contextual asociado
+                const container = this.closest('.context-menu-container');
+                const menu = container ? container.querySelector('.context-menu') : null;
+                
+                console.log('Container:', container);
+                console.log('Menú:', menu);
+                
+                if (menu) {
+                    console.log('Menú encontrado, toggleando...');
+                    
+                    // Cerrar otros menús
+                    document.querySelectorAll('.context-menu').forEach(otherMenu => {
+                        if (otherMenu !== menu) {
+                            otherMenu.classList.remove('show');
+                            otherMenu.style.opacity = '0';
+                            otherMenu.style.visibility = 'hidden';
+                            otherMenu.style.transform = 'translateY(10px)';
+                        }
+                    });
+                    
+                    // Toggle del menú actual
+                    const isVisible = menu.classList.contains('show');
+                    if (isVisible) {
+                        menu.classList.remove('show');
+                        menu.style.opacity = '0';
+                        menu.style.visibility = 'hidden';
+                        menu.style.transform = 'translateY(10px)';
+                    } else {
+                        menu.classList.add('show');
+                        menu.style.opacity = '1';
+                        menu.style.visibility = 'visible';
+                        menu.style.transform = 'translateY(0)';
+                    }
+                    console.log('Clase show aplicada:', menu.classList.contains('show'));
+                } else {
+                    console.log('No se encontró menú contextual');
+                }
+            }
+            
+            // Inicializar menús contextuales
+            initContextMenus();
+
+            // Cerrar menús al hacer clic fuera
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.context-menu-container') && !e.target.closest('.context-menu-btn') && !e.target.closest('.context-menu')) {
+                    document.querySelectorAll('.context-menu').forEach(menu => {
+                        menu.classList.remove('show');
+                        menu.style.opacity = '0';
+                        menu.style.visibility = 'hidden';
+                        menu.style.transform = 'translateY(10px)';
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

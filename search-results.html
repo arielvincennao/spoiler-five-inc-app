@@ -43,6 +43,14 @@
         </div>
         
         <div class="sidebar-content">
+            <!-- Búsqueda en Biblioteca -->
+            <div class="library-search">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="librarySearchInput" class="library-search-bar" placeholder="Buscar en tu biblioteca">
+                </div>
+            </div>
+
             <!-- Filtros de Biblioteca -->
             <div class="library-filters">
                 <div class="filter-group">
@@ -529,76 +537,46 @@
             </div>
 
 
-            <!-- Filtros Adicionales -->
-            <div class="additional-filters">
-                <div class="filter-group">
-                    <label class="filter-label">Tipo:</label>
-                    <select class="filter-select" id="typeFilter">
-                        <option value="">Todos los tipos</option>
-                        <option value="songs">Canciones</option>
-                        <option value="playlists">Playlists</option>
-                        <option value="albums">Álbumes</option>
-                        <option value="podcasts">Podcasts</option>
-                        <option value="artists">Artistas</option>
-                    </select>
+            <!-- Filtros Rápidos con Chips -->
+            <div class="quick-filters">
+                <div class="filter-chips">
+                    <button class="filter-chip active" data-filter="all">
+                        <i class="fas fa-music"></i>
+                        <span>Todos</span>
+                    </button>
+                    <button class="filter-chip" data-filter="rock">
+                        <i class="fas fa-guitar"></i>
+                        <span>Rock</span>
+                    </button>
+                    <button class="filter-chip" data-filter="pop">
+                        <i class="fas fa-star"></i>
+                        <span>Pop</span>
+                    </button>
+                    <button class="filter-chip" data-filter="trap">
+                        <i class="fas fa-fire"></i>
+                        <span>Trap</span>
+                    </button>
+                    <button class="filter-chip" data-filter="latest">
+                        <i class="fas fa-clock"></i>
+                        <span>Lo último</span>
+                    </button>
+                    <button class="filter-chip" data-filter="trending">
+                        <i class="fas fa-trending-up"></i>
+                        <span>Tendencias</span>
+                    </button>
                 </div>
-
-                <div class="filter-group">
-                    <label class="filter-label">Género:</label>
-                    <select class="filter-select" id="genreFilter">
-                        <option value="">Todos los géneros</option>
-                        <option value="rock">Rock</option>
-                        <option value="pop">Pop</option>
-                        <option value="jazz">Jazz</option>
-                        <option value="classical">Clásica</option>
-                        <option value="electronic">Electrónica</option>
-                        <option value="hip-hop">Hip Hop</option>
-                        <option value="country">Country</option>
-                        <option value="reggae">Reggae</option>
-                    </select>
-                </div>
-
-                <div class="filter-group">
-                    <label class="filter-label">Duración:</label>
-                    <select class="filter-select" id="durationFilter">
-                        <option value="">Cualquier duración</option>
-                        <option value="short">Menos de 3 min</option>
-                        <option value="medium">3-6 min</option>
-                        <option value="long">Más de 6 min</option>
-                    </select>
-                </div>
-
-                <div class="filter-group">
-                    <label class="filter-label">Año:</label>
-                    <select class="filter-select" id="yearFilter">
-                        <option value="">Cualquier año</option>
-                        <option value="2020s">2020s</option>
-                        <option value="2010s">2010s</option>
-                        <option value="2000s">2000s</option>
-                        <option value="1990s">1990s</option>
-                        <option value="1980s">1980s</option>
-                        <option value="1970s">1970s</option>
-                        <option value="1960s">1960s</option>
-                        <option value="before">Antes de 1960</option>
-                    </select>
-                </div>
-
-                <div class="filter-group">
-                    <label class="filter-label">Ordenar por:</label>
-                    <select class="filter-select" id="sortFilter">
-                        <option value="relevance">Relevancia</option>
+                
+                <div class="sort-options">
+                    <label class="sort-label">Ordenar:</label>
+                    <select class="sort-select" id="sortFilter">
                         <option value="popularity">Popularidad</option>
+                        <option value="relevance">Relevancia</option>
                         <option value="newest">Más reciente</option>
                         <option value="oldest">Más antiguo</option>
                         <option value="alphabetical">A-Z</option>
                         <option value="duration">Duración</option>
                     </select>
                 </div>
-
-                <button class="clear-filters-btn" id="clearFiltersBtn">
-                    <i class="fas fa-times"></i>
-                    <span>Limpiar filtros</span>
-                </button>
             </div>
 
             <!-- Resultados -->
@@ -1031,28 +1009,42 @@
                 resultsCount.textContent = `Encontrados ${totalResults} resultados`;
             }
             
-            // Funcionalidad de filtros
-            const typeFilter = document.getElementById('typeFilter');
+            // Funcionalidad de chips de filtros - DESHABILITADA
+            const filterChips = document.querySelectorAll('.filter-chip');
             const resultSections = document.querySelectorAll('.results-section');
             
-            if (typeFilter) {
-                typeFilter.addEventListener('change', function() {
-                    const filter = this.value;
+            filterChips.forEach(chip => {
+                chip.addEventListener('click', function(e) {
+                    // Prevenir cualquier acción
+                    e.preventDefault();
+                    e.stopPropagation();
                     
-                    // Mostrar/ocultar secciones según el filtro
-                    resultSections.forEach(section => {
-                        if (filter === '' || filter === 'all') {
-                            section.style.display = 'block';
-                        } else {
-                            const sectionId = section.id.replace('-results', '');
-                            if (sectionId === filter) {
-                                section.style.display = 'block';
-                            } else {
-                                section.style.display = 'none';
-                            }
-                        }
-                    });
+                    // No hacer nada - funcionalidad deshabilitada
+                    console.log('Chip clickeado pero funcionalidad deshabilitada:', this.getAttribute('data-filter'));
                 });
+            });
+            
+            // Funcionalidad de ordenamiento - DESHABILITADA
+            const sortFilter = document.getElementById('sortFilter');
+            if (sortFilter) {
+                sortFilter.addEventListener('change', function(e) {
+                    // Prevenir cualquier acción
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // No hacer nada - funcionalidad deshabilitada
+                    console.log('Select de ordenamiento clickeado pero funcionalidad deshabilitada:', this.value);
+                });
+            }
+            
+            // Función para actualizar contador de resultados
+            function updateResultsCount() {
+                const resultsCount = document.getElementById('resultsCount');
+                if (resultsCount) {
+                    const visibleResults = document.querySelectorAll('.results-section[style*="block"], .results-section:not([style])').length;
+                    const totalResults = document.querySelectorAll('.song-item, .content-card').length;
+                    resultsCount.textContent = `Encontrados ${totalResults} resultados`;
+                }
             }
 
 
