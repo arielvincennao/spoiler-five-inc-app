@@ -38,7 +38,7 @@ function applyPlayerState() {
                 if (playerState.isPlaying) {
                     icon.classList.remove('fa-play');
                     icon.classList.add('fa-pause');
-                    playPauseBtn.style.background = '#1db954';
+                    playPauseBtn.style.background = '#2a9d8a';
                 } else {
                     icon.classList.remove('fa-pause');
                     icon.classList.add('fa-play');
@@ -90,7 +90,7 @@ function syncPlayers() {
                 if (playerState.isPlaying) {
                     icon.classList.remove('fa-play');
                     icon.classList.add('fa-pause');
-                    playPauseBtn.style.background = '#1db954';
+                    playPauseBtn.style.background = '#2a9d8a';
                 } else {
                     icon.classList.remove('fa-pause');
                     icon.classList.add('fa-play');
