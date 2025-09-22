@@ -3,9 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canciones que te gustan - Spoiler Five</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Ayuda y Soporte - Spoiler Five Inc.</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        /* Estilos específicos para la página de ayuda */
+        .help-container {
+            min-height: calc(100vh - 80px);
+            background: #0f0f23;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 80px;
+        }
+
+        .help-content {
+            max-width: 1200px;
+            width: 100%;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .help-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .help-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .help-logo i {
+            font-size: 32px;
+            color: #2a9d8a;
+        }
+
+        .help-logo h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2a9d8a;
+            margin: 0;
+        }
+
+        .help-subtitle {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+
+        .help-content-container {
+            background: rgba(5, 5, 15, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin: 0 auto 60px auto;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .help-section {
+            margin-bottom: 40px;
+        }
+
+        .help-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .help-section h3 {
+            color: #2a9d8a;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(42, 157, 138, 0.3);
+        }
+
+        .help-section h3 i {
+            font-size: 20px;
+        }
+
+        .help-content {
+            margin-left: 20px;
+        }
+
+        .help-content h4 {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 500;
+            margin: 25px 0 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .help-content h4:first-child {
+            margin-top: 0;
+        }
+
+        .help-content h4::before {
+            content: "•";
+            color: #2a9d8a;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .help-content p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 15px;
+            line-height: 1.7;
+            margin: 0 0 20px 0;
+            padding-left: 20px;
+        }
+
+        .help-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-text {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contact-text h3 {
+            color: #2a9d8a;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .contact-text p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .contact-email {
+            color: #2a9d8a !important;
+            font-size: 18px !important;
+            font-weight: 500 !important;
+            margin-bottom: 0 !important;
+            text-decoration: none;
+        }
+
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .help-content {
+                padding: 20px 10px;
+            }
+
+            .help-content-container {
+                padding: 25px 20px;
+            }
+
+            .help-section {
+                margin-bottom: 30px;
+            }
+
+            .help-section h3 {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+            .help-content {
+                margin-left: 10px;
+            }
+
+            .help-content h4 {
+                font-size: 16px;
+                margin: 20px 0 10px 0;
+            }
+
+            .help-content p {
+                font-size: 14px;
+                padding-left: 15px;
+            }
+
+            .contact-section {
+                padding: 30px 20px;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .help-logo h1 {
+                font-size: 24px;
+            }
+
+            .help-subtitle {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -22,7 +227,7 @@
             
             <div class="search-container">
                 <i class="fas fa-search search-icon"></i>
-                <input type="text" id="searchInput" class="search-bar" placeholder="¿Qué vas a escuchar hoy?">
+                <input type="text" class="search-bar" placeholder="¿Qué vas a escuchar hoy?">
             </div>
         </div>
         
@@ -79,7 +284,6 @@
                     </select>
                 </div>
             </div>
-
 
             <!-- Lista de Contenido -->
             <div class="sidebar-section">
@@ -179,10 +383,10 @@
                         </button>
                     </div>
 
-                    <!-- Canciones -->
-                    <div class="sidebar-item" data-type="song">
+                    <!-- Podcasts -->
+                    <div class="sidebar-item" data-type="podcast">
                         <div class="sidebar-item-icon">
-                            <i class="fas fa-music"></i>
+                            <i class="fas fa-microphone"></i>
                         </div>
                         <div class="sidebar-item-info">
                             <span class="sidebar-item-title">Música y Más</span>
@@ -194,9 +398,9 @@
                         </button>
                     </div>
                     
-                    <div class="sidebar-item" data-type="song">
+                    <div class="sidebar-item" data-type="podcast">
                         <div class="sidebar-item-icon">
-                            <i class="fas fa-music"></i>
+                            <i class="fas fa-microphone"></i>
                         </div>
                         <div class="sidebar-item-info">
                             <span class="sidebar-item-title">Rock Clásico Podcast</span>
@@ -207,8 +411,6 @@
                             <i class="fas fa-play"></i>
                         </button>
                     </div>
-
-                    <!-- Artistas -->
 
                     <!-- Más Playlists -->
                     <div class="sidebar-item" data-type="playlist">
@@ -244,82 +446,10 @@
                             <i class="fas fa-star"></i>
                         </div>
                         <div class="sidebar-item-info">
-                            <span class="sidebar-item-title">Éxitos de los 80s</span>
+                            <span class="sidebar-item-title">Favoritos del Verano</span>
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 18 canciones</span>
                         </div>
                         <div class="sidebar-item-badge playlist-badge">Playlist</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
-                    </div>
-
-                    <!-- Más Álbumes -->
-                    <div class="sidebar-item" data-type="album">
-                        <div class="sidebar-item-icon">
-                            <i class="fas fa-compact-disc"></i>
-                        </div>
-                        <div class="sidebar-item-info">
-                            <span class="sidebar-item-title">Dark Side of the Moon</span>
-                            <span class="sidebar-item-subtitle">Pink Floyd • 9 canciones</span>
-                        </div>
-                        <div class="sidebar-item-badge album-badge">Album</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
-                    </div>
-                    
-                    <div class="sidebar-item" data-type="album">
-                        <div class="sidebar-item-icon">
-                            <i class="fas fa-compact-disc"></i>
-                        </div>
-                        <div class="sidebar-item-info">
-                            <span class="sidebar-item-title">Back in Black</span>
-                            <span class="sidebar-item-subtitle">AC/DC • 10 canciones</span>
-                        </div>
-                        <div class="sidebar-item-badge album-badge">Album</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
-                    </div>
-                    
-                    <div class="sidebar-item" data-type="album">
-                        <div class="sidebar-item-icon">
-                            <i class="fas fa-compact-disc"></i>
-                        </div>
-                        <div class="sidebar-item-info">
-                            <span class="sidebar-item-title">Led Zeppelin IV</span>
-                            <span class="sidebar-item-subtitle">Led Zeppelin • 8 canciones</span>
-                        </div>
-                        <div class="sidebar-item-badge album-badge">Album</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
-                    </div>
-
-                    <!-- Más Podcasts -->
-                    <div class="sidebar-item" data-type="podcast">
-                        <div class="sidebar-item-icon">
-                            <i class="fas fa-microphone"></i>
-                        </div>
-                        <div class="sidebar-item-info">
-                            <span class="sidebar-item-title">Historia del Rock</span>
-                            <span class="sidebar-item-subtitle">Ariel Vincennao • 12 canciones</span>
-                        </div>
-                        <div class="sidebar-item-badge podcast-badge">Podcast</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
-                    </div>
-                    
-                    <div class="sidebar-item" data-type="podcast">
-                        <div class="sidebar-item-icon">
-                            <i class="fas fa-microphone"></i>
-                        </div>
-                        <div class="sidebar-item-info">
-                            <span class="sidebar-item-title">Música Indie</span>
-                            <span class="sidebar-item-subtitle">Ariel Vincennao • 6 canciones</span>
-                        </div>
-                        <div class="sidebar-item-badge podcast-badge">Podcast</div>
                         <button class="sidebar-play-btn">
                             <i class="fas fa-play"></i>
                         </button>
@@ -329,7 +459,7 @@
         </div>
     </div>
 
-    <!-- Overlay para cerrar sidebar -->
+    <!-- Overlay para el sidebar -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
     <!-- Panel de Notificaciones -->
@@ -340,72 +470,44 @@
                 <i class="fas fa-times"></i>
             </button>
         </div>
+        
         <div class="notifications-content">
             <div class="notification-item">
                 <div class="notification-icon">
                     <i class="fas fa-music"></i>
                 </div>
-                <div class="notification-info">
-                    <h4 class="notification-title">Nueva canción</h4>
-                    <p class="notification-text">AC/DC ha lanzado "Thunderstruck (Live)"</p>
+                <div class="notification-text">
+                    <h4>Nueva canción disponible</h4>
+                    <p>Se ha agregado "Bohemian Rhapsody" a tu playlist favorita</p>
                     <span class="notification-time">Hace 2 horas</span>
                 </div>
             </div>
-
+            
             <div class="notification-item">
                 <div class="notification-icon">
                     <i class="fas fa-heart"></i>
                 </div>
-                <div class="notification-info">
-                    <h4 class="notification-title">Playlist actualizada</h4>
-                    <p class="notification-text">Tu playlist "Hora de Gym" se ha actualizado con 3 nuevas canciones</p>
+                <div class="notification-text">
+                    <h4>Playlist actualizada</h4>
+                    <p>Tu playlist "Rock Clásico" se ha actualizado con 3 nuevas canciones</p>
                     <span class="notification-time">Hace 5 horas</span>
                 </div>
             </div>
-
-            <div class="notification-item">
-                <div class="notification-icon">
-                    <i class="fas fa-user"></i>
-                </div>
-                <div class="notification-info">
-                    <h4 class="notification-title">Artista seguido</h4>
-                    <p class="notification-text">Pink Floyd ha lanzado un nuevo álbum: "The Wall (Remastered)"</p>
-                    <span class="notification-time">Ayer</span>
-                </div>
-            </div>
-
+            
             <div class="notification-item">
                 <div class="notification-icon">
                     <i class="fas fa-star"></i>
                 </div>
-                <div class="notification-info">
-                    <h4 class="notification-title">Recomendación personalizada</h4>
-                    <p class="notification-text">Basado en tu historial, te recomendamos "Bohemian Rhapsody"</p>
-                    <span class="notification-time">Hace 1 día</span>
+                <div class="notification-text">
+                    <h4>Recomendación personalizada</h4>
+                    <p>Basado en tu historial, te recomendamos "Hotel California"</p>
+                    <span class="notification-time">Ayer</span>
                 </div>
             </div>
-
-            <div class="notification-item">
-                <div class="notification-icon">
-                    <i class="fas fa-download"></i>
-                </div>
-                <div class="notification-info">
-                    <h4 class="notification-title">Descarga completada</h4>
-                    <p class="notification-text">"Stairway to Heaven" se ha descargado correctamente</p>
-                    <span class="notification-time">Hace 2 días</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="notifications-footer">
-            <button class="view-all-btn">
-                <i class="fas fa-list"></i>
-                Ver todas las notificaciones
-            </button>
         </div>
     </div>
 
-    <!-- Overlay para cerrar notificaciones -->
+    <!-- Overlay para notificaciones -->
     <div class="notifications-overlay" id="notificationsOverlay"></div>
 
     <!-- Panel de Ajustes de Usuario -->
@@ -436,6 +538,11 @@
                     <div class="settings-item">
                         <i class="fas fa-user-edit"></i>
                         <span>Perfil</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="settings-item" onclick="window.location.href='help.html'">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Ayuda</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
                     <div class="settings-item">
@@ -503,20 +610,30 @@
                     Soporte
                 </h4>
                 <div class="settings-list">
-                    <div class="settings-item">
-                        <i class="fas fa-headset"></i>
+                    <div class="settings-item" onclick="window.location.href='help.html'">
+                        <i class="fas fa-question-circle"></i>
                         <span>Ayuda</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
                     <div class="settings-item">
-                        <i class="fas fa-comment"></i>
-                        <span>Contacto</span>
+                        <i class="fas fa-question-circle"></i>
+                        <span>Centro de ayuda</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
                     <div class="settings-item">
-                        <i class="fas fa-info-circle"></i>
-                        <span>Acerca de</span>
+                        <i class="fas fa-comment"></i>
+                        <span>Contactar soporte</span>
                         <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cerrar sesión -->
+            <div class="settings-section">
+                <div class="settings-list">
+                    <div class="settings-item logout-item">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Cerrar sesión</span>
                     </div>
                 </div>
             </div>
@@ -530,133 +647,84 @@
         </div>
     </div>
 
-    <!-- Overlay para cerrar ajustes -->
+    <!-- Overlay para configuración de usuario -->
     <div class="settings-overlay" id="settingsOverlay"></div>
 
-    <!-- Contenido Principal -->
-    <main class="main-content">
-        <!-- Hero de los Favoritos -->
-        <section class="playlist-hero favorites-hero">
-            <div class="playlist-hero-content">
-                <div class="playlist-image">
-                    <i class="fas fa-heart"></i>
+    <div class="help-container">
+        <div class="help-content">
+            <!-- Header -->
+            <div class="help-header">
+                <div class="help-logo">
+                    <i class="fas fa-music"></i>
+                    <h1>Spoiler Five Inc.</h1>
                 </div>
-                <div class="playlist-info">
-                    <div class="playlist-type">Playlist</div>
-                    <h1 class="playlist-title">Canciones que te gustan</h1>
-                    <div class="playlist-meta">
-                        <span class="playlist-creator">Creada por Ariel Vincennao</span>
-                        <span class="playlist-stats">• 3 canciones • 18min</span>
-                    </div>
-                    <div class="playlist-actions">
-                        <button class="play-btn-large">
-                            <i class="fas fa-play"></i>
-                        </button>
-                    </div>
-                </div>
+                <p class="help-subtitle">Centro de Ayuda y Soporte</p>
             </div>
-        </section>
 
-        <!-- Lista de Canciones -->
-        <section class="songs-section">
-            <div class="songs-header">
-                <h2>Canciones</h2>
-                <div class="songs-controls">
-                    <button class="shuffle-btn">
-                        <i class="fas fa-random"></i>
-                        <span>Aleatorio</span>
-                    </button>
-                </div>
-            </div>
-            
-            <div class="songs-list">
-                <!-- Encabezado de la tabla -->
-                <div class="song-header">
-                    <div class="song-header-number">#</div>
-                    <div class="song-header-info">TÍTULO</div>
-                    <div class="song-header-album">ÁLBUM</div>
-                    <div class="song-header-date">FECHA AGREGADA</div>
-                    <div class="song-header-duration">DURACIÓN</div>
-                    <div class="song-header-actions"></div>
-                </div>
-                
-                <!-- Canción 1 -->
-                <div class="song-item">
-                    <div class="song-number">1</div>
-                    <div class="song-info">
-                        <div class="song-image">
-                            <i class="fas fa-music"></i>
-                        </div>
-                        <div class="song-details">
-                            <h3 class="song-title">Thunderstruck</h3>
-                            <p class="song-artist">AC/DC</p>
-                        </div>
-                    </div>
-                    <div class="song-album">The Razors Edge</div>
-                    <div class="song-date">15 de enero, 2024</div>
-                    <div class="song-duration">4:52</div>
-                    <div class="song-actions">
-                        <button class="song-action-btn" title="Quitar de Canciones que te gustan">
-                            <i class="fas fa-check"></i>
-                        </button>
-                        <button class="song-action-btn context-menu-btn" data-song-id="1">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </button>
+            <!-- Contenido de ayuda -->
+            <div class="help-content-container">
+                <!-- Cuenta y Perfil -->
+                <div class="help-section">
+                    <h3><i class="fas fa-user"></i>Cuenta y Perfil</h3>
+                    <div class="help-content">
+                        <h4>¿Cómo cambio mi contraseña?</h4>
+                        <p>Ve a Configuración > Seguridad > Cambiar contraseña. Ingresa tu contraseña actual y la nueva contraseña.</p>
+                        
+                        <h4>¿Cómo actualizo mi información personal?</h4>
+                        <p>En tu perfil, haz clic en "Editar perfil" y modifica la información que desees cambiar.</p>
+                        
+                        <h4>¿Cómo elimino mi cuenta?</h4>
+                        <p>Ve a Configuración > Cuenta > Eliminar cuenta. Esta acción no se puede deshacer.</p>
                     </div>
                 </div>
 
-                <!-- Canción 2 -->
-                <div class="song-item">
-                    <div class="song-number">2</div>
-                    <div class="song-info">
-                        <div class="song-image">
-                            <i class="fas fa-music"></i>
-                        </div>
-                        <div class="song-details">
-                            <h3 class="song-title">Bohemian Rhapsody</h3>
-                            <p class="song-artist">Queen</p>
-                        </div>
-                    </div>
-                    <div class="song-album">A Night at the Opera</div>
-                    <div class="song-date">22 de enero, 2024</div>
-                    <div class="song-duration">5:55</div>
-                    <div class="song-actions">
-                        <button class="song-action-btn" title="Quitar de Canciones que te gustan">
-                            <i class="fas fa-check"></i>
-                        </button>
-                        <button class="song-action-btn context-menu-btn" data-song-id="2">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </button>
+                <!-- Reproducción -->
+                <div class="help-section">
+                    <h3><i class="fas fa-play"></i>Reproducción</h3>
+                    <div class="help-content">
+                        <h4>¿Por qué no se reproduce la música?</h4>
+                        <p>Verifica tu conexión a internet y que tengas un plan activo. También revisa que el volumen esté activado.</p>
+                        
+                        <h4>¿Cómo creo una playlist?</h4>
+                        <p>Ve a "Mi Biblioteca" > "Crear playlist" y dale un nombre. Luego agrega canciones desde la biblioteca.</p>
+                        
+                        <h4>¿Cómo descargo música para escuchar offline?</h4>
+                        <p>Haz clic en el ícono de descarga junto a la canción o playlist que quieras descargar.</p>
                     </div>
                 </div>
 
-                <!-- Canción 3 -->
-                <div class="song-item">
-                    <div class="song-number">3</div>
-                    <div class="song-info">
-                        <div class="song-image">
-                            <i class="fas fa-music"></i>
-                        </div>
-                        <div class="song-details">
-                            <h3 class="song-title">Stairway to Heaven</h3>
-                            <p class="song-artist">Led Zeppelin</p>
-                        </div>
+                <!-- Planes y Pagos -->
+                <div class="help-section">
+                    <h3><i class="fas fa-credit-card"></i>Planes y Pagos</h3>
+                    <div class="help-content">
+                        <h4>¿Cómo cambio mi plan?</h4>
+                        <p>Ve a "Planes" en el menú principal y selecciona el plan que mejor se adapte a tus necesidades.</p>
+                        
+                        <h4>¿Cómo cancelo mi suscripción?</h4>
+                        <p>Ve a Configuración > Planes > Cancelar suscripción. Tu acceso continuará hasta el final del período pagado.</p>
+                        
+                        <h4>¿Qué métodos de pago aceptan?</h4>
+                        <p>Aceptamos tarjetas de crédito, débito y PayPal. Todos los pagos son procesados de forma segura.</p>
                     </div>
-                    <div class="song-album">Led Zeppelin IV</div>
-                    <div class="song-date">28 de enero, 2024</div>
-                    <div class="song-duration">8:02</div>
-                    <div class="song-actions">
-                        <button class="song-action-btn" title="Quitar de Canciones que te gustan">
-                            <i class="fas fa-check"></i>
-                        </button>
-                        <button class="song-action-btn context-menu-btn" data-song-id="3">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </button>
+                </div>
+
+                <!-- Problemas Técnicos -->
+                <div class="help-section">
+                    <h3><i class="fas fa-tools"></i>Problemas Técnicos</h3>
+                    <div class="help-content">
+                        <h4>La aplicación se cierra inesperadamente</h4>
+                        <p>Intenta cerrar y abrir la aplicación. Si el problema persiste, reinicia tu dispositivo.</p>
+                        
+                        <h4>¿Cómo actualizo la aplicación?</h4>
+                        <p>Ve a tu tienda de aplicaciones (App Store/Google Play) y busca actualizaciones para Spoiler Five Inc.</p>
+                        
+                        <h4>¿Cómo reporto un error?</h4>
+                        <p>Usa el botón "Reportar problema" en esta página o contacta a nuestro equipo de soporte.</p>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </div>
 
     <!-- Player Fijo -->
     <div class="player">
@@ -716,18 +784,6 @@
             <div class="volume-slider">
                 <div class="volume-fill"></div>
             </div>
-        </div>
-    </div>
-
-    <!-- Menú Contextual -->
-    <div class="context-menu" id="contextMenu">
-        <div class="context-menu-item" onclick="removeFromFavorites()">
-            <i class="fas fa-check"></i>
-            <span>Quitar de Canciones que te gustan</span>
-        </div>
-        <div class="context-menu-item" onclick="shareSong()">
-            <i class="fas fa-share"></i>
-            <span>Compartir</span>
         </div>
     </div>
 

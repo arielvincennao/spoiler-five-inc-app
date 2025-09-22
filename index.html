@@ -16,9 +16,15 @@
             Spoiler Five Inc.
         </div>
         
-        <div class="search-container">
-            <i class="fas fa-search search-icon"></i>
-            <input type="text" class="search-bar" placeholder="¿Qué vas a escuchar hoy?">
+        <div class="search-section">
+            <button class="home-btn" id="homeBtn" title="Inicio">
+                <i class="fas fa-home"></i>
+            </button>
+            
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-bar" placeholder="¿Qué vas a escuchar hoy?">
+            </div>
         </div>
         
         <div class="header-actions">
@@ -431,6 +437,11 @@
                     <div class="settings-item">
                         <i class="fas fa-user-edit"></i>
                         <span>Perfil</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="settings-item" onclick="window.location.href='help.html'">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Ayuda</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
                     <div class="settings-item">
@@ -1780,6 +1791,14 @@
             <div class="player-details">
                 <h4>Canción Actual</h4>
                 <p>Artista - Álbum</p>
+            </div>
+            <div class="player-actions">
+                <button class="action-btn add-to-playlist-btn" title="Agregar a playlist">
+                    <i class="fas fa-plus"></i>
+                </button>
+                <button class="action-btn context-menu-btn" title="Más opciones">
+                    <i class="fas fa-ellipsis-h"></i>
+                </button>
             </div>
         </div>
 

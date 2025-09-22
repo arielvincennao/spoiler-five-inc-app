@@ -27,6 +27,14 @@ body {
     justify-content: space-between;
 }
 
+.search-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    justify-content: center;
+}
+
 .logo {
     font-size: 24px;
     font-weight: 700;
@@ -43,7 +51,6 @@ body {
 .search-container {
     flex: 1;
     max-width: 500px;
-    margin: 0 40px;
     position: relative;
 }
 
@@ -83,7 +90,7 @@ body {
     gap: 20px;
 }
 
-.notification-btn, .favorites-btn, .user-btn {
+.home-btn, .notification-btn, .favorites-btn, .user-btn {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -97,7 +104,7 @@ body {
     justify-content: center;
 }
 
-.notification-btn:hover, .favorites-btn:hover, .user-btn:hover {
+.home-btn:hover, .notification-btn:hover, .favorites-btn:hover, .user-btn:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: scale(1.05);
 }
@@ -183,7 +190,8 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 40px;
 }
 
 .hero-background {
@@ -217,12 +225,12 @@ body {
     position: relative;
     z-index: 3;
     text-align: left;
-    max-width: 600px;
+    max-width: 800px;
     padding: 0 20px;
 }
 
 .hero-title {
-    font-size: 44px;
+    font-size: 52px;
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 16px;
@@ -231,7 +239,7 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 20px;
+    font-size: 24px;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 32px;
     line-height: 1.6;
@@ -484,7 +492,7 @@ body {
 
 .card-image {
     width: 100%;
-    height: 160px;
+    height: 200px;
     background: #2a9d8a;
     border-radius: 10px;
     margin-bottom: 15px;
@@ -521,10 +529,11 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     line-height: 1.4;
     flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .card-actions {
@@ -630,7 +639,7 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
-    min-width: 250px;
+    min-width: 350px;
 }
 
 .player-image {
@@ -795,6 +804,44 @@ body {
     width: 70%;
 }
 
+.player-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 10px;
+}
+
+.player-actions .action-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+
+.player-actions .action-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #2a9d8a;
+    transform: scale(1.1);
+}
+
+
+.player-actions .add-to-playlist-btn:hover {
+    color: #2a9d8a;
+}
+
+.player-actions .context-menu-btn:hover {
+    color: #2a9d8a;
+}
+
 /* Responsive */
 /* Desktop grande - 5 cards */
 @media (min-width: 1200px) {
@@ -836,12 +883,28 @@ body {
         gap: 15px;
     }
 
+    .card-image {
+        height: 180px;
+    }
+
     .player {
         padding: 15px 20px;
     }
 
     .player-info {
-        min-width: 200px;
+        min-width: 280px;
+    }
+
+    .player-actions {
+        gap: 6px;
+        margin-left: 8px;
+    }
+
+    .player-actions .action-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+        padding: 4px;
     }
 
     /* Hero responsive */
@@ -850,12 +913,16 @@ body {
         margin-bottom: 30px;
     }
 
+    .hero-container {
+        padding-left: 20px;
+    }
+
     .hero-title {
-        font-size: 36px;
+        font-size: 42px;
     }
 
     .hero-subtitle {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .hero-actions {

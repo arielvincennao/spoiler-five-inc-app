@@ -136,6 +136,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         logo.style.cursor = 'pointer';
     }
+
+    // Botón de home
+    const homeBtn = document.getElementById('homeBtn');
+    if (homeBtn) {
+        homeBtn.addEventListener('click', function() {
+            this.style.background = '#2a9d8a';
+            this.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                this.style.background = 'rgba(255, 255, 255, 0.1)';
+                this.style.transform = 'scale(1)';
+                window.location.href = 'index.html';
+            }, 200);
+        });
+    }
     // Efectos hover en las cards
     const cards = document.querySelectorAll('.content-card');
     cards.forEach(card => {
@@ -712,6 +726,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
+            // Redirigir a ayuda si es el elemento "Ayuda"
+            if (text === 'Ayuda') {
+                setTimeout(() => {
+                    window.location.href = 'help.html';
+                }, 200);
+                return;
+            }
+            
             // Simular acción para otros elementos
             setTimeout(() => {
                 alert(`Abriendo: ${text}`);
@@ -1043,6 +1065,34 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.style.color = '#ffffff';
             }, 200);
             alert('Agregado a favoritos');
+        });
+    }
+
+    // Botones de acciones del reproductor
+    const addToPlaylistBtn = document.querySelector('.add-to-playlist-btn');
+    if (addToPlaylistBtn) {
+        addToPlaylistBtn.addEventListener('click', function() {
+            this.style.color = '#2a9d8a';
+            this.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                this.style.color = 'rgba(255, 255, 255, 0.7)';
+                this.style.transform = 'scale(1)';
+            }, 200);
+            alert('Agregar a playlist - Funcionalidad próximamente disponible');
+        });
+    }
+
+
+    const contextMenuBtn = document.querySelector('.context-menu-btn');
+    if (contextMenuBtn) {
+        contextMenuBtn.addEventListener('click', function() {
+            this.style.color = '#2a9d8a';
+            this.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                this.style.color = 'rgba(255, 255, 255, 0.7)';
+                this.style.transform = 'scale(1)';
+            }, 200);
+            alert('Menú contextual - Funcionalidad próximamente disponible');
         });
     }
 

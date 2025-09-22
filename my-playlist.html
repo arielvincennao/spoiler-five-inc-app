@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Playlist - Spoiler Five</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
@@ -15,9 +16,15 @@
             Spoiler Five Inc.
         </div>
         
-        <div class="search-container">
-            <i class="fas fa-search search-icon"></i>
-            <input type="text" id="searchInput" class="search-bar" placeholder="¿Qué vas a escuchar hoy?">
+        <div class="search-section">
+            <button class="home-btn" id="homeBtn" title="Inicio">
+                <i class="fas fa-home"></i>
+            </button>
+            
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" class="search-bar" placeholder="¿Qué vas a escuchar hoy?">
+            </div>
         </div>
         
         <div class="header-actions">
@@ -101,13 +108,13 @@
                         </button>
                     </div>
                     
-                    <div class="sidebar-item" data-type="playlist" onclick="window.location.href='my-playlist.html'">
+                    <div class="sidebar-item" data-type="playlist">
                         <div class="sidebar-item-icon">
                             <i class="fas fa-dumbbell"></i>
                         </div>
                         <div class="sidebar-item-info">
-                            <span class="sidebar-item-title">Mi Playlist Personal</span>
-                            <span class="sidebar-item-subtitle">Ariel Vincennao • 8 canciones</span>
+                            <span class="sidebar-item-title">Hora de Gym</span>
+                            <span class="sidebar-item-subtitle">Ariel Vincennao • 5 canciones</span>
                         </div>
                         <div class="sidebar-item-badge playlist-badge">Playlist</div>
                         <button class="sidebar-play-btn">
@@ -409,7 +416,7 @@
                 </div>
                 <div class="user-info">
                     <h3>Ariel Vincennao</h3>
-                    <p>ariel.vincennao@spoilerfive.com</p>
+                    <p>Plan Premium</p>
                 </div>
             </div>
             <button class="close-settings-btn" id="closeSettingsBtn">
@@ -418,12 +425,21 @@
         </div>
         
         <div class="user-settings-content">
+            <!-- Cuenta -->
             <div class="settings-section">
-                <h4>Cuenta</h4>
-                <div class="settings-items">
+                <h4 class="settings-section-title">
+                    <i class="fas fa-user"></i>
+                    Cuenta
+                </h4>
+                <div class="settings-list">
                     <div class="settings-item">
                         <i class="fas fa-user-edit"></i>
-                        <span>Editar perfil</span>
+                        <span>Perfil</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="settings-item" onclick="window.location.href='help.html'">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Ayuda</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
                     <div class="settings-item">
@@ -439,17 +455,21 @@
                 </div>
             </div>
 
+            <!-- Suscripción -->
             <div class="settings-section">
-                <h4>Premium</h4>
-                <div class="settings-items">
-                    <div class="settings-item">
-                        <i class="fas fa-crown"></i>
-                        <span>Gestionar suscripción</span>
-                        <i class="fas fa-chevron-right"></i>
+                <h4 class="settings-section-title">
+                    <i class="fas fa-crown"></i>
+                    Suscripción
+                </h4>
+                <div class="settings-list">
+                    <div class="settings-item" onclick="window.location.href='plans.html'">
+                        <i class="fas fa-star"></i>
+                        <span>Plan</span>
+                        <span class="settings-value">Premium</span>
                     </div>
                     <div class="settings-item">
                         <i class="fas fa-credit-card"></i>
-                        <span>Métodos de pago</span>
+                        <span>Método de pago</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
                     <div class="settings-item">
@@ -460,44 +480,57 @@
                 </div>
             </div>
 
+            <!-- Privacidad -->
             <div class="settings-section">
-                <h4>Privacidad</h4>
-                <div class="settings-items">
-                    <div class="settings-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Privacidad y seguridad</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
+                <h4 class="settings-section-title">
+                    <i class="fas fa-shield-alt"></i>
+                    Privacidad
+                </h4>
+                <div class="settings-list">
                     <div class="settings-item">
                         <i class="fas fa-lock"></i>
-                        <span>Cambiar contraseña</span>
+                        <span>Privacidad</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
                     <div class="settings-item">
                         <i class="fas fa-eye"></i>
-                        <span>Actividad reciente</span>
+                        <span>Actividad</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
                 </div>
             </div>
 
+            <!-- Soporte -->
             <div class="settings-section">
-                <h4>Soporte</h4>
-                <div class="settings-items">
+                <h4 class="settings-section-title">
+                    <i class="fas fa-question-circle"></i>
+                    Soporte
+                </h4>
+                <div class="settings-list">
+                    <div class="settings-item" onclick="window.location.href='help.html'">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Ayuda</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
                     <div class="settings-item">
                         <i class="fas fa-question-circle"></i>
                         <span>Centro de ayuda</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
                     <div class="settings-item">
-                        <i class="fas fa-headset"></i>
-                        <span>Contacto</span>
+                        <i class="fas fa-comment"></i>
+                        <span>Contactar soporte</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
-                    <div class="settings-item">
-                        <i class="fas fa-info-circle"></i>
-                        <span>Acerca de</span>
-                        <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+
+            <!-- Cerrar sesión -->
+            <div class="settings-section">
+                <div class="settings-list">
+                    <div class="settings-item logout-item">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Cerrar sesión</span>
                     </div>
                 </div>
             </div>
@@ -817,6 +850,14 @@
             <div class="player-details">
                 <h4>Canción Actual</h4>
                 <p>Artista - Álbum</p>
+            </div>
+            <div class="player-actions">
+                <button class="action-btn add-to-playlist-btn" title="Agregar a playlist">
+                    <i class="fas fa-plus"></i>
+                </button>
+                <button class="action-btn context-menu-btn" title="Más opciones">
+                    <i class="fas fa-ellipsis-h"></i>
+                </button>
             </div>
         </div>
 
