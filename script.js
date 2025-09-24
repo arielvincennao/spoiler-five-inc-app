@@ -836,9 +836,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.style.transform = 'scale(1)';
             }, 150);
             
+            // Actualizar estado del reproductor para todos los elementos del sidebar
+            playerState.currentSong = title.replace('📌 ', '').trim(); // Remover el indicador de pin si existe
+            playerState.currentArtist = subtitle;
+            playerState.isPlaying = true;
+            playerState.currentTime = 0;
+            playerState.progress = 0;
+            playerState.startTime = null;
+            
+            // Establecer duración basada en el tipo de contenido
+            if (title.includes('Canciones que te gustan') || title.includes('Playlist') || title.includes('Hora de Gym')) {
+                playerState.duration = 105 * 60; // 1h 45min para playlists
+            } else {
+                playerState.duration = 240; // 4 minutos por defecto para canciones individuales
+            }
+            
+            applyPlayerState();
+            
             // Simular reproducción
             setTimeout(() => {
-                alert(`Reproduciendo: ${title} - ${subtitle}`);
+                alert(`Reproduciendo: ${title.replace('📌 ', '').trim()} - ${subtitle}`);
             }, 200);
         });
     });
@@ -864,10 +881,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.style.transform = 'scale(1)';
             }, 150);
             
-            // Simular navegación a detalles
-            setTimeout(() => {
-                alert(`Abriendo detalles de: ${this.textContent} - ${subtitle}`);
-            }, 200);
+            // Navegación especial para "Canciones que te gustan"
+            if (this.textContent.includes('Canciones que te gustan')) {
+                setTimeout(() => {
+                    window.location.href = 'favorites.html';
+                }, 200);
+            } else {
+                // Simular navegación a detalles para otros elementos
+                setTimeout(() => {
+                    alert(`Abriendo detalles de: ${this.textContent} - ${subtitle}`);
+                }, 200);
+            }
         });
     });
 
@@ -918,9 +942,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.style.transform = 'scale(1)';
             }, 300);
             
+            // Actualizar estado del reproductor para todos los elementos del sidebar
+            playerState.currentSong = title.replace('📌 ', '').trim(); // Remover el indicador de pin si existe
+            playerState.currentArtist = subtitle;
+            playerState.isPlaying = true;
+            playerState.currentTime = 0;
+            playerState.progress = 0;
+            playerState.startTime = null;
+            
+            // Establecer duración basada en el tipo de contenido
+            if (title.includes('Canciones que te gustan') || title.includes('Playlist') || title.includes('Hora de Gym')) {
+                playerState.duration = 105 * 60; // 1h 45min para playlists
+            } else {
+                playerState.duration = 240; // 4 minutos por defecto para canciones individuales
+            }
+            
+            applyPlayerState();
+            
             // Simular reproducción
             setTimeout(() => {
-                alert(`Reproduciendo: ${title} - ${subtitle}`);
+                alert(`Reproduciendo: ${title.replace('📌 ', '').trim()} - ${subtitle}`);
             }, 200);
         });
     });

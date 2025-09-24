@@ -89,7 +89,7 @@
                 </button>
                 <div class="sidebar-list">
                     <!-- Playlists -->
-                    <div class="sidebar-item pinned-item" data-type="playlist" onclick="window.location.href='favorites.html'">
+                    <div class="sidebar-item pinned-item" data-type="playlist">
                         <div class="sidebar-item-icon">
                             <i class="fas fa-heart"></i>
                         </div>
@@ -103,7 +103,7 @@
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 12 canciones</span>
                         </div>
                         <div class="sidebar-item-badge playlist-badge">Playlist</div>
-                        <button class="sidebar-play-btn" onclick="event.stopPropagation(); window.location.href='favorites.html'">
+                        <button class="sidebar-play-btn">
                             <i class="fas fa-play"></i>
                         </button>
                     </div>
@@ -946,7 +946,7 @@
                 <p>Artista - Álbum</p>
             </div>
             <div class="player-actions">
-                <button class="action-btn add-to-playlist-btn" title="Agregar a playlist">
+                <button class="action-btn add-to-playlist-btn" title="Agregar a Mi Biblioteca">
                     <i class="fas fa-plus"></i>
                 </button>
                 <button class="action-btn context-menu-btn" title="Más opciones">
@@ -1099,25 +1099,6 @@
                 }
             });
 
-            // Funcionalidad de los elementos del sidebar
-            const sidebarItems = document.querySelectorAll('.sidebar-item');
-            sidebarItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    const title = this.querySelector('.sidebar-item-title').textContent;
-                    const subtitle = this.querySelector('.sidebar-item-subtitle').textContent;
-                    
-                    // Efecto visual
-                    this.style.transform = 'scale(0.98)';
-                    setTimeout(() => {
-                        this.style.transform = 'scale(1)';
-                    }, 150);
-                    
-                    // Simular acción
-                    setTimeout(() => {
-                        alert(`Reproduciendo: ${title} - ${subtitle}`);
-                    }, 200);
-                });
-            });
         });
     </script>
 </body>
