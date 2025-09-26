@@ -3,12 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planes - Spoiler Five</title>
+    <title>Ayuda y Soporte - Spoiler Five Inc.</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
     <style>
-        /* Estilos específicos para el sidebar en plans.html */
+        /* Estilos específicos para la página de ayuda */
+        .help-container {
+            min-height: calc(100vh - 80px);
+            background: #0f0f23;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 80px;
+        }
+
+        .help-content {
+            max-width: 1200px;
+            width: 100%;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .help-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .help-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .help-logo i {
+            font-size: 32px;
+            color: #2a9d8a;
+        }
+
+        .help-logo h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2a9d8a;
+            margin: 0;
+        }
+
+        .help-subtitle {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+
+        .help-content-container {
+            background: rgba(5, 5, 15, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin: 0 auto 60px auto;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .help-section {
+            margin-bottom: 40px;
+        }
+
+        .help-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .help-section h3 {
+            color: #2a9d8a;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(42, 157, 138, 0.3);
+        }
+
+        .help-section h3 i {
+            font-size: 20px;
+        }
+
+        .help-content {
+            margin-left: 20px;
+        }
+
+        .help-content h4 {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 500;
+            margin: 25px 0 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .help-content h4:first-child {
+            margin-top: 0;
+        }
+
+        .help-content h4::before {
+            content: "•";
+            color: #2a9d8a;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .help-content p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 15px;
+            line-height: 1.7;
+            margin: 0 0 20px 0;
+            padding-left: 20px;
+        }
+
+        .help-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-text {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contact-text h3 {
+            color: #2a9d8a;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .contact-text p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .contact-email {
+            color: #2a9d8a !important;
+            font-size: 18px !important;
+            font-weight: 500 !important;
+            margin-bottom: 0 !important;
+            text-decoration: none;
+        }
+
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .help-content {
+                padding: 20px 10px;
+            }
+
+            .help-content-container {
+                padding: 25px 20px;
+            }
+
+            .help-section {
+                margin-bottom: 30px;
+            }
+
+            .help-section h3 {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+            .help-content {
+                margin-left: 10px;
+            }
+
+            .help-content h4 {
+                font-size: 16px;
+                margin: 20px 0 10px 0;
+            }
+
+            .help-content p {
+                font-size: 14px;
+                padding-left: 15px;
+            }
+
+            .contact-section {
+                padding: 30px 20px;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .help-logo h1 {
+                font-size: 24px;
+            }
+
+            .help-subtitle {
+                font-size: 14px;
+            }
+        }
+        
+        /* Estilos específicos para el sidebar en my-account.html */
         .sidebar-item:hover .sidebar-item-title {
             color: #2a9d8a !important;
         }
@@ -50,7 +253,7 @@
         </div>
     </header>
 
-    <!-- Sidebar -->
+    <!-- Panel Lateral -->
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <h3>Mi Biblioteca</h3>
@@ -58,6 +261,7 @@
                 <i class="fas fa-times"></i>
             </button>
         </div>
+        
         <div class="sidebar-content">
             <!-- Búsqueda en Biblioteca -->
             <div class="library-search">
@@ -89,7 +293,6 @@
                     </select>
                 </div>
             </div>
-
 
             <!-- Lista de Contenido -->
             <div class="sidebar-section">
@@ -173,7 +376,7 @@
                         <div class="sidebar-item-badge album-badge">Album</div>
                     </div>
 
-                    <!-- Canciones -->
+                    <!-- Podcasts -->
                     <div class="sidebar-item" data-type="podcast">
                         <div class="sidebar-item-icon">
                             <img src="images/p9.png" alt="Música y Más">
@@ -195,8 +398,6 @@
                         </div>
                         <div class="sidebar-item-badge podcast-badge">Podcast</div>
                     </div>
-
-                    <!-- Artistas -->
 
                     <!-- Más Playlists -->
                     <div class="sidebar-item" data-type="playlist">
@@ -231,72 +432,15 @@
                         </div>
                         <div class="sidebar-item-badge playlist-badge">Playlist</div>
                     </div>
-
-                    <!-- Más Álbumes -->
-                    <div class="sidebar-item" data-type="album">
-                        <div class="sidebar-item-icon">
-                            <img src="images/p11.png" alt="Dark Side of the Moon">
-                        </div>
-                        <div class="sidebar-item-info">
-                            <span class="sidebar-item-title">Dark Side of the Moon</span>
-                            <span class="sidebar-item-subtitle">Pink Floyd • 9 canciones</span>
-                        </div>
-                        <div class="sidebar-item-badge album-badge">Album</div>
-                    </div>
-                    
-                    <div class="sidebar-item" data-type="album">
-                        <div class="sidebar-item-icon">
-                            <img src="images/p12.png" alt="Back in Black">
-                        </div>
-                        <div class="sidebar-item-info">
-                            <span class="sidebar-item-title">Back in Black</span>
-                            <span class="sidebar-item-subtitle">AC/DC • 10 canciones</span>
-                        </div>
-                        <div class="sidebar-item-badge album-badge">Album</div>
-                    </div>
-                    
-                    <div class="sidebar-item" data-type="album">
-                        <div class="sidebar-item-icon">
-                            <img src="images/p13.png" alt="Led Zeppelin IV">
-                        </div>
-                        <div class="sidebar-item-info">
-                            <span class="sidebar-item-title">Led Zeppelin IV</span>
-                            <span class="sidebar-item-subtitle">Led Zeppelin • 8 canciones</span>
-                        </div>
-                        <div class="sidebar-item-badge album-badge">Album</div>
-                    </div>
-
-                    <!-- Más Podcasts -->
-                    <div class="sidebar-item" data-type="podcast">
-                        <div class="sidebar-item-icon">
-                            <img src="images/p14.png" alt="Historia del Rock">
-                        </div>
-                        <div class="sidebar-item-info">
-                            <span class="sidebar-item-title">Historia del Rock</span>
-                            <span class="sidebar-item-subtitle">Ariel Vincennao • 12 canciones</span>
-                        </div>
-                        <div class="sidebar-item-badge podcast-badge">Podcast</div>
-                    </div>
-                    
-                    <div class="sidebar-item" data-type="podcast">
-                        <div class="sidebar-item-icon">
-                            <img src="images/p15.png" alt="Música Indie">
-                        </div>
-                        <div class="sidebar-item-info">
-                            <span class="sidebar-item-title">Música Indie</span>
-                            <span class="sidebar-item-subtitle">Ariel Vincennao • 6 canciones</span>
-                        </div>
-                        <div class="sidebar-item-badge podcast-badge">Podcast</div>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Overlay del panel lateral -->
+    <!-- Overlay para el sidebar -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-    <!-- Panel de notificaciones -->
+    <!-- Panel de Notificaciones -->
     <div class="notifications-panel" id="notificationsPanel">
         <div class="notifications-header">
             <h3>Notificaciones</h3>
@@ -304,6 +448,7 @@
                 <i class="fas fa-times"></i>
             </button>
         </div>
+        
         <div class="notifications-content">
             <div class="notification-item">
                 <div class="notification-icon">
@@ -369,10 +514,10 @@
         </div>
     </div>
 
-    <!-- Overlay del panel de notificaciones -->
+    <!-- Overlay para notificaciones -->
     <div class="notifications-overlay" id="notificationsOverlay"></div>
 
-    <!-- Panel de configuración de usuario -->
+    <!-- Panel de Ajustes de Usuario -->
     <div class="user-settings-panel" id="userSettingsPanel">
         <div class="user-settings-header">
             <div class="user-profile">
@@ -388,7 +533,7 @@
                 <i class="fas fa-times"></i>
             </button>
         </div>
-
+        
         <div class="user-settings-content">
             <!-- Perfil -->
             <div class="settings-section">
@@ -467,20 +612,30 @@
                     Soporte
                 </h4>
                 <div class="settings-list">
-                    <div class="settings-item">
-                        <i class="fas fa-headset"></i>
+                    <div class="settings-item" onclick="window.location.href='help.html'">
+                        <i class="fas fa-question-circle"></i>
                         <span>Ayuda</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
                     <div class="settings-item">
-                        <i class="fas fa-comment"></i>
-                        <span>Contacto</span>
+                        <i class="fas fa-question-circle"></i>
+                        <span>Centro de ayuda</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
                     <div class="settings-item">
-                        <i class="fas fa-info-circle"></i>
-                        <span>Acerca de</span>
+                        <i class="fas fa-comment"></i>
+                        <span>Contactar soporte</span>
                         <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cerrar sesión -->
+            <div class="settings-section">
+                <div class="settings-list">
+                    <div class="settings-item logout-item">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Cerrar sesión</span>
                     </div>
                 </div>
             </div>
@@ -494,166 +649,89 @@
         </div>
     </div>
 
-    <!-- Overlay del panel de configuración -->
+    <!-- Overlay para configuración de usuario -->
     <div class="settings-overlay" id="settingsOverlay"></div>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="page-header">
-            <h1>Planes</h1>
-            <p>Elige el plan que mejor se adapte a tus necesidades</p>
-        </div>
-        
-        <div class="plans-container">
-
-            <div class="plans-page-grid">
-                <!-- Plan Básico -->
-                <div class="plans-page-card">
-                    <div class="plan-header">
-                        <h3 class="plan-name">Básico</h3>
-                        <div class="plan-price">
-                            <span class="price">$4.99</span>
-                            <span class="period">/mes</span>
-                        </div>
-                    </div>
-                    <div class="plan-features">
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>Música sin anuncios</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>Calidad estándar (160 kbps)</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>Reproducción offline</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>Hasta 3 dispositivos</span>
-                        </div>
-                    </div>
-                    <div class="plan-footer">
-                        <button class="plan-btn">Suscribirse</button>
-                    </div>
+    <div class="help-container">
+        <div class="help-content">
+            <!-- Header -->
+            <div class="help-header">
+                <div class="help-logo">
+                    <i class="fas fa-music"></i>
+                    <h1>Spoiler Five Inc.</h1>
                 </div>
+                <p class="help-subtitle">Cuenta de Ariel Vincennao</p>
+            </div>
 
-                <!-- Plan Estándar -->
-                <div class="plans-page-card">
-                    <div class="plan-header">
-                        <h3 class="plan-name">Estándar</h3>
-                        <div class="plan-price">
-                            <span class="price">$9.99</span>
-                            <span class="period">/mes</span>
+            <!-- Contenido -->
+            <div class="help-content-container">
+                <!-- Perfil y Datos de cuenta -->
+                <div class="help-section">
+                    <h3><i class="fas fa-user"></i>Información de perfil</h3>
+                    <div class="help-content">
+                        <!-- Foto de perfil -->
+                        <div style="display: flex; align-items: flex-start; gap: 40px; margin-bottom: 40px;">
+                            <div style="text-align: center; flex-shrink: 0;">
+                                <img src="images/avatar.png" alt="Foto de perfil" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #2a9d8a; margin-bottom: 15px;">
+                                <div style="color: #ffffff; font-size: 18px; font-weight: 600; margin-bottom: 5px;">Ariel Vincennao</div>
+                                <br>
+                                <br>
+                                <div style="display: flex; flex-direction: column; gap: 10px;">
+                                    <button style="background: #2a9d8a; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 500; font-size: 13px; display: flex; align-items: center; gap: 6px; transition: all 0.3s ease;" onmouseover="this.style.background='#218a7a'" onmouseout="this.style.background='#2a9d8a'">
+                                        <i class="fas fa-camera"></i>
+                                        Cambiar foto
+                                    </button>
+                                    <button style="background: transparent; color: #ff6b6b; border: 1px solid #ff6b6b; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 500; font-size: 13px; display: flex; align-items: center; gap: 6px; transition: all 0.3s ease;" onmouseover="this.style.background='#ff6b6b'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#ff6b6b'">
+                                        <i class="fas fa-trash"></i>
+                                        Eliminar foto
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Formulario de datos -->
+                            <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                                        <label style="color: #ffffff; font-size: 14px; font-weight: 500; margin-bottom: 5px;">Nombre</label>
+                                        <input type="text" value="Ariel" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 12px 15px; color: #ffffff; font-size: 14px; outline: none; transition: all 0.3s ease;" onfocus="this.style.borderColor='#2a9d8a'" onblur="this.style.borderColor='rgba(255, 255, 255, 0.2)'">
+                                    </div>
+                                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                                        <label style="color: #ffffff; font-size: 14px; font-weight: 500; margin-bottom: 5px;">Apellido</label>
+                                        <input type="text" value="Vincennao" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 12px 15px; color: #ffffff; font-size: 14px; outline: none; transition: all 0.3s ease;" onfocus="this.style.borderColor='#2a9d8a'" onblur="this.style.borderColor='rgba(255, 255, 255, 0.2)'">
+                                    </div>
+                                </div>
+                                
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                                        <label style="color: #ffffff; font-size: 14px; font-weight: 500; margin-bottom: 5px;">Fecha de nacimiento</label>
+                                        <input type="date" value="1990-01-01" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 12px 15px; color: #ffffff; font-size: 14px; outline: none; transition: all 0.3s ease;" onfocus="this.style.borderColor='#2a9d8a'" onblur="this.style.borderColor='rgba(255, 255, 255, 0.2)'">
+                                    </div>
+                                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                                        <label style="color: #ffffff; font-size: 14px; font-weight: 500; margin-bottom: 5px;">Correo electrónico</label>
+                                        <input type="email" value="usuario@ejemplo.com" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 12px 15px; color: #ffffff; font-size: 14px; outline: none; transition: all 0.3s ease;" onfocus="this.style.borderColor='#2a9d8a'" onblur="this.style.borderColor='rgba(255, 255, 255, 0.2)'">
+                                    </div>
+                                </div>
+                                
+                                <div style="display: flex; flex-direction: column; gap: 8px;">
+                                    <label style="color: #ffffff; font-size: 14px; font-weight: 500; margin-bottom: 5px;">Contraseña</label>
+                                    <input type="password" value="••••••••" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 12px 15px; color: #ffffff; font-size: 14px; outline: none; transition: all 0.3s ease;" onfocus="this.style.borderColor='#2a9d8a'" onblur="this.style.borderColor='rgba(255, 255, 255, 0.2)'">
+                                </div>
+                                
+                                <div style="display: flex; gap: 15px; justify-content: flex-end; margin-top: 10px;">
+                                    <button style="background: transparent; color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.3); padding: 12px 25px; border-radius: 8px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255, 255, 255, 0.1)'" onmouseout="this.style.background='transparent'">
+                                        Cancelar
+                                    </button>
+                                    <button style="background: #2a9d8a; color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;" onmouseover="this.style.background='#218a7a'" onmouseout="this.style.background='#2a9d8a'">
+                                        Guardar cambios
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="plan-features">
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>Música sin anuncios</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>Alta calidad (320 kbps)</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>Reproducción offline</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>Hasta 5 dispositivos</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>Playlists ilimitadas</span>
-                        </div>
-                    </div>
-                    <div class="plan-footer">
-                        <button class="plan-btn">Suscribirse</button>
-                    </div>
-                </div>
-
-                <!-- Plan Premium -->
-                <div class="plans-page-card plans-popular">
-                    <div class="popular-badge">🔥 Popular</div>
-                    <div class="plan-header">
-                        <h3 class="plan-name">Premium</h3>
-                        <div class="plan-price">
-                            <span class="price">$14.99</span>
-                            <span class="period">/mes</span>
-                        </div>
-                    </div>
-                    <div class="plan-features">
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>Música sin anuncios</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>Calidad Hi-Fi (Lossless)</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>Reproducción offline</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>Dispositivos ilimitados</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>Playlists ilimitadas</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>Modo de escucha social</span>
-                        </div>
-                    </div>
-                    <div class="plan-footer">
-                        <button class="plan-btn primary current" disabled>Actual</button>
-                    </div>
-                </div>
-
-                <!-- Plan Familiar -->
-                <div class="plans-page-card">
-                    <div class="plan-header">
-                        <h3 class="plan-name">Familiar</h3>
-                        <div class="plan-price">
-                            <span class="price">$19.99</span>
-                            <span class="period">/mes</span>
-                        </div>
-                    </div>
-                    <div class="plan-features">
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>Hasta 6 cuentas familiares</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>Todas las funciones Premium</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>Control parental</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>Playlists familiares</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>Soporte prioritario</span>
-                        </div>
-                    </div>
-                    <div class="plan-footer">
-                        <button class="plan-btn">Suscribirse</button>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
 
     <!-- Player Fijo -->
     <div class="player">

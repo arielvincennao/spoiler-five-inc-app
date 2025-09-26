@@ -1,8 +1,8 @@
 // Estado global del reproductor
 let playerState = {
     isPlaying: false,
-    currentSong: 'Canción Actual',
-    currentArtist: 'Artista - Álbum',
+    currentSong: 'Stricken',
+    currentArtist: 'Por Disturbed',
     progress: 0,
     volume: 100,
     duration: 0,
@@ -995,22 +995,94 @@ document.addEventListener('DOMContentLoaded', function() {
     const progressBar = document.querySelector('.progress-bar');
     const progressFill = document.querySelector('.progress-fill');
     
+    // Variable para rastrear reproducciones
+    let playCount = 0;
+    let hasShownRatingAlert = false;
+    
+    // Función para verificar y mostrar alert de calificación
+    function checkRatingAlert() {
+        console.log('Verificando alert:', playerState.progress, hasShownRatingAlert);
+        if (playerState.progress >= 80 && !hasShownRatingAlert) {
+            playCount++;
+            hasShownRatingAlert = true;
+            console.log('Mostrando alert de calificación');
+            
+            // Obtener el nombre real de la canción desde el reproductor
+            const playerDetails = document.querySelector('.player-details h4');
+            const currentSong = playerDetails ? playerDetails.textContent : 'esta canción';
+            const alertMessage = `Has escuchado "${currentSong}" 3 veces, ¿quieres dejar tu opinión?`;
+            
+            if (confirm(alertMessage)) {
+                // Redirigir a playlist-details.html con scroll a la sección de calificación
+                window.location.href = 'playlist-details.html#rating-section';
+            } else {
+                alert('No hay problema, puedes calificar más tarde si quieres. 😊');
+            }
+            
+            // NO resetear hasShownRatingAlert - que solo aparezca una vez por sesión
+        } else {
+            console.log('No se muestra alert - progreso:', playerState.progress, 'hasShown:', hasShownRatingAlert);
+        }
+    }
+    
+    // Función para resetear el estado (para testing)
+    window.resetRatingState = function() {
+        hasShownRatingAlert = false;
+        playCount = 0;
+        console.log('Estado de calificación reseteado');
+    };
+    
     if (progressBar && progressFill) {
-        progressBar.addEventListener('click', function(e) {
-            const rect = this.getBoundingClientRect();
+        let isDragging = false;
+        
+        // Función para actualizar la barra de progreso
+        function updateProgress(e) {
+            const rect = progressBar.getBoundingClientRect();
             const clickX = e.clientX - rect.left;
-            const percentage = (clickX / rect.width) * 100;
+            const percentage = Math.max(0, Math.min(100, (clickX / rect.width) * 100));
             progressFill.style.width = percentage + '%';
             
+            console.log('Actualizando progreso:', percentage);
+            
             // Actualizar estado del reproductor
+            console.log('playerState.duration:', playerState.duration);
+            playerState.progress = percentage;
+            
             if (playerState.duration > 0) {
-                playerState.progress = Math.max(0, Math.min(100, percentage));
                 playerState.currentTime = (playerState.progress / 100) * playerState.duration;
                 
                 const currentTimeDisplay = document.querySelector('.current-time');
                 if (currentTimeDisplay) {
                     currentTimeDisplay.textContent = secondsToTime(playerState.currentTime);
                 }
+            }
+            
+            // Verificar si se llegó al 70% y mostrar alert de calificación (independiente de la duración)
+            console.log('Verificando alert con progreso:', playerState.progress);
+            checkRatingAlert();
+        }
+        
+        // Evento de clic
+        progressBar.addEventListener('click', function(e) {
+            updateProgress(e);
+        });
+        
+        // Eventos de arrastre
+        progressBar.addEventListener('mousedown', function(e) {
+            isDragging = true;
+            updateProgress(e);
+        });
+        
+        document.addEventListener('mousemove', function(e) {
+            if (isDragging) {
+                updateProgress(e);
+            }
+        });
+        
+        document.addEventListener('mouseup', function(e) {
+            if (isDragging) {
+                isDragging = false;
+                updateProgress(e);
             }
         });
     }
@@ -1041,6 +1113,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 icon.classList.remove('fa-play');
                 icon.classList.add('fa-pause');
                 this.style.background = '#1db954';
+                
+                // Simular progreso de reproducción
+                if (playerState.duration > 0) {
+                    simulatePlayback();
+                }
             } else {
                 playerState.isPlaying = false;
                 icon.classList.remove('fa-pause');
@@ -1050,6 +1127,60 @@ document.addEventListener('DOMContentLoaded', function() {
             applyPlayerState();
         });
     }
+    
+    // Función para simular reproducción y detectar cuando termina
+    function simulatePlayback() {
+        if (!playerState.isPlaying) return;
+        
+        const progressFill = document.querySelector('.progress-fill');
+        const currentTimeDisplay = document.querySelector('.current-time');
+        
+        if (playerState.currentTime < playerState.duration) {
+            playerState.currentTime += 1;
+            playerState.progress = (playerState.currentTime / playerState.duration) * 100;
+            
+            if (progressFill) {
+                progressFill.style.width = playerState.progress + '%';
+            }
+            
+            if (currentTimeDisplay) {
+                currentTimeDisplay.textContent = secondsToTime(playerState.currentTime);
+            }
+            
+            // Verificar si llegó al 80% durante la reproducción
+            if (playerState.progress >= 80 && !hasShownRatingAlert) {
+                playCount++;
+                hasShownRatingAlert = true;
+                
+                const currentSong = playerState.currentSong || 'esta canción';
+                const alertMessage = `Has escuchado "${currentSong}" 3 veces, ¿quieres dejar tu opinión?`;
+                
+                if (confirm(alertMessage)) {
+                    // Redirigir a playlist-details.html con scroll a la sección de calificación
+                    window.location.href = 'playlist-details.html#rating-section';
+                } else {
+                    alert('No hay problema, puedes calificar más tarde si quieres. 😊');
+                }
+                
+                // NO resetear hasShownRatingAlert - que solo aparezca una vez por sesión
+                
+                // Pausar la reproducción
+                playerState.isPlaying = false;
+                const playPauseBtn = document.querySelector('.play-pause-btn');
+                if (playPauseBtn) {
+                    const icon = playPauseBtn.querySelector('i');
+                    icon.classList.remove('fa-pause');
+                    icon.classList.add('fa-play');
+                    playPauseBtn.style.background = '#2a9d8a';
+                }
+                return;
+            }
+            
+            // Continuar la reproducción
+            setTimeout(simulatePlayback, 1000);
+        }
+    }
+    
 
     // Controles del reproductor
     document.querySelectorAll('.control-btn').forEach(btn => {
@@ -1133,7 +1264,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.style.color = 'rgba(255, 255, 255, 0.7)';
                 this.style.transform = 'scale(1)';
             }, 200);
-            alert('Menú contextual - Funcionalidad próximamente disponible');
         });
     }
 

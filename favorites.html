@@ -6,6 +6,44 @@
     <title>Canciones que te gustan - Spoiler Five</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .song-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        
+        .play-btn:hover {
+            background: rgba(42, 157, 138, 1);
+            transform: scale(1.02);
+        }
+        
+        .song-item:hover .song-image img {
+            opacity: 0;
+        }
+        
+        .song-item:hover .song-image {
+            background-color: #2B7A70;
+        }
+        
+        .song-item:hover .song-title {
+            color: #2a9d8a;
+        }
+        
+        .song-item:hover .song-artist {
+            color: #2a9d8a;
+        }
+        
+        /* Estilos específicos para el sidebar en favorites.html */
+        .sidebar-item:hover .sidebar-item-title {
+            color: #2a9d8a !important;
+        }
+        
+        .sidebar-item:hover .sidebar-item-subtitle {
+            color: #2a9d8a !important;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -103,109 +141,87 @@
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 12 canciones</span>
                         </div>
                         <div class="sidebar-item-badge playlist-badge">Playlist</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
                     
                     <div class="sidebar-item" data-type="playlist">
                         <div class="sidebar-item-icon">
-                            <i class="fas fa-dumbbell"></i>
+                            <img src="images/p1.png" alt="Hora de Gym">
                         </div>
+                        <a href="my-playlist.html" style="text-decoration: none;">
                         <div class="sidebar-item-info">
-                            <span class="sidebar-item-title">Hora de Gym</span>
+                            <span class="sidebar-item-title">Mi Playlist Personal</span>
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 5 canciones</span>
                         </div>
+                        </a>
                         <div class="sidebar-item-badge playlist-badge">Playlist</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
                     
                     <div class="sidebar-item" data-type="playlist">
                         <div class="sidebar-item-icon">
-                            <i class="fas fa-heart"></i>
+                            <img src="images/p2.png" alt="Rock Clásico">
                         </div>
                         <div class="sidebar-item-info">
                             <span class="sidebar-item-title">Rock Clásico</span>
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 12 canciones</span>
                         </div>
                         <div class="sidebar-item-badge playlist-badge">Playlist</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
                     
                     <div class="sidebar-item" data-type="playlist">
                         <div class="sidebar-item-icon">
-                            <i class="fas fa-fire"></i>
+                            <img src="images/p3.png" alt="Energía Total">
                         </div>
                         <div class="sidebar-item-info">
                             <span class="sidebar-item-title">Energía Total</span>
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 8 canciones</span>
                         </div>
                         <div class="sidebar-item-badge playlist-badge">Playlist</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
 
                     <!-- Álbumes -->
                     <div class="sidebar-item" data-type="album">
                         <div class="sidebar-item-icon">
-                            <i class="fas fa-compact-disc"></i>
+                            <img src="images/p7.png" alt="The Razors Edge">
                         </div>
                         <div class="sidebar-item-info">
                             <span class="sidebar-item-title">The Razors Edge</span>
                             <span class="sidebar-item-subtitle">AC/DC • 12 canciones</span>
                         </div>
                         <div class="sidebar-item-badge album-badge">Album</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
                     
                     <div class="sidebar-item" data-type="album">
                         <div class="sidebar-item-icon">
-                            <i class="fas fa-compact-disc"></i>
+                            <img src="images/p8.png" alt="The Wall">
                         </div>
                         <div class="sidebar-item-info">
                             <span class="sidebar-item-title">The Wall</span>
                             <span class="sidebar-item-subtitle">Pink Floyd • 26 canciones</span>
                         </div>
                         <div class="sidebar-item-badge album-badge">Album</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
 
                     <!-- Canciones -->
-                    <div class="sidebar-item" data-type="song">
+                    <div class="sidebar-item" data-type="podcast">
                         <div class="sidebar-item-icon">
-                            <i class="fas fa-music"></i>
+                            <img src="images/p9.png" alt="Música y Más">
                         </div>
                         <div class="sidebar-item-info">
                             <span class="sidebar-item-title">Música y Más</span>
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 15 canciones</span>
                         </div>
                         <div class="sidebar-item-badge podcast-badge">Podcast</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
                     
-                    <div class="sidebar-item" data-type="song">
+                    <div class="sidebar-item" data-type="podcast">
                         <div class="sidebar-item-icon">
-                            <i class="fas fa-music"></i>
+                            <img src="images/p10.png" alt="Rock Clásico Podcast">
                         </div>
                         <div class="sidebar-item-info">
                             <span class="sidebar-item-title">Rock Clásico Podcast</span>
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 8 canciones</span>
                         </div>
                         <div class="sidebar-item-badge podcast-badge">Podcast</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
 
                     <!-- Artistas -->
@@ -213,116 +229,92 @@
                     <!-- Más Playlists -->
                     <div class="sidebar-item" data-type="playlist">
                         <div class="sidebar-item-icon">
-                            <i class="fas fa-moon"></i>
+                            <img src="images/p4.png" alt="Relajación Nocturna">
                         </div>
                         <div class="sidebar-item-info">
                             <span class="sidebar-item-title">Relajación Nocturna</span>
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 15 canciones</span>
                         </div>
                         <div class="sidebar-item-badge playlist-badge">Playlist</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
                     
                     <div class="sidebar-item" data-type="playlist">
                         <div class="sidebar-item-icon">
-                            <i class="fas fa-car"></i>
+                            <img src="images/p5.png" alt="Viaje en Carretera">
                         </div>
                         <div class="sidebar-item-info">
                             <span class="sidebar-item-title">Viaje en Carretera</span>
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 22 canciones</span>
                         </div>
                         <div class="sidebar-item-badge playlist-badge">Playlist</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
                     
                     <div class="sidebar-item" data-type="playlist">
                         <div class="sidebar-item-icon">
-                            <i class="fas fa-star"></i>
+                            <img src="images/p6.png" alt="Éxitos de los 80s">
                         </div>
                         <div class="sidebar-item-info">
                             <span class="sidebar-item-title">Éxitos de los 80s</span>
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 18 canciones</span>
                         </div>
                         <div class="sidebar-item-badge playlist-badge">Playlist</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
 
                     <!-- Más Álbumes -->
                     <div class="sidebar-item" data-type="album">
                         <div class="sidebar-item-icon">
-                            <i class="fas fa-compact-disc"></i>
+                            <img src="images/p11.png" alt="Dark Side of the Moon">
                         </div>
                         <div class="sidebar-item-info">
                             <span class="sidebar-item-title">Dark Side of the Moon</span>
                             <span class="sidebar-item-subtitle">Pink Floyd • 9 canciones</span>
                         </div>
                         <div class="sidebar-item-badge album-badge">Album</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
                     
                     <div class="sidebar-item" data-type="album">
                         <div class="sidebar-item-icon">
-                            <i class="fas fa-compact-disc"></i>
+                            <img src="images/p12.png" alt="Back in Black">
                         </div>
                         <div class="sidebar-item-info">
                             <span class="sidebar-item-title">Back in Black</span>
                             <span class="sidebar-item-subtitle">AC/DC • 10 canciones</span>
                         </div>
                         <div class="sidebar-item-badge album-badge">Album</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
                     
                     <div class="sidebar-item" data-type="album">
                         <div class="sidebar-item-icon">
-                            <i class="fas fa-compact-disc"></i>
+                            <img src="images/p13.png" alt="Led Zeppelin IV">
                         </div>
                         <div class="sidebar-item-info">
                             <span class="sidebar-item-title">Led Zeppelin IV</span>
                             <span class="sidebar-item-subtitle">Led Zeppelin • 8 canciones</span>
                         </div>
                         <div class="sidebar-item-badge album-badge">Album</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
 
                     <!-- Más Podcasts -->
                     <div class="sidebar-item" data-type="podcast">
                         <div class="sidebar-item-icon">
-                            <i class="fas fa-microphone"></i>
+                            <img src="images/p14.png" alt="Historia del Rock">
                         </div>
                         <div class="sidebar-item-info">
                             <span class="sidebar-item-title">Historia del Rock</span>
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 12 canciones</span>
                         </div>
                         <div class="sidebar-item-badge podcast-badge">Podcast</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
                     
                     <div class="sidebar-item" data-type="podcast">
                         <div class="sidebar-item-icon">
-                            <i class="fas fa-microphone"></i>
+                            <img src="images/p15.png" alt="Música Indie">
                         </div>
                         <div class="sidebar-item-info">
                             <span class="sidebar-item-title">Música Indie</span>
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 6 canciones</span>
                         </div>
                         <div class="sidebar-item-badge podcast-badge">Podcast</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
                 </div>
             </div>
@@ -346,8 +338,8 @@
                     <i class="fas fa-music"></i>
                 </div>
                 <div class="notification-info">
-                    <h4 class="notification-title">Nueva canción</h4>
-                    <p class="notification-text">AC/DC ha lanzado "Thunderstruck (Live)"</p>
+                    <h4 class="notification-title">Nueva canción disponible</h4>
+                    <p class="notification-text">"Thunderstruck" de AC/DC ya está disponible en tu biblioteca</p>
                     <span class="notification-time">Hace 2 horas</span>
                 </div>
             </div>
@@ -413,7 +405,7 @@
         <div class="user-settings-header">
             <div class="user-profile">
                 <div class="user-avatar">
-                    <i class="fas fa-user"></i>
+                    <img src="images/avatar.png" alt="Avatar" class="user-avatar-img">
                 </div>
                 <div class="user-info">
                     <h3>Ariel Vincennao</h3>
@@ -426,26 +418,26 @@
         </div>
         
         <div class="user-settings-content">
-            <!-- Cuenta -->
+            <!-- Perfil -->
             <div class="settings-section">
                 <h4 class="settings-section-title">
                     <i class="fas fa-user"></i>
-                    Cuenta
+                    Perfil
                 </h4>
                 <div class="settings-list">
-                    <div class="settings-item">
+                    <div class="settings-item" onclick="window.location.href='my-account.html'">
                         <i class="fas fa-user-edit"></i>
-                        <span>Perfil</span>
+                        <span>Mi cuenta</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="settings-item">
+                        <i class="fas fa-user-friends"></i>
+                        <span>Amigos</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
                     <div class="settings-item">
                         <i class="fas fa-cog"></i>
-                        <span>Configuración</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
-                    <div class="settings-item">
-                        <i class="fas fa-palette"></i>
-                        <span>Apariencia</span>
+                        <span>Ajustes</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
                 </div>
@@ -461,7 +453,7 @@
                     <div class="settings-item" onclick="window.location.href='plans.html'">
                         <i class="fas fa-star"></i>
                         <span>Plan</span>
-                        <span class="settings-value">Premium</span>
+                        <i class="fas fa-chevron-right"></i>
                     </div>
                     <div class="settings-item">
                         <i class="fas fa-credit-card"></i>
@@ -562,10 +554,6 @@
             <div class="songs-header">
                 <h2>Canciones</h2>
                 <div class="songs-controls">
-                    <button class="shuffle-btn">
-                        <i class="fas fa-random"></i>
-                        <span>Aleatorio</span>
-                    </button>
                 </div>
             </div>
             
@@ -574,7 +562,6 @@
                 <div class="song-header">
                     <div class="song-header-number">#</div>
                     <div class="song-header-info">TÍTULO</div>
-                    <div class="song-header-album">ÁLBUM</div>
                     <div class="song-header-date">FECHA AGREGADA</div>
                     <div class="song-header-duration">DURACIÓN</div>
                     <div class="song-header-actions"></div>
@@ -585,14 +572,13 @@
                     <div class="song-number">1</div>
                     <div class="song-info">
                         <div class="song-image">
-                            <i class="fas fa-music"></i>
+                            <img src="images/c1.jpg" alt="Thunderstruck">
                         </div>
                         <div class="song-details">
                             <h3 class="song-title">Thunderstruck</h3>
                             <p class="song-artist">AC/DC</p>
                         </div>
                     </div>
-                    <div class="song-album">The Razors Edge</div>
                     <div class="song-date">15 de enero, 2024</div>
                     <div class="song-duration">4:52</div>
                     <div class="song-actions">
@@ -610,14 +596,13 @@
                     <div class="song-number">2</div>
                     <div class="song-info">
                         <div class="song-image">
-                            <i class="fas fa-music"></i>
+                            <img src="images/c2.png" alt="Stairway to Heaven">
                         </div>
                         <div class="song-details">
                             <h3 class="song-title">Bohemian Rhapsody</h3>
                             <p class="song-artist">Queen</p>
                         </div>
                     </div>
-                    <div class="song-album">A Night at the Opera</div>
                     <div class="song-date">22 de enero, 2024</div>
                     <div class="song-duration">5:55</div>
                     <div class="song-actions">
@@ -635,14 +620,13 @@
                     <div class="song-number">3</div>
                     <div class="song-info">
                         <div class="song-image">
-                            <i class="fas fa-music"></i>
+                            <img src="images/p1.png" alt="Another Brick in the Wall">
                         </div>
                         <div class="song-details">
                             <h3 class="song-title">Stairway to Heaven</h3>
                             <p class="song-artist">Led Zeppelin</p>
                         </div>
                     </div>
-                    <div class="song-album">Led Zeppelin IV</div>
                     <div class="song-date">28 de enero, 2024</div>
                     <div class="song-duration">8:02</div>
                     <div class="song-actions">
@@ -662,11 +646,11 @@
     <div class="player">
         <div class="player-info">
             <div class="player-image">
-                <i class="fas fa-music"></i>
+                <img src="images/p14.png" alt="Stricken">
             </div>
             <div class="player-details">
-                <h4>Canción Actual</h4>
-                <p>Artista - Álbum</p>
+                <h4>Stricken</h4>
+                <p>Por Disturbed</p>
             </div>
             <div class="player-actions">
                 <button class="action-btn add-to-playlist-btn" title="Agregar a Mi Biblioteca">
@@ -732,5 +716,105 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // Funcionalidad específica del reproductor para favorites.html
+        document.addEventListener('DOMContentLoaded', function() {
+            // Variables para rastrear reproducciones
+            let playCount = 0;
+            let hasShownRatingAlert = false;
+            
+            // Función para verificar y mostrar alert de calificación
+            function checkRatingAlert() {
+                console.log('Verificando alert:', playerState.progress, hasShownRatingAlert);
+                if (playerState.progress >= 80 && !hasShownRatingAlert) {
+                    playCount++;
+                    hasShownRatingAlert = true;
+                    console.log('Mostrando alert de calificación');
+                    
+                    // Obtener el nombre real de la canción desde el reproductor
+                    const playerDetails = document.querySelector('.player-details h4');
+                    const currentSong = playerDetails ? playerDetails.textContent : 'esta canción';
+                    const alertMessage = `Has escuchado "${currentSong}" 3 veces, ¿quieres dejar tu opinión?`;
+                    
+                    if (confirm(alertMessage)) {
+                        // Redirigir a playlist-details.html con scroll a la sección de calificación
+                        window.location.href = 'playlist-details.html#rating-section';
+                    } else {
+                        alert('No hay problema, puedes calificar más tarde si quieres. 😊');
+                    }
+                    
+                    // NO resetear hasShownRatingAlert - que solo aparezca una vez por sesión
+                } else {
+                    console.log('No se muestra alert - progreso:', playerState.progress, 'hasShown:', hasShownRatingAlert);
+                }
+            }
+            
+            // Función para resetear el estado (para testing)
+            window.resetRatingState = function() {
+                hasShownRatingAlert = false;
+                playCount = 0;
+                console.log('Estado de calificación reseteado');
+            };
+            
+            // Barra de progreso
+            const progressBar = document.querySelector('.progress-bar');
+            const progressFill = document.querySelector('.progress-fill');
+            
+            if (progressBar && progressFill) {
+                let isDragging = false;
+                
+                // Función para actualizar la barra de progreso
+                function updateProgress(e) {
+                    const rect = progressBar.getBoundingClientRect();
+                    const clickX = e.clientX - rect.left;
+                    const percentage = Math.max(0, Math.min(100, (clickX / rect.width) * 100));
+                    progressFill.style.width = percentage + '%';
+                    
+                    console.log('Actualizando progreso:', percentage);
+                    
+                    // Actualizar estado del reproductor
+                    console.log('playerState.duration:', playerState.duration);
+                    playerState.progress = percentage;
+                    
+                    if (playerState.duration > 0) {
+                        playerState.currentTime = (playerState.progress / 100) * playerState.duration;
+                        
+                        const currentTimeDisplay = document.querySelector('.current-time');
+                        if (currentTimeDisplay) {
+                            currentTimeDisplay.textContent = secondsToTime(playerState.currentTime);
+                        }
+                    }
+                    
+                    // Verificar si se llegó al 80% y mostrar alert de calificación (independiente de la duración)
+                    console.log('Verificando alert con progreso:', playerState.progress);
+                    checkRatingAlert();
+                }
+                
+                // Evento de clic
+                progressBar.addEventListener('click', function(e) {
+                    updateProgress(e);
+                });
+                
+                // Eventos de arrastre
+                progressBar.addEventListener('mousedown', function(e) {
+                    isDragging = true;
+                    updateProgress(e);
+                });
+                
+                document.addEventListener('mousemove', function(e) {
+                    if (isDragging) {
+                        updateProgress(e);
+                    }
+                });
+                
+                document.addEventListener('mouseup', function(e) {
+                    if (isDragging) {
+                        isDragging = false;
+                        updateProgress(e);
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

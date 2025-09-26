@@ -7,6 +7,16 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <style>
+        /* Estilos específicos para el sidebar en index.html */
+        .sidebar-item:hover .sidebar-item-title {
+            color: #2a9d8a !important;
+        }
+        
+        .sidebar-item:hover .sidebar-item-subtitle {
+            color: #2a9d8a !important;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -104,23 +114,19 @@
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 12 canciones</span>
                         </div>
                         <div class="sidebar-item-badge playlist-badge">Playlist</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
                     
                     <div class="sidebar-item" data-type="playlist">
                         <div class="sidebar-item-icon">
                             <img src="images/p1.png" alt="Hora de Gym">
                         </div>
+                        <a href="my-playlist.html" style="text-decoration: none;">
                         <div class="sidebar-item-info">
-                            <span class="sidebar-item-title">Hora de Gym</span>
+                            <span class="sidebar-item-title">Mi Playlist Personal</span>
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 5 canciones</span>
                         </div>
+                        </a>
                         <div class="sidebar-item-badge playlist-badge">Playlist</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
                     
                     <div class="sidebar-item" data-type="playlist">
@@ -132,9 +138,6 @@
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 12 canciones</span>
                         </div>
                         <div class="sidebar-item-badge playlist-badge">Playlist</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
                     
                     <div class="sidebar-item" data-type="playlist">
@@ -146,9 +149,6 @@
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 8 canciones</span>
                         </div>
                         <div class="sidebar-item-badge playlist-badge">Playlist</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
 
                     <!-- Álbumes -->
@@ -161,9 +161,6 @@
                             <span class="sidebar-item-subtitle">AC/DC • 12 canciones</span>
                         </div>
                         <div class="sidebar-item-badge album-badge">Album</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
                     
                     <div class="sidebar-item" data-type="album">
@@ -175,9 +172,6 @@
                             <span class="sidebar-item-subtitle">Pink Floyd • 26 canciones</span>
                         </div>
                         <div class="sidebar-item-badge album-badge">Album</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
 
                     <!-- Podcasts -->
@@ -190,9 +184,6 @@
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 15 canciones</span>
                         </div>
                         <div class="sidebar-item-badge podcast-badge">Podcast</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
                     
                     <div class="sidebar-item" data-type="podcast">
@@ -204,9 +195,6 @@
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 8 canciones</span>
                         </div>
                         <div class="sidebar-item-badge podcast-badge">Podcast</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
 
                     <!-- Más Playlists -->
@@ -219,9 +207,6 @@
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 15 canciones</span>
                         </div>
                         <div class="sidebar-item-badge playlist-badge">Playlist</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
                     
                     <div class="sidebar-item" data-type="playlist">
@@ -233,9 +218,6 @@
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 22 canciones</span>
                         </div>
                         <div class="sidebar-item-badge playlist-badge">Playlist</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
                     
                     <div class="sidebar-item" data-type="playlist">
@@ -247,9 +229,6 @@
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 18 canciones</span>
                         </div>
                         <div class="sidebar-item-badge playlist-badge">Playlist</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
 
                     <!-- Más Álbumes -->
@@ -262,9 +241,6 @@
                             <span class="sidebar-item-subtitle">Pink Floyd • 9 canciones</span>
                         </div>
                         <div class="sidebar-item-badge album-badge">Album</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
                     
                     <div class="sidebar-item" data-type="album">
@@ -276,9 +252,6 @@
                             <span class="sidebar-item-subtitle">AC/DC • 10 canciones</span>
                         </div>
                         <div class="sidebar-item-badge album-badge">Album</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
                     
                     <div class="sidebar-item" data-type="album">
@@ -290,9 +263,6 @@
                             <span class="sidebar-item-subtitle">Led Zeppelin • 8 canciones</span>
                         </div>
                         <div class="sidebar-item-badge album-badge">Album</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
 
                     <!-- Más Podcasts -->
@@ -305,9 +275,6 @@
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 12 canciones</span>
                         </div>
                         <div class="sidebar-item-badge podcast-badge">Podcast</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
                     
                     <div class="sidebar-item" data-type="podcast">
@@ -319,9 +286,6 @@
                             <span class="sidebar-item-subtitle">Ariel Vincennao • 6 canciones</span>
                         </div>
                         <div class="sidebar-item-badge podcast-badge">Podcast</div>
-                        <button class="sidebar-play-btn">
-                            <i class="fas fa-play"></i>
-                        </button>
                     </div>
 
                 </div>
@@ -414,7 +378,7 @@
         <div class="user-settings-header">
             <div class="user-profile">
                 <div class="user-avatar">
-                    <i class="fas fa-user"></i>
+                    <img src="images/avatar.png" alt="Avatar" class="user-avatar-img">
                 </div>
                 <div class="user-info">
                     <h3>Ariel Vincennao</h3>
@@ -427,31 +391,26 @@
         </div>
         
         <div class="user-settings-content">
-            <!-- Cuenta -->
+            <!-- Perfil -->
             <div class="settings-section">
                 <h4 class="settings-section-title">
                     <i class="fas fa-user"></i>
-                    Cuenta
+                    Perfil
                 </h4>
                 <div class="settings-list">
-                    <div class="settings-item">
+                    <div class="settings-item" onclick="window.location.href='my-account.html'">
                         <i class="fas fa-user-edit"></i>
-                        <span>Perfil</span>
+                        <span>Mi cuenta</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
-                    <div class="settings-item" onclick="window.location.href='help.html'">
-                        <i class="fas fa-question-circle"></i>
-                        <span>Ayuda</span>
+                    <div class="settings-item">
+                        <i class="fas fa-user-friends"></i>
+                        <span>Amigos</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
                     <div class="settings-item">
                         <i class="fas fa-cog"></i>
-                        <span>Configuración</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
-                    <div class="settings-item">
-                        <i class="fas fa-palette"></i>
-                        <span>Apariencia</span>
+                        <span>Ajustes</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
                 </div>
@@ -467,7 +426,7 @@
                     <div class="settings-item" onclick="window.location.href='plans.html'">
                         <i class="fas fa-star"></i>
                         <span>Plan</span>
-                        <span class="settings-value">Premium</span>
+                        <i class="fas fa-chevron-right"></i>
                     </div>
                     <div class="settings-item">
                         <i class="fas fa-credit-card"></i>
@@ -563,34 +522,30 @@
                 </div>
             </div>
         </section>
-
         <!-- Filtros de Recomendaciones -->
-        <div class="recommendations-filters">
-            <button class="filter-btn active" data-filter="all">
-                <i class="fas fa-th"></i>
+        <div class="filter-chips" style="margin-bottom: 30px;">
+            <button class="filter-chip active" data-filter="all">
+                <i class="fas fa-music"></i>
                 <span>Todos</span>
             </button>
-            <button class="filter-btn" data-filter="music">
-                <i class="fas fa-music"></i>
-                <span>Canciones</span>
+            <button class="filter-chip" data-filter="rock">
+                <i class="fas fa-guitar"></i>
+                <span>Rock</span>
             </button>
-            <button class="filter-btn" data-filter="artists">
-                <i class="fas fa-user"></i>
-                <span>Artistas</span>
+            <button class="filter-chip" data-filter="pop">
+                <i class="fas fa-star"></i>
+                <span>Pop</span>
             </button>
-            <button class="filter-btn" data-filter="playlists">
-                <i class="fas fa-list"></i>
-                <span>Playlists</span>
+            <button class="filter-chip" data-filter="trap">
+                <i class="fas fa-fire"></i>
+                <span>Trap</span>
             </button>
-            <button class="filter-btn" data-filter="albums">
-                <i class="fas fa-compact-disc"></i>
-                <span>Álbumes</span>
-            </button>
-            <button class="filter-btn" data-filter="podcasts">
-                <i class="fas fa-microphone"></i>
-                <span>Podcasts</span>
+            <button class="filter-chip" data-filter="latest">
+                <i class="fas fa-clock"></i>
+                <span>Lo último</span>
             </button>
         </div>
+        
         <section class="section">
             <div class="section-header">
                 <div class="section-title-group">
@@ -612,7 +567,7 @@
                 <div class="carousel-track" id="recent-carousel">
                 <div class="content-card">
                     <div class="card-image">
-                        <img src="images/p1.png" alt="Mi Playlist de Deporte">
+                        <img src="images/p23.png" alt="Mi Playlist de Deporte">
                     </div>
                     <div class="card-tag playlist-tag">Playlist</div>
                     <h3 class="card-title">Hora de Gym</h3>
@@ -627,7 +582,7 @@
                             </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="context-menu">
                                         <button class="context-menu-item save-item">
@@ -661,7 +616,7 @@
                             </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="context-menu">
                                         <button class="context-menu-item save-item">
@@ -695,7 +650,7 @@
                             </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="context-menu">
                                         <button class="context-menu-item save-item">
@@ -729,7 +684,7 @@
                             </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="context-menu">
                                         <button class="context-menu-item save-item">
@@ -763,7 +718,7 @@
                                 </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="context-menu">
                                         <button class="context-menu-item save-item">
@@ -797,7 +752,7 @@
                                 </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="context-menu">
                                         <button class="context-menu-item save-item">
@@ -831,7 +786,7 @@
                                 </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="context-menu">
                                         <button class="context-menu-item save-item">
@@ -865,7 +820,7 @@
                                 </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="context-menu">
                                         <button class="context-menu-item save-item">
@@ -921,7 +876,7 @@
                             </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="context-menu">
                                         <button class="context-menu-item save-item">
@@ -955,7 +910,7 @@
                             </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="context-menu">
                                         <button class="context-menu-item save-item">
@@ -989,7 +944,7 @@
                             </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="context-menu">
                                         <button class="context-menu-item save-item">
@@ -1023,7 +978,7 @@
                             </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="context-menu">
                                         <button class="context-menu-item save-item">
@@ -1057,7 +1012,7 @@
                                 </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="context-menu">
                                         <button class="context-menu-item save-item">
@@ -1091,7 +1046,7 @@
                                 </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="context-menu">
                                         <button class="context-menu-item save-item">
@@ -1125,7 +1080,7 @@
                                 </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="context-menu">
                                         <button class="context-menu-item save-item">
@@ -1159,7 +1114,7 @@
                                 </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="context-menu">
                                         <button class="context-menu-item save-item">
@@ -1203,7 +1158,7 @@
                     </div>
                     <div class="card-tag playlist-tag">Playlist</div>
                     <h3 class="card-title">Correr 🏃‍♂️</h3>
-                    <p class="card-subtitle">Ritmo perfecto para entrenar</p>
+                    <p class="card-subtitle">Por Spoiler Five</p>
                     <div class="card-actions">
                         <button class="play-btn">
                             <i class="fas fa-play"></i>
@@ -1214,7 +1169,7 @@
                             </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="context-menu">
                                         <button class="context-menu-item save-item">
@@ -1237,7 +1192,7 @@
                     </div>
                     <div class="card-tag playlist-tag">Playlist</div>
                     <h3 class="card-title">Trabajar 💼</h3>
-                    <p class="card-subtitle">Concentración y productividad</p>
+                    <p class="card-subtitle">Por Spoiler Five</p>
                     <div class="card-actions">
                         <button class="play-btn">
                             <i class="fas fa-play"></i>
@@ -1248,7 +1203,7 @@
                             </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="context-menu">
                                         <button class="context-menu-item save-item">
@@ -1271,7 +1226,7 @@
                     </div>
                     <div class="card-tag playlist-tag">Playlist</div>
                     <h3 class="card-title">Relajarse 🌴</h3>
-                    <p class="card-subtitle">Momentos de tranquilidad</p>
+                    <p class="card-subtitle">Por Spoiler Five</p>
                     <div class="card-actions">
                         <button class="play-btn">
                             <i class="fas fa-play"></i>
@@ -1282,7 +1237,7 @@
                             </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="context-menu">
                                         <button class="context-menu-item save-item">
@@ -1305,7 +1260,7 @@
                     </div>
                     <div class="card-tag playlist-tag">Playlist</div>
                     <h3 class="card-title">Fiesta 🎉</h3>
-                    <p class="card-subtitle">Energía y diversión</p>
+                    <p class="card-subtitle">Por Spoiler Five</p>
                     <div class="card-actions">
                         <button class="play-btn">
                             <i class="fas fa-play"></i>
@@ -1316,7 +1271,7 @@
                                 </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="context-menu">
                                         <button class="context-menu-item save-item">
@@ -1339,7 +1294,7 @@
                     </div>
                     <div class="card-tag playlist-tag">Playlist</div>
                     <h3 class="card-title">Dormir 💤</h3>
-                    <p class="card-subtitle">Sueños tranquilos</p>
+                    <p class="card-subtitle">Por Spoiler Five</p>
                         <div class="card-actions">
                             <button class="play-btn">
                                 <i class="fas fa-play"></i>
@@ -1350,7 +1305,7 @@
                                 </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="context-menu">
                                         <button class="context-menu-item save-item">
@@ -1373,7 +1328,7 @@
                     </div>
                     <div class="card-tag playlist-tag">Playlist</div>
                     <h3 class="card-title">Programar 💻</h3>
-                    <p class="card-subtitle">Música para concentrarse</p>
+                    <p class="card-subtitle">Por Spoiler Five</p>
                         <div class="card-actions">
                             <button class="play-btn">
                                 <i class="fas fa-play"></i>
@@ -1384,7 +1339,7 @@
                                 </button>
                                 <div class="context-menu-container">
                                     <button class="context-menu-btn" title="Más opciones">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="context-menu">
                                         <button class="context-menu-item save-item">
@@ -1410,11 +1365,11 @@
     <div class="player">
         <div class="player-info">
             <div class="player-image">
-                <i class="fas fa-music"></i>
+                <img src="images/p14.png" alt="Stricken">
             </div>
             <div class="player-details">
-                <h4>Canción Actual</h4>
-                <p>Artista - Álbum</p>
+                <h4>Stricken</h4>
+                <p>Por Disturbed</p>
             </div>
             <div class="player-actions">
                 <button class="action-btn add-to-playlist-btn" title="Agregar a Mi Biblioteca">
