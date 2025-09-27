@@ -167,38 +167,19 @@ document.addEventListener('DOMContentLoaded', function() {
     playButtons.forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.stopPropagation();
-            this.innerHTML = '<i class="fas fa-pause"></i>';
-            this.style.background = '#ffffff';
-            this.style.color = '#4ecdc4';
             
-            // Actualizar estado del reproductor
+            // Obtener información de la card
             const card = this.closest('.content-card');
             const title = card.querySelector('.card-title');
             const subtitle = card.querySelector('.card-subtitle');
             
             if (title && subtitle) {
-                playerState.currentSong = title.textContent;
-                playerState.currentArtist = subtitle.textContent;
-                playerState.isPlaying = true;
-                playerState.currentTime = 0;
-                playerState.progress = 0;
-                playerState.startTime = null;
-                
-                // Establecer duración basada en el tipo de contenido
-                if (title.textContent.includes('Playlist') || title.textContent.includes('Hora de Gym')) {
-                    playerState.duration = 105 * 60; // 1h 45min para playlists
-                } else {
-                    playerState.duration = 240; // 4 minutos por defecto para canciones individuales
-                }
-                
-                applyPlayerState();
+                // Mostrar alert con información de la canción/playlist
+                alert(`Reproduciendo: ${title.textContent} - ${subtitle.textContent}`);
+            } else {
+                // Fallback si no se encuentra la información
+                alert('Reproduciendo contenido');
             }
-            
-            setTimeout(() => {
-                this.innerHTML = '<i class="fas fa-play"></i>';
-                this.style.background = '#2a9d8a';
-                this.style.color = '#ffffff';
-            }, 3000);
         });
     });
 
@@ -820,7 +801,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Funcionalidad de los elementos del sidebar
     const sidebarItems = document.querySelectorAll('.sidebar-item');
     sidebarItems.forEach(item => {
-        // Click en el elemento (reproducir por defecto)
+        // Click en el elemento (solo alert)
         item.addEventListener('click', function(e) {
             // Si el elemento tiene un onclick definido, no hacer nada (dejar que se ejecute)
             if (this.hasAttribute('onclick')) {
@@ -830,33 +811,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const title = this.querySelector('.sidebar-item-title').textContent;
             const subtitle = this.querySelector('.sidebar-item-subtitle').textContent;
             
-            // Efecto visual
-            this.style.transform = 'scale(0.98)';
-            setTimeout(() => {
-                this.style.transform = 'scale(1)';
-            }, 150);
-            
-            // Actualizar estado del reproductor para todos los elementos del sidebar
-            playerState.currentSong = title.replace('📌 ', '').trim(); // Remover el indicador de pin si existe
-            playerState.currentArtist = subtitle;
-            playerState.isPlaying = true;
-            playerState.currentTime = 0;
-            playerState.progress = 0;
-            playerState.startTime = null;
-            
-            // Establecer duración basada en el tipo de contenido
-            if (title.includes('Canciones que te gustan') || title.includes('Playlist') || title.includes('Hora de Gym')) {
-                playerState.duration = 105 * 60; // 1h 45min para playlists
-            } else {
-                playerState.duration = 240; // 4 minutos por defecto para canciones individuales
-            }
-            
-            applyPlayerState();
-            
-            // Simular reproducción
-            setTimeout(() => {
-                alert(`Reproduciendo: ${title.replace('📌 ', '').trim()} - ${subtitle}`);
-            }, 200);
+            // Solo mostrar alert sin cambiar el reproductor
+            alert(`Reproduciendo: ${title.replace('📌 ', '').trim()} - ${subtitle}`);
         });
     });
 
@@ -933,36 +889,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const title = item.querySelector('.sidebar-item-title').textContent;
             const subtitle = item.querySelector('.sidebar-item-subtitle').textContent;
             
-            // Efecto visual
-            this.style.transform = 'scale(0.9)';
-            setTimeout(() => {
-                this.style.transform = 'scale(1.1)';
-            }, 150);
-            setTimeout(() => {
-                this.style.transform = 'scale(1)';
-            }, 300);
-            
-            // Actualizar estado del reproductor para todos los elementos del sidebar
-            playerState.currentSong = title.replace('📌 ', '').trim(); // Remover el indicador de pin si existe
-            playerState.currentArtist = subtitle;
-            playerState.isPlaying = true;
-            playerState.currentTime = 0;
-            playerState.progress = 0;
-            playerState.startTime = null;
-            
-            // Establecer duración basada en el tipo de contenido
-            if (title.includes('Canciones que te gustan') || title.includes('Playlist') || title.includes('Hora de Gym')) {
-                playerState.duration = 105 * 60; // 1h 45min para playlists
-            } else {
-                playerState.duration = 240; // 4 minutos por defecto para canciones individuales
-            }
-            
-            applyPlayerState();
-            
-            // Simular reproducción
-            setTimeout(() => {
-                alert(`Reproduciendo: ${title.replace('📌 ', '').trim()} - ${subtitle}`);
-            }, 200);
+            // Solo mostrar alert sin cambiar nada más
+            alert(`Reproduciendo: ${title.replace('📌 ', '').trim()} - ${subtitle}`);
         });
     });
 
@@ -1335,25 +1263,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
 
-        document.querySelectorAll('.song-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const title = this.querySelector('.song-title').textContent;
-                const artist = this.querySelector('.song-artist').textContent;
-                const durationText = this.querySelector('.song-duration').textContent;
-                
-
-                playerState.currentSong = title;
-                playerState.currentArtist = artist;
-                playerState.isPlaying = true;
-                playerState.currentTime = 0;
-                playerState.progress = 0;
-                playerState.startTime = null;
-                playerState.duration = timeToSeconds(durationText);
-                applyPlayerState();
-                
-                alert(`Reproduciendo: ${title}`);
-            });
-        });
 
 
         document.querySelectorAll('.song-action-btn').forEach(btn => {
@@ -1720,6 +1629,76 @@ document.addEventListener('DOMContentLoaded', function() {
                 star.className = 'fas fa-star';
             } else {
                 star.className = 'far fa-star';
+            }
+        });
+    }
+});
+
+// Funcionalidad específica para playlist-details.html
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.pathname.includes('playlist-details.html')) {
+        // Funcionalidad de hover para reproducir y ver detalles
+        const songItems = document.querySelectorAll('.song-item');
+        songItems.forEach(item => {
+            // Click en la imagen para reproducir
+            const songImage = item.querySelector('.song-image');
+            if (songImage) {
+                songImage.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const songTitle = item.querySelector('.song-title').textContent;
+                    const songArtist = item.querySelector('.song-artist').textContent;
+                    
+                    // Efecto visual
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                    
+                    // Simular reproducción
+                    setTimeout(() => {
+                        alert(`Reproduciendo: ${songTitle} - ${songArtist}`);
+                    }, 200);
+                });
+            }
+            
+            // Click en el título o artista para ver detalles
+            const songTitle = item.querySelector('.song-title');
+            const songArtist = item.querySelector('.song-artist');
+            
+            if (songTitle) {
+                songTitle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const artist = item.querySelector('.song-artist').textContent;
+                    
+                    // Efecto visual
+                    this.style.color = '#2a9d8a';
+                    setTimeout(() => {
+                        this.style.color = '';
+                    }, 200);
+                    
+                    // Simular navegación a detalles
+                    setTimeout(() => {
+                        alert(`Abriendo detalles de: ${this.textContent} - ${artist}`);
+                    }, 200);
+                });
+            }
+            
+            if (songArtist) {
+                songArtist.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const title = item.querySelector('.song-title').textContent;
+                    
+                    // Efecto visual
+                    this.style.color = '#2a9d8a';
+                    setTimeout(() => {
+                        this.style.color = '';
+                    }, 200);
+                    
+                    // Simular navegación a detalles
+                    setTimeout(() => {
+                        alert(`Abriendo detalles de: ${title} - ${this.textContent}`);
+                    }, 200);
+                });
             }
         });
     }

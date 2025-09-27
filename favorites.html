@@ -544,6 +544,9 @@
                         <button class="play-btn-large">
                             <i class="fas fa-play"></i>
                         </button>
+                        <button class="context-menu-btn playlist-context-btn" title="Más opciones">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -656,7 +659,7 @@
                 <button class="action-btn add-to-playlist-btn" title="Agregar a Mi Biblioteca">
                     <i class="fas fa-plus"></i>
                 </button>
-                <button class="action-btn context-menu-btn" title="Más opciones">
+                <button class="action-btn context-menu-btn" title="Abrir menú contextual">
                     <i class="fas fa-ellipsis-h"></i>
                 </button>
             </div>
@@ -675,26 +678,26 @@
                 </div>
             </div>
             <div class="control-buttons">
-                <button class="control-btn">
+                <button class="control-btn" title="Reproducción aleatoria">
                     <i class="fas fa-random"></i>
                 </button>
-                <button class="control-btn">
+                <button class="control-btn" title="Canción anterior">
                     <i class="fas fa-step-backward"></i>
                 </button>
-                <button class="play-pause-btn">
+                <button class="play-pause-btn" title="Reproducir/Pausar">
                     <i class="fas fa-play"></i>
                 </button>
-                <button class="control-btn">
+                <button class="control-btn" title="Siguiente canción">
                     <i class="fas fa-step-forward"></i>
                 </button>
-                <button class="control-btn">
+                <button class="control-btn" title="Repetir">
                     <i class="fas fa-redo"></i>
                 </button>
             </div>
         </div>
 
         <div class="volume-control">
-            <button class="control-btn">
+            <button class="control-btn" title="Silenciar/Activar volumen">
                 <i class="fas fa-volume-up"></i>
             </button>
             <div class="volume-slider">
@@ -712,6 +715,26 @@
         <div class="context-menu-item" onclick="shareSong()">
             <i class="fas fa-share"></i>
             <span>Compartir</span>
+        </div>
+    </div>
+
+    <!-- Menú Contextual de Playlist -->
+    <div class="context-menu" id="playlistContextMenu">
+        <div class="context-menu-item" onclick="sharePlaylist()">
+            <i class="fas fa-share"></i>
+            <span>Compartir playlist</span>
+        </div>
+        <div class="context-menu-item" onclick="editPlaylist()">
+            <i class="fas fa-edit"></i>
+            <span>Editar detalles</span>
+        </div>
+        <div class="context-menu-item" onclick="downloadPlaylist()">
+            <i class="fas fa-download"></i>
+            <span>Descargar</span>
+        </div>
+        <div class="context-menu-item" onclick="addToQueue()">
+            <i class="fas fa-list"></i>
+            <span>Agregar a la cola</span>
         </div>
     </div>
 
@@ -815,6 +838,51 @@
                 });
             }
         });
+
+        // Funcionalidad del menú contextual de playlist
+        const playlistContextBtn = document.querySelector('.playlist-context-btn');
+        if (playlistContextBtn) {
+            playlistContextBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const playlistContextMenu = document.getElementById('playlistContextMenu');
+                if (playlistContextMenu) {
+                    // Cerrar otros menús
+                    document.querySelectorAll('.context-menu').forEach(otherMenu => {
+                        if (otherMenu !== playlistContextMenu) {
+                            otherMenu.style.opacity = '0';
+                            otherMenu.style.visibility = 'hidden';
+                            otherMenu.style.transform = 'translateY(10px)';
+                            otherMenu.classList.remove('show');
+                        }
+                    });
+                    
+                    // Posicionar y mostrar el menú de playlist
+                    const rect = this.getBoundingClientRect();
+                    playlistContextMenu.style.left = (rect.left - 180) + 'px';
+                    playlistContextMenu.style.top = (rect.bottom + 5) + 'px';
+                    playlistContextMenu.classList.add('show');
+                }
+            });
+        }
+
+        // Funciones del menú contextual de playlist
+        window.sharePlaylist = function() {
+            alert('Compartiendo playlist "Canciones que te gustan"...');
+        };
+
+        window.editPlaylist = function() {
+            alert('Editando detalles de la playlist...');
+        };
+
+        window.downloadPlaylist = function() {
+            alert('Descargando playlist...');
+        };
+
+        window.addToQueue = function() {
+            alert('Agregando playlist a la cola...');
+        };
     </script>
 </body>
 </html>

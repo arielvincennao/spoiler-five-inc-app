@@ -36,6 +36,10 @@
         }
         
         /* Estilos específicos para el sidebar en playlist-details.html */
+        .sidebar-item-title {
+            padding: 2px 4px 2px 0;
+        }
+        
         .sidebar-item:hover .sidebar-item-title {
             color: #2a9d8a !important;
         }
@@ -65,13 +69,13 @@
         </div>
         
         <div class="header-actions">
-            <button class="hamburger-btn" id="hamburgerBtn">
+            <button class="hamburger-btn" id="hamburgerBtn" title="Abrir biblioteca">
                 <i class="fas fa-book"></i>
             </button>
-            <button class="notification-btn" id="notificationBtn">
+            <button class="notification-btn" id="notificationBtn" title="Ver notificaciones">
                 <i class="fas fa-bell"></i>
             </button>
-            <button class="user-btn" id="userBtn">
+            <button class="user-btn" id="userBtn" title="Abrir menú de usuario">
                 <i class="fas fa-user"></i>
             </button>
         </div>
@@ -81,7 +85,7 @@
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <h3>Mi Biblioteca</h3>
-            <button class="close-sidebar-btn" id="closeSidebarBtn">
+            <button class="close-sidebar-btn" id="closeSidebarBtn" title="Cerrar biblioteca">
                 <i class="fas fa-times"></i>
             </button>
         </div>
@@ -328,7 +332,7 @@
     <div class="notifications-panel" id="notificationsPanel">
         <div class="notifications-header">
             <h3>Notificaciones</h3>
-            <button class="close-notifications-btn" id="closeNotificationsBtn">
+            <button class="close-notifications-btn" id="closeNotificationsBtn" title="Cerrar notificaciones">
                 <i class="fas fa-times"></i>
             </button>
         </div>
@@ -391,7 +395,7 @@
         </div>
 
         <div class="notifications-footer">
-            <button class="view-all-btn">
+            <button class="view-all-btn" title="Ver todas las notificaciones">
                 <i class="fas fa-list"></i>
                 Ver todas las notificaciones
             </button>
@@ -413,7 +417,7 @@
                     <p>Plan Premium</p>
                 </div>
             </div>
-            <button class="close-settings-btn" id="closeSettingsBtn">
+            <button class="close-settings-btn" id="closeSettingsBtn" title="Cerrar menú de usuario">
                 <i class="fas fa-times"></i>
             </button>
         </div>
@@ -516,7 +520,7 @@
         </div>
 
         <div class="user-settings-footer">
-            <button class="logout-btn">
+            <button class="logout-btn" title="Cerrar sesión">
                 <i class="fas fa-sign-out-alt"></i>
                 Cerrar sesión
             </button>
@@ -909,7 +913,7 @@
                 <button class="action-btn add-to-playlist-btn" title="Agregar a Mi Biblioteca">
                     <i class="fas fa-plus"></i>
                 </button>
-                <button class="action-btn context-menu-btn" title="Más opciones">
+                <button class="action-btn context-menu-btn" title="Abrir menú contextual">
                     <i class="fas fa-ellipsis-h"></i>
                 </button>
             </div>
@@ -928,26 +932,26 @@
                 </div>
             </div>
             <div class="control-buttons">
-                <button class="control-btn">
+                <button class="control-btn" title="Reproducción aleatoria">
                     <i class="fas fa-random"></i>
                 </button>
-                <button class="control-btn">
+                <button class="control-btn" title="Canción anterior">
                     <i class="fas fa-step-backward"></i>
                 </button>
-                <button class="play-pause-btn">
+                <button class="play-pause-btn" title="Reproducir/Pausar">
                     <i class="fas fa-play"></i>
                 </button>
-                <button class="control-btn">
+                <button class="control-btn" title="Siguiente canción">
                     <i class="fas fa-step-forward"></i>
                 </button>
-                <button class="control-btn">
+                <button class="control-btn" title="Repetir">
                     <i class="fas fa-redo"></i>
                 </button>
             </div>
         </div>
 
         <div class="volume-control">
-            <button class="control-btn">
+            <button class="control-btn" title="Silenciar/Activar volumen">
                 <i class="fas fa-volume-up"></i>
             </button>
             <div class="volume-slider">
@@ -1172,6 +1176,69 @@
                     }
                 });
             }
+        });
+
+        // Funcionalidad para hacer clickeables los títulos y artistas de canciones
+        function initSongClickHandlers() {
+            const songTitles = document.querySelectorAll('.song-title');
+            const songArtists = document.querySelectorAll('.song-artist');
+            
+            // Agregar click handlers a los títulos
+            songTitles.forEach(title => {
+                title.style.cursor = 'pointer';
+                title.addEventListener('click', function() {
+                    const artist = this.parentElement.querySelector('.song-artist').textContent;
+                    const songName = this.textContent;
+                    showSongDetails(songName, artist);
+                });
+            });
+            
+            // Agregar click handlers a los artistas
+            songArtists.forEach(artist => {
+                artist.style.cursor = 'pointer';
+                artist.addEventListener('click', function() {
+                    const title = this.parentElement.querySelector('.song-title').textContent;
+                    const artistName = this.textContent;
+                    showSongDetails(title, artistName);
+                });
+            });
+        }
+        
+        // Funcionalidad para hacer clickeable el autor
+        function initAuthorClickHandler() {
+            const authorElement = document.querySelector('.playlist-creator');
+            if (authorElement) {
+                // Extraer solo el nombre del autor del texto completo
+                const fullText = authorElement.textContent;
+                const authorName = fullText.split(' • ')[0].replace('Por ', '');
+                
+                // Crear HTML con el nombre del autor como span clickeable
+                const newHTML = fullText.replace(authorName, `<span class="author-name" style="cursor: pointer; text-decoration: underline;">${authorName}</span>`);
+                authorElement.innerHTML = newHTML;
+                
+                // Agregar event listener al span del nombre del autor
+                const authorNameSpan = authorElement.querySelector('.author-name');
+                if (authorNameSpan) {
+                    authorNameSpan.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        
+                        // Efecto visual
+                        this.style.color = '#1a6b5e';
+                        setTimeout(() => {
+                            this.style.color = '';
+                        }, 200);
+                        
+                        // Mostrar alert
+                        alert('Viendo detalles del autor');
+                    });
+                }
+            }
+        }
+        
+        // Inicializar cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', function() {
+            initSongClickHandlers();
+            initAuthorClickHandler();
         });
     </script>
 </body>

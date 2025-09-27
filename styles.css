@@ -371,7 +371,6 @@ body {
 .create-playlist-btn:hover {
     background: #45b7b8;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(42, 157, 138, 0.3);
 }
 
 /* Controles de Playlist */
@@ -1171,7 +1170,6 @@ body {
 .create-playlist-btn:hover {
     background: linear-gradient(135deg, #1e7a6b, #2a9d8a);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(42, 157, 138, 0.3);
 }
 
 .create-playlist-btn i {
@@ -1236,8 +1234,9 @@ body {
     text-overflow: ellipsis;
     cursor: pointer;
     transition: all 0.2s ease;
-    padding: 2px 4px;
+    padding: 2px 4px 2px 0;
     border-radius: 4px;
+    position: relative;
 }
 
 .sidebar-item-info:hover .sidebar-item-title {
@@ -2363,6 +2362,8 @@ body:has(.playlist-hero) .main-content {
     font-size: 12px;
     margin-right: 8px;
     vertical-align: middle;
+    position: absolute;
+    left: -20px;
 }
 
 /* Estilos para botones de edición y eliminación */
@@ -2952,8 +2953,8 @@ body:has(.playlist-hero) .main-content {
 }
 
 .comment-submit-btn:hover:not(:disabled) {
-    background: #45b7b8;
-    transform: translateY(-1px);
+    background: #218a7a;
+    transform: none;
 }
 
 .comment-submit-btn:disabled {
@@ -3395,6 +3396,28 @@ body:has(.playlist-hero) .main-content {
 
 .play-btn-large:hover {
     background: #45b7b8;
+    transform: scale(1.05);
+}
+
+.playlist-context-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.playlist-context-btn:hover {
+    background: rgba(42, 157, 138, 0.2);
+    color: #2a9d8a;
+    border-color: #2a9d8a;
     transform: scale(1.05);
 }
 
