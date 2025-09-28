@@ -20,6 +20,48 @@
         .sidebar-item:hover .sidebar-item-subtitle {
             color: #2a9d8a !important;
         }
+
+        /* Estilos para el header de planes */
+        .help-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .help-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .help-logo i {
+            font-size: 32px;
+            color: #2a9d8a;
+        }
+
+        .help-logo h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2a9d8a;
+            margin: 0;
+        }
+
+        .help-subtitle {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .help-logo h1 {
+                font-size: 24px;
+            }
+
+            .help-subtitle {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -503,9 +545,12 @@
 
     <!-- Main Content -->
     <main class="main-content">
-        <div class="page-header">
-            <h1>Planes</h1>
-            <p>Elige el plan que mejor se adapte a tus necesidades</p>
+        <div class="help-header">
+            <div class="help-logo">
+                <i class="fas fa-music"></i>
+                <h1>Spoiler Five Inc.</h1>
+            </div>
+            <p class="help-subtitle">Elige el plan que mejor se adapte a tus necesidades</p>
         </div>
         
         <div class="plans-container">
