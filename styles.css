@@ -5000,7 +5000,7 @@ body:has(.playlist-hero) .main-content {
     top: -15px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    background: #2a9d8a;
     color: white;
     padding: 8px 20px;
     border-radius: 20px;
@@ -5008,7 +5008,7 @@ body:has(.playlist-hero) .main-content {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 4px 15px rgba(42, 157, 138, 0.3);
     z-index: 10;
 }
 
