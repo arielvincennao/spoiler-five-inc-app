@@ -3488,7 +3488,7 @@ body:has(.playlist-hero) .main-content {
 /* Encabezado de la tabla */
 .song-header {
     display: grid;
-    grid-template-columns: 40px 1fr 200px 60px 80px;
+    grid-template-columns: 40px 1fr 200px 150px 60px 80px;
     gap: 16px;
     align-items: center;
     padding: 12px 16px;
@@ -3514,6 +3514,10 @@ body:has(.playlist-hero) .main-content {
     font-weight: 600;
 }
 
+.song-header-album {
+    font-weight: 600;
+}
+
 .song-header-duration {
     text-align: center;
     font-weight: 600;
@@ -3528,6 +3532,16 @@ body:has(.playlist-hero) .main-content {
     color: rgba(255, 255, 255, 0.7);
     font-size: 14px;
     font-weight: 400;
+}
+
+/* Columna de álbum */
+.song-album {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 /* Menú contextual */
@@ -3685,7 +3699,7 @@ body:has(.playlist-hero) .main-content {
 
 .song-item {
     display: grid;
-    grid-template-columns: 40px 1fr 200px 60px 80px;
+    grid-template-columns: 40px 1fr 200px 150px 60px 80px;
     gap: 16px;
     align-items: center;
     padding: 12px 16px;
@@ -3948,10 +3962,32 @@ body:has(.playlist-hero) .main-content {
         font-size: 32px;
     }
     
+    .song-header {
+        grid-template-columns: 30px 1fr 60px;
+        gap: 12px;
+        padding: 8px 12px;
+    }
+    
+    .song-header-album {
+        display: none;
+    }
+    
+    .song-header-date {
+        display: none;
+    }
+    
     .song-item {
         grid-template-columns: 30px 1fr 60px;
         gap: 12px;
         padding: 8px 12px;
+    }
+    
+    .song-album {
+        display: none;
+    }
+    
+    .song-date {
+        display: none;
     }
     
     
