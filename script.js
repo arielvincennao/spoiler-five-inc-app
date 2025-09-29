@@ -128,6 +128,9 @@ document.addEventListener('DOMContentLoaded', function() {
     applyPlayerState();
  
     syncPlayers();
+    
+    // Inicializar funcionalidad de clics en el reproductor fijo
+    initPlayerClickHandlers();
 
     const logo = document.querySelector('.logo');
     if (logo) {
@@ -1193,6 +1196,77 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.style.transform = 'scale(1)';
             }, 200);
         });
+    }
+
+    // Funcionalidad para hacer clickeables el nombre de la canción y autor en el reproductor fijo
+    function initPlayerClickHandlers() {
+        // Buscar el reproductor fijo
+        const player = document.querySelector('.player');
+        if (player) {
+            const playerDetails = player.querySelector('.player-details');
+            if (playerDetails) {
+                const songTitle = playerDetails.querySelector('h4');
+                const songArtist = playerDetails.querySelector('p');
+                
+                // Hacer clickeable el título de la canción
+                if (songTitle) {
+                    songTitle.style.cursor = 'pointer';
+                    songTitle.style.transition = 'all 0.3s ease';
+                    
+                    songTitle.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        
+                        // Efecto visual
+                        this.style.color = '#2a9d8a';
+                        setTimeout(() => {
+                            this.style.color = '';
+                        }, 200);
+                        
+                        // Mostrar alert con detalles de la canción
+                        const songName = this.textContent;
+                        alert(`Detalles de ${songName}`);
+                    });
+                    
+                    // Efecto hover
+                    songTitle.addEventListener('mouseenter', function() {
+                        this.style.color = '#2a9d8a';
+                    });
+                    
+                    songTitle.addEventListener('mouseleave', function() {
+                        this.style.color = '';
+                    });
+                }
+                
+                // Hacer clickeable el nombre del artista
+                if (songArtist) {
+                    songArtist.style.cursor = 'pointer';
+                    songArtist.style.transition = 'all 0.3s ease';
+                    
+                    songArtist.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        
+                        // Efecto visual
+                        this.style.color = '#2a9d8a';
+                        setTimeout(() => {
+                            this.style.color = '';
+                        }, 200);
+                        
+                        // Mostrar alert con detalles del artista
+                        const artistName = this.textContent.replace('Por ', '');
+                        alert(`Detalles de ${artistName}`);
+                    });
+                    
+                    // Efecto hover
+                    songArtist.addEventListener('mouseenter', function() {
+                        this.style.color = '#2a9d8a';
+                    });
+                    
+                    songArtist.addEventListener('mouseleave', function() {
+                        this.style.color = '';
+                    });
+                }
+            }
+        }
     }
 
     // Funcionalidad específica para página de detalles
